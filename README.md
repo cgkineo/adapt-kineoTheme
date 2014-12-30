@@ -9,6 +9,10 @@ adapt-kineo-theme
 
 Applied to page content objects.
 
+Auto switches between desktop and mobile background images.
+
+If isEnabled is set to false, the standard page title is rendered.
+
 ```
 "_theme": {
     "_pageHeader": {
