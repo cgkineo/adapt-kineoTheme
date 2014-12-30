@@ -8,7 +8,7 @@
   "displayName": "Vanilla",
   "theme": "vanilla",
   "description": "A core bundled theme",
-  "main": "js/vanilla.js",
+  "main": "js/theme.js",
   "keywords": [
     "adapt-plugin",
     "adapt-theme"
