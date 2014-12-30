@@ -1,0 +1,12 @@
+/*Page Content Object - add to all content objects and configure as necessary*/
+
+"_theme": {
+    "_pageHeader": {
+        "_isEnabled": true,
+        "layout": "left",
+        "_backgroundImage": {
+            "_desktop": "course/en/images/base_assets/hero_image.jpg",
+            "_mobile": "course/en/images/base_assets/hero_image_mobile.jpg"
+        }
+    }
+}
