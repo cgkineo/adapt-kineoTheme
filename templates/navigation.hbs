@@ -1,0 +1,24 @@
+{{! Maintainers - Daryl Hedley}}
+{{! All links in the nav bar should have an attritbue of data-event, navigationView uses this to fire a global event}}
+<div class="navigation-inner clearfix" role="navigation">
+	{{#if config._back._isEnabled}}
+		<a href="#" class="{{config._back._class}} icon navigation-button {{config._back._iconTypeClass}} {{config._back._layout}} naviation-core-item" data-event="{{config._back._dataEvent}}" aria-label="{{aria.previous}}" title="{{config._back._tooltip}}">
+			<span class="tooltip">{{#if config._back._showTooltip}}{{config._back._tooltip}}{{/if}}</span>
+		</a>
+	{{/if}}
+	{{#if config._menu._isEnabled}}
+		<a href="#" class="{{config._menu._class}} icon navigation-button {{config._menu._iconTypeClass}} {{config._menu._layout}} naviation-core-item" data-event="{{config._menu._dataEvent}}" aria-label="{{aria._menu}}" title="{{config._menu._tooltip}}">
+			<span class="tooltip">{{#if config._menu._showTooltip}}{{config._menu._tooltip}}{{/if}}</span>
+		</a>
+	{{/if}}
+	{{#if config._title._isEnabled}}
+		<div class="{{config._title._class}} title {{config._title._layout}} naviation-core-item">
+			{{config._title._text}}
+		</div>
+	{{/if}}
+	{{#if config._drawer._isEnabled}}
+		<a href="#" class="{{config._drawer._class}} icon {{config._drawer._iconTypeClass}} {{config._drawer._layout}} naviation-core-item" data-event="{{config._drawer._dataEvent}}" aria-label="{{aria.navigationDrawer}}" title="{{config._drawer._tooltip}}">
+			<span class="tooltip">{{#if config._drawer._showTooltip}}{{config._drawer._tooltip}}{{/if}}</span>
+		</a>
+	{{/if}}
+</div>

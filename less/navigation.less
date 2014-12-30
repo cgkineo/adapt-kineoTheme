@@ -1,0 +1,83 @@
+// Navigation styling
+// ==================
+
+.navigation {
+    overflow: hidden;
+    width:100%;
+    .ie8 & {
+        max-width:@ie8-max-width;
+    }
+    background-color:@navigation-color;
+    height:@navigation-height;
+    @media all and (max-width:(@device-width-medium - 1px)) {
+        height:@navigation-height-mobile;
+    }
+    border-bottom:@navigation-border;
+    .navigation-inner {
+        padding: 0 @navigation-extra-padding-sides;
+    }
+    .icon {
+        padding:@navigation-padding;
+        @media all and (max-width:(@device-width-medium - 1px)) {
+            padding:@navigation-padding-mobile;
+        }
+        color:@navigation-icon-color;
+        .no-touch &:hover {
+            color:@navigation-icon-hover-color;
+        }
+    }
+    .title {
+        padding:@navigation-padding;
+        @media all and (max-width:(@device-width-medium - 1px)) {
+            padding:@navigation-padding-mobile;
+        }
+        color:@navigation-title-color;
+        font-size: @navigation-title-font-size;
+
+    }
+    .tooltip {
+        font-size: @navigation-tooltip-font-size;
+        font-family: @font-family;
+        line-height: @navigation-padding / 2;
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        left: 0;
+        bottom: @navigation-padding / 2;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.3s ease-in;
+        color:@navigation-icon-color;
+        @media all and (max-width:(@device-width-medium - 1px)) {
+            line-height: @navigation-padding / 4;
+        }
+    }
+
+    &.show-icon-border {
+        .icon {
+            &.left {
+                border-right: @navigation-border;
+            }
+            &.right {
+                border-left: @navigation-border;
+            }
+        }
+    }
+
+    &.show-all-tooltips-hover {
+        .no-touch &:hover {
+            .tooltip {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    &.tooltips-always-visible {
+        .tooltip {
+            transition: all 0s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
