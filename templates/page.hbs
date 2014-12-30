@@ -1,12 +1,47 @@
-{{! Maintainers - Daryl Hedley}}
 {{! .article-container: Adapt will place the pages articles inside this class}}
 <div class="page-inner article-container" role="main" aria-label="{{_accessibility._ariaLabels.page}}">
-    {{! Check if a page title exist and render it}}
-    {{#if displayTitle}}
-    <div class="page-title" role="heading">
-        <h1 class="page-title-inner">
-            {{{displayTitle}}}
-        </h1>
-    </div>
+
+    {{#if _theme._pageHeader._isEnabled}}
+
+    	<div class="page-header">
+    		<div class="page-header-inner clearfix">
+
+    			<div class="page-header-content">
+    				<div class="page-header-content-inner">
+
+    					{{#if displayTitle}}
+					    <div class="page-header-title">
+					        <h1 class="page-header-title-inner">
+					            {{{displayTitle}}}
+					        </h1>
+					    </div>
+					    {{/if}}
+
+					    {{#if body}}
+					    <div class="page-header-body">
+					        <div class="page-header-body-inner">
+					            {{{body}}}
+					        </div>
+					    </div>
+					    {{/if}}
+
+    				</div>
+    			</div>
+
+    		</div>
+    	</div>
+
+    {{else}}
+
+	    {{#if displayTitle}}
+	    <div class="page-title">
+	        <h1 class="page-title-inner">
+	            {{{displayTitle}}}
+	        </h1>
+	    </div>
+	    {{/if}}
+
     {{/if}}
+
+    
 </div>
