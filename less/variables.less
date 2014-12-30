@@ -2,18 +2,11 @@
 // Variables
 // =========
 
-// Main colors
-// ===========
+// Swatch
+// ======
 
-@primary-color:#3eb4e4;
-@secondary-color:#1b87b2;
-@tertiary-color:darken(#1b87b2, 10%);
-
-@foreground-color:#333;
-@background-color:#fff;
-
-@inverted-foreground-color:#fff;
-@inverted-background-color:#3eb4e4;
+@white: #fff;
+@black: #000;
 
 @transparency:rgba(255,255,255,0.8);
 @transparency-fallback-png:url('assets/transparency-light.png');
@@ -126,7 +119,8 @@
 
 @device-width-small: 520px;
 @device-width-medium: 760px;
-@device-width-large: 1024px;
+@device-width-large: 900px;
+@max-width: 1440px;
 @ie8-max-width:1024px;
 
 // ==============
@@ -360,15 +354,13 @@
 // Fonts
 // =====
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,800);
 
 @font-family:'Open Sans', sans-serif;
 @font-size:16px;
-@font-extra-line-height:10px;
-@font-color:@foreground-color;
-@font-weight-light:300;
-@font-weight-normal:400;
-@font-weight-bold:600;
+@font-weight-light:400;
+@font-weight-normal:600;
+@font-weight-bold:800;
 
 
 // Icons
