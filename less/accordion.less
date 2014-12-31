@@ -5,6 +5,12 @@
 		color: @white;
 		border: none;
 		padding: 15px 15px 15px 44px;
+		.transition-all-colors;
+
+		.accordion-item-title-icon {
+			color: @white;
+			.transition-color;
+		}
 
 		.no-touch &:hover {
 			background-color: darken(@cyan, 20%);
@@ -41,10 +47,6 @@
 				}
 			}
 		}
-	}
-
-	.accordion-item-title-icon {
-		color: @white;
 	}
 
 	.accordion-item-body {
