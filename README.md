@@ -25,13 +25,3 @@ If isEnabled is set to false, the standard page title is rendered.
     }
 }
 ```
-
-
-
-###Depreciated Mixins:
-
-```
-.responsive-large;
-.responsive-medium;
-.responsive-small;
-```
