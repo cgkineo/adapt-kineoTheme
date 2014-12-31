@@ -4,7 +4,12 @@
 .block {
 
     .block-inner {
-        padding:0px 20px 40px;
+        max-width: @device-width-large;
+        margin: auto;
+
+        @media all and (max-width: @device-width-large) {
+            padding:0px 20px 40px;
+        }  
     }
 
     .block-title {
@@ -12,7 +17,7 @@
     }
 
     .block-title-inner {
-        padding:@block-title-padding;
+        padding: 20px 0;
     }
 
     .block-body{
