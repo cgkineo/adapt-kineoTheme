@@ -16,7 +16,7 @@
             color: @white;
         } 
     }
-    
+
     &.disabled, &:disabled {
         background-color: @grey!important;
         color: @white!important;
@@ -43,8 +43,6 @@
         }
     }
 
-
-
     .buttons-display {
         position:relative;
         border:@button-border;
@@ -52,6 +50,7 @@
         background-color:@inverted-background-color;
         color:@inverted-foreground-color;
     }
+
     .buttons-marking-icon {
         position:absolute;
         left:50%;
@@ -62,18 +61,22 @@
         line-height:40px;
         text-align:center;
         border-radius:50%;
-        margin-left:-(40px/2);
-        margin-top:-(40px/2);
-        background-color:@background-color;
+        margin-left:-(44px/2);
+        margin-top:-(44px/2);
+        background-color:@white;
+        border: 2px solid;
+
         &.icon-tick {
-            color:@icon-correct-color;
+            color:@green;
         }
+
         &.icon-cross {
-            color:@icon-incorrect-color;
+            color:@red;
         }
     }
+
     .buttons-display-inner {
         text-align:center;
-        padding:@button-padding;
+        padding: 10px;
     }
 }
