@@ -21,6 +21,10 @@ If isEnabled is set to false, the standard page title is rendered.
         "_backgroundImage": {
             "_desktop": "course/en/images/base_assets/hero_image.jpg",
             "_mobile": "course/en/images/base_assets/hero_image_mobile.jpg"
+        },
+        "_minimumHeaderHeights": {
+            "_desktop": 500,
+            "_mobile": 500
         }
     }
 }

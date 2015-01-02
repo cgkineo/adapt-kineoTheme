@@ -6,13 +6,15 @@ define(function(require) {
 	var ThemePageHeaderView = Backbone.View.extend({
 
 		initialize: function() {
-			this.setup();
-			this.listenTo(Adapt, 'device:resize', this.setBackground);
+			console.log(this.model);
+			this.setStyles();
+			this.listenTo(Adapt, 'device:resize', this.setStyles);
 			this.listenTo(Adapt, 'remove', this.remove);
 		},
 
-		setup: function() {
+		setStyles: function() {
 			this.setBackground();
+			this.setMinHeight();
 		},
 
 		setBackground: function() {
@@ -29,6 +31,24 @@ define(function(require) {
 
 			this.$el.css({
 				backgroundImage: 'url(' + backgroundImage + ')'
+			});
+		},
+
+		setMinHeight: function() {
+			var minHeight = 0;
+			var minHeights = this.model.get('_pageHeaderConfig')._minimumHeaderHeights;
+			console.log(minHeights);
+			if (minHeights) {
+
+				if (Adapt.device.screenSize == 'large') {
+					minHeight = minHeights._desktop;
+				} else {
+					minHeight = minHeights._mobile;
+				}
+			}
+
+			this.$el.css({
+				minHeight: minHeight + "px"
 			});
 		}
 
