@@ -2,21 +2,24 @@
 // ==============
 
 .button, button {
-    background-color:@button-color;
-    color:@button-text-color;
-    padding:@button-padding;
+    background-color: @darkGrey;
+    color: @white;
+    padding: 10px;
     text-decoration: none;
     display:inline-block;
-    border:@button-border;
+    border: none;
+    .transition-all-colors;
+
     .no-touch & {
         &:hover {
-            background-color:@button-hover-color;
-            color:@button-text-hover-color;
+            background-color: darken(@darkGrey, 10%);
+            color: @white;
         } 
     }
+    
     &.disabled, &:disabled {
-        background-color:@button-disabled-color!important;
-        color:@button-text-disabled-color!important;
+        background-color: @grey!important;
+        color: @white!important;
         cursor:default;
     }
 
@@ -26,10 +29,21 @@
     margin-top:@button-margin-top;
     margin-bottom:@button-margin-bottom;
     position:relative;
+
     button {
-        width:50%;
+        width:49.5%;
         float:left;
+
+        &.buttons-action {
+            margin-right: 0.5%;
+        }
+
+        &.buttons-feedback {
+            margin-left: 0.5%;
+        }
     }
+
+
 
     .buttons-display {
         position:relative;
