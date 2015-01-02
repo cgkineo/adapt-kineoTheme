@@ -16,7 +16,7 @@ define(function(require) {
 		},
 
 		setBackground: function() {
-			var backgrounImage = '';
+			var backgroundImage = '';
 			var backgrounds = this.model.get('_pageHeaderConfig')._backgroundImage;
 			if (backgrounds) {
 
