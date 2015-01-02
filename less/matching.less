@@ -73,11 +73,15 @@
 	// IE Specific styling
 	.ie & {
 		.submitted.matching-widget .matching-select-container {
-			background-color: @white;
+			background-color: @white!important; // Override for IE
 		}
 
 		.matching-select {
-			border: 1px solid @pink;
+			border: 1px solid @pink!important; // Override for IE
+		}
+
+		.matching-select-icon {
+			color: @pink!important; // Override for IE
 		}
 	}
 
