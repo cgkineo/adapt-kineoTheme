@@ -8,9 +8,17 @@
         padding: 20px 0;
         margin: auto;
 
-        @media all and (max-width: @device-width-large) {
+        @media all and (max-width: (@device-width-large + 20px)) {
+            max-width: @device-width-medium;
+        }
+
+        @media all and (max-width: (@device-width-medium + 20px)) {
+            max-width: @device-width-small;
+        }
+
+        @media all and (max-width: (@device-width-small + 20px)) {
             padding:0px 20px 40px;
-        }  
+        }
     }
 
     .block-title {
