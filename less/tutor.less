@@ -1,0 +1,46 @@
+.extension-tutor {
+
+    .tutor {
+        background-color: @darkGrey;
+        color: @white;
+    }
+
+    .tutor-content {
+        max-width: @device-width-large;
+        margin: auto;
+    }
+
+    .tutor-inner {
+        padding: 0 0 30px;
+
+        @media all and (max-width: @device-width-large) {
+            padding: 0 20px 20px 20px;
+        }
+    }
+
+    .tutor-done {
+        padding: 18px 18px 0 18px;
+    }
+
+    .tutor-icon-close {
+        color: @white;
+        .transition-color;
+
+        .no-touch &:hover {
+            color: darken(@white, 20%);
+        }
+    }
+
+    .tutor-title {
+        margin-bottom: 10px;
+        color: @white;
+    }
+
+    .tutor-title-inner {
+        font-size: 18px;
+    }
+
+    .tutor-body-inner {
+        color: @white;
+    }
+}
