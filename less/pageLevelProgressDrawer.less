@@ -1,0 +1,61 @@
+.page-level-progress-item-title {
+	background-color:@darkGrey;
+	color:@white;
+    .transition-all-colors;
+
+	&.disabled {
+		background-color:@item-disabled-color;
+		color:@item-text-disabled-color;
+
+        &:hover {
+            background-color:@item-disabled-color!important;
+            color:@item-text-disabled-color!important;
+        }
+	}
+
+    .drawer-item-open {
+        padding:@drawer-item-padding;
+        display:block;
+    }
+
+    &:hover {
+        background-color:@drawer-item-hover-color;
+        color:@drawer-item-text-hover-color;
+
+        .page-level-progress-indicator-complete {
+            .page-level-progress-indicator-bar {
+                background-color:@item-color;
+            }
+        }
+    }
+}
+
+.page-level-progress-item-title-inner {
+	float:left;
+	width:80%;
+}
+
+.page-level-progress-indicator {
+	width: 16%;
+	height: 10px;
+    margin-left:4%;
+    display: inline-block;
+	border-radius:5px;
+	overflow:hidden;
+	background-color:@inverted-foreground-color;
+}
+
+.page-level-progress-indicator-complete {
+    .page-level-progress-indicator-bar {
+        width:100%;
+        height:10px;
+        background-color:@item-hover-color;
+        &:hover {
+            background-color:@item-color;
+        }
+    }
+}
+
+.page-level-progress-indicator-bar {
+	width:0%;
+}

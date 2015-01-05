@@ -8,8 +8,8 @@
     width:100%;
     height:@navigation-height;
     max-width: 1440px;
-    background-color:@darkGrey;
     border-bottom:none;
+    background-color:@darkGrey;
     
     .ie8 & {
         max-width: 1024px;
@@ -22,6 +22,7 @@
     .icon {
         padding: 18px;
         color:@white;
+        .transition-color;
 
         .no-touch &:hover {
             color: darken(@white, 20%);

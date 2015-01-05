@@ -2,39 +2,47 @@
 // ==============
 
 .drawer {
-    background-color:@drawer-color;
-    color: @drawer-text-color;
+    background-color: @darkGrey;
+    color: @white;
+
     .drawer-toolbar {
-        border-bottom: 1px solid darken(@item-color, 10%);
+        border-bottom: 1px solid darken(@white, 10%);
     }
+
     .drawer-toolbar .icon {
-        padding:@navigation-padding;
-        @media all and (max-width:(@device-width-small - 1px)) {
-            padding:@navigation-padding-mobile;
-        }
-        color: @drawer-icon-color;
+        padding: 18px!important; // Override defaults
+        color: @white;
+        .transition-color;
+        
         &:hover {
-            color:@drawer-icon-hover-color;
+            color: darken(@white, 20%);
         }
     }
+
     .drawer-inner {
-        border-left: 5px solid darken(@drawer-color, 10%);
+        border-left: 5px solid lighten(@darkGrey, 20%);
     }
+
     .drawer-item {
+
         .drawer-item-open {
             text-decoration: none;
-            color: @drawer-item-text-color;
-            border-bottom: 1px solid darken(@item-color, 10%);
+            color: @white;
+            border-bottom: 1px solid darken(@white, 20%);
+            .transition-all-colors;
+
             .no-touch &:hover {
-                color:@drawer-item-text-hover-color;
-                background-color: @drawer-item-hover-color;
+                color: @white;
+                background-color: darken(@darkGrey, 20%);
             }
         }
+
         h5 {
             font-size:16px;
         }
     }
+
     .drawer-item-open {
-        padding:@drawer-item-padding;
+        padding: 15px 20px;
     }
 }

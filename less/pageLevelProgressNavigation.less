@@ -1,0 +1,81 @@
+.page-level-progress-navigation {
+    padding: 24px 36px 24px 18px!important; // Override defaults in extension
+    float:right;
+    display:inline-block;
+    position: relative;
+    
+    .no-touch &:hover {
+
+        .page-level-progress-navigation-completion {
+            background-color: darken(@white, 20%);
+        }
+
+        .page-level-progress-navigation-bar {
+            background-color: lighten(@darkGrey, 20%);
+        }
+
+        .page-level-progress-plus-icon {
+            color: darken(@white, 20%);
+        }
+    }
+}
+
+.page-level-progress-navigation-completion {
+    width: 60px;
+    height: 8px;
+    background-color: @darkGrey;
+    overflow: hidden;
+    border: 2px solid @white;
+    position: relative;
+    border-radius: 5px;
+    .transition-background-color;
+}
+
+.page-level-progress-navigation-bar {
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius:0;
+    background-color: @white;
+    transition: all 0.3s ease-in;
+    .transition-background-color;
+}
+
+.page-level-progress-plus-icon {
+    position: absolute;
+    top: 50%;
+    right: 9px;
+    padding: 0!important;
+    margin-top: -12px;
+}
+
+/*Navigation Config*/
+
+.show-icon-border {
+    .page-level-progress-navigation {
+        &.left {
+            border-right: @navigation-border;
+        }
+        &.right {
+            border-left: @navigation-border;
+        }
+    }
+}
+
+.show-all-tooltips-hover {
+    .no-touch &:hover {
+        .tooltip {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
+
+.tooltips-always-visible {
+    .tooltip {
+        transition: all 0s;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
