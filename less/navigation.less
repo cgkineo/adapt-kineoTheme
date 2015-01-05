@@ -1,64 +1,60 @@
 // Navigation styling
 // ==================
 
+@navigation-height: 60px;
+
 .navigation {
     overflow: hidden;
     width:100%;
-    .ie8 & {
-        max-width:@ie8-max-width;
-    }
-    background-color:@navigation-color;
     height:@navigation-height;
-    @media all and (max-width:(@device-width-medium - 1px)) {
-        height:@navigation-height-mobile;
+    max-width: 1440px;
+    background-color:@darkGrey;
+    border-bottom:none;
+    
+    .ie8 & {
+        max-width: 1024px;
     }
-    border-bottom:@navigation-border;
+    
     .navigation-inner {
-        padding: 0 @navigation-extra-padding-sides;
+        padding: 0;
     }
-    .icon {
-        padding:@navigation-padding;
-        @media all and (max-width:(@device-width-medium - 1px)) {
-            padding:@navigation-padding-mobile;
-        }
-        color:@navigation-icon-color;
-        .no-touch &:hover {
-            color:@navigation-icon-hover-color;
-        }
-    }
-    .title {
-        padding:@navigation-padding;
-        @media all and (max-width:(@device-width-medium - 1px)) {
-            padding:@navigation-padding-mobile;
-        }
-        color:@navigation-title-color;
-        font-size: @navigation-title-font-size;
 
+    .icon {
+        padding: 18px;
+        color:@white;
+
+        .no-touch &:hover {
+            color: darken(@white, 20%);
+        }
     }
+
+    .title {
+        padding: 18px;
+        font-size: 18px;
+        color: @white;
+    }
+
     .tooltip {
-        font-size: @navigation-tooltip-font-size;
-        line-height: @navigation-padding / 2;
+        font-size: 13px;
+        line-height: 9px;
         position: absolute;
         width: 100%;
         text-align: center;
         left: 0;
-        bottom: @navigation-padding / 2;
+        bottom: 9px;
         opacity: 0;
         transform: translateY(20px);
         transition: all 0.3s ease-in;
-        color:@navigation-icon-color;
-        @media all and (max-width:(@device-width-medium - 1px)) {
-            line-height: @navigation-padding / 4;
-        }
+        color: @white;
     }
 
     &.show-icon-border {
         .icon {
             &.left {
-                border-right: @navigation-border;
+                border-right: 1px solid @white;
             }
             &.right {
-                border-left: @navigation-border;
+                border-left: 1px solid @white;
             }
         }
     }
