@@ -6,7 +6,6 @@ define(function(require) {
 	var ThemePageHeaderView = Backbone.View.extend({
 
 		initialize: function() {
-			console.log(this.model);
 			this.setStyles();
 			this.listenTo(Adapt, 'device:resize', this.setStyles);
 			this.listenTo(Adapt, 'remove', this.remove);
@@ -37,7 +36,6 @@ define(function(require) {
 		setMinHeight: function() {
 			var minHeight = 0;
 			var minHeights = this.model.get('_pageHeaderConfig')._minimumHeaderHeights;
-			console.log(minHeights);
 			if (minHeights) {
 
 				if (Adapt.device.screenSize == 'large') {
