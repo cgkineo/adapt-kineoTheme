@@ -50,8 +50,13 @@
         .gmcq-widget {
             &:not(.disabled) {
                 .gmcq-item label:hover {
+
                     .gmcq-item-icon {
                         color:@black;
+
+                        &:before {
+                        	content: "\e65d";
+                        }
                     }
                 }
             }
