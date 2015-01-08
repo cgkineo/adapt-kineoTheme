@@ -3,36 +3,18 @@ define(function(require) {
 	var Adapt = require('coreJS/adapt');
 	var Backbone = require('backbone');
 	var ThemePageHeader = require('theme/adapt-kineo-theme/js/theme-page-header');
-	var ThemeBlock = require('theme/adapt-kineo-theme/js/theme-block');
+
 	
-	// Page Header View
+	// Create Page Header View if enabled on the content object
 
 	Adapt.on('pageView:postRender', function(view) {
-		var theme = view.model.get('_theme');
-
-		if (theme) {
-			var pageHeaderConfig = theme._pageHeader;
-			if (pageHeaderConfig._isEnabled) {
-				new ThemePageHeader({
-					model: new Backbone.Model({
-						_pageHeaderConfig: pageHeaderConfig
-					}),
-					el: $(".page-header")
-				});
-			}
-		}
-		
-	});
-
-	Adapt.on('blockView:postRender', function(view) {
-		var theme = view.model.get('_theme');
-		
-		if (theme) {
-			new ThemeBlock({
+		var pageHeaderConfig = view.model.get('_theme')._pageHeader;
+		if (pageHeaderConfig._isEnabled) {
+			new ThemePageHeader({
 				model: new Backbone.Model({
-					_themeBlockConfig: theme
+					_pageHeaderConfig: pageHeaderConfig
 				}),
-				el: view.$el
+				el: $(".page-header")
 			});
 		}
 		

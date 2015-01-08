@@ -63,6 +63,19 @@
 .mcq-widget {
 
     &.disabled {
+
+        .mcq-item label {
+            color: @white;
+            background-color: @grey;
+            cursor:default;
+        }
+
+        .mcq-item label.selected {
+            color: @white;
+            background-color: darken(@pink, 20%);
+            cursor:default;
+        }
+
         .mcq-item label.selected.disabled {
             color: @white;
             background-color: darken(@pink, 20%);

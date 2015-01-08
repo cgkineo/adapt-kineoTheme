@@ -11,6 +11,10 @@ define(function(require) {
 			this.listenTo(Adapt, 'remove', this.remove);
 		},
 
+		events: {
+			"click .page-header-scroll-button": "onScrollButtonClicked"
+		},
+
 		setStyles: function() {
 			this.setBackground();
 			this.setMinHeight();
@@ -47,6 +51,16 @@ define(function(require) {
 
 			this.$el.css({
 				minHeight: minHeight + "px"
+			});
+		},
+
+		onScrollButtonClicked: function(event) {
+			if (event) event.preventDefault();
+			var offset = this.$el.height();
+			$("html, body").velocity("scroll", {
+				duration: 800,
+				offset: offset + "px",
+				mobileHA: false 
 			});
 		}
 
