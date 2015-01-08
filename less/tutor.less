@@ -11,27 +11,35 @@
     }
 
     .tutor-inner {
-        padding: 0 0 30px;
+        padding: 40px 0 30px;
 
         @media all and (max-width: @device-width-large) {
-            padding: 0 20px 20px 20px;
+            padding: 40px 20px 20px 30px;
         }
     }
 
     .tutor-done {
-        padding: 18px 18px 0 18px;
+        padding: 5px;
+        margin: 10px;
+        border-radius: 50%;
+        border: 2px solid @white;
         position:absolute;
         top: 0px;
         right:0px;
+        .transition-border-color;
+
+        .no-touch &:hover {
+            border-color: darken(@white, 20%);
+
+            .tutor-icon-close {
+                color: darken(@white, 20%);
+            }
+        }
     }
 
     .tutor-icon-close {
         color: @white;
         .transition-color;
-
-        .no-touch &:hover {
-            color: darken(@white, 20%);
-        }
     }
 
     .tutor-title {
