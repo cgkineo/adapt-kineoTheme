@@ -1,7 +1,5 @@
 /*Page Content Object - add to all content objects and configure as necessary*/
 
-
-
 "_theme": {
     "_pageHeader": {
         "_isEnabled": true,
