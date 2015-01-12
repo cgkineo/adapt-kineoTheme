@@ -3,18 +3,38 @@ define(function(require) {
 	var Adapt = require('coreJS/adapt');
 	var Backbone = require('backbone');
 	var ThemePageHeader = require('theme/adapt-kineo-theme/js/theme-page-header');
-
+	var ThemeBlock = require('theme/adapt-kineo-theme/js/theme-block');
 	
-	// Create Page Header View if enabled on the content object
+	// Page Header View
 
 	Adapt.on('pageView:postRender', function(view) {
-		var pageHeaderConfig = view.model.get('_theme')._pageHeader;
-		if (pageHeaderConfig._isEnabled) {
-			new ThemePageHeader({
+		var theme = view.model.get('_theme');
+
+		if (theme) {
+			var pageHeaderConfig = theme._pageHeader;
+			if (pageHeaderConfig._isEnabled) {
+				new ThemePageHeader({
+					model: new Backbone.Model({
+						_pageHeaderConfig: pageHeaderConfig
+					}),
+					el: $(".page-header")
+				});
+			}
+		}
+		
+	});
+
+	// Block
+
+	Adapt.on('blockView:postRender', function(view) {
+		var theme = view.model.get('_theme');
+		
+		if (theme) {
+			new ThemeBlock({
 				model: new Backbone.Model({
-					_pageHeaderConfig: pageHeaderConfig
+					_themeBlockConfig: theme
 				}),
-				el: $(".page-header")
+				el: view.$el
 			});
 		}
 		
