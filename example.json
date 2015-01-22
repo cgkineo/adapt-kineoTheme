@@ -12,6 +12,15 @@
     }
 }
 
+/*Article - add to articles that need the functionality provided by the theme*/
+
+"_theme": {
+    "_backgroundImage": {
+        "_desktop": "course/en/images/base_assets/hero_image.jpg",
+        "_mobile": "course/en/images/base_assets/hero_image_mobile.jpg"
+    }
+}
+
 /*Block - add to blocks that need the functionality provided by the theme*/
 
 "_theme": {
