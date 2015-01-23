@@ -6,8 +6,9 @@
         "layout": "left",
         "_showScrollButton": true,
         "_backgroundImage": {
-            "_desktop": "course/en/images/base_assets/hero_image.jpg",
-            "_mobile": "course/en/images/base_assets/hero_image_mobile.jpg"
+            "_large": "course/en/images/base_assets/hero_image.jpg",
+            "_medium": "course/en/images/base_assets/hero_image.jpg",
+            "_small": "course/en/images/base_assets/hero_image_mobile.jpg"
         }
     }
 }

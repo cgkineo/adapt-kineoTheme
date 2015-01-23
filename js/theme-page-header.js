@@ -26,9 +26,11 @@ define(function(require) {
 			if (backgrounds) {
 
 				if (Adapt.device.screenSize == 'large') {
-					backgroundImage = backgrounds._desktop;
+					backgroundImage = backgrounds._large;
+				} else if (Adapt.device.screenSize == 'medium') {
+					backgroundImage = backgrounds._medium;
 				} else {
-					backgroundImage = backgrounds._mobile;
+					backgroundImage = backgrounds._small;
 				}
 			}
 
@@ -43,9 +45,11 @@ define(function(require) {
 			if (minHeights) {
 
 				if (Adapt.device.screenSize == 'large') {
-					minHeight = minHeights._desktop;
+					minHeight = minHeights._large;
+				} else if (Adapt.device.screenSize == 'medium') {
+					minHeight = minHeights._medium;
 				} else {
-					minHeight = minHeights._mobile;
+					minHeight = minHeights._small;
 				}
 			}
 
