@@ -4,6 +4,7 @@ define(function(require) {
 	var Backbone = require('backbone');
 	var ThemePageHeader = require('theme/adapt-kineo-theme/js/theme-page-header');
 	var ThemeBlock = require('theme/adapt-kineo-theme/js/theme-block');
+	var ThemeArticle = require('theme/adapt-kineo-theme/js/theme-article');
 	
 	// Page Header View
 
@@ -24,6 +25,22 @@ define(function(require) {
 		
 	});
 
+	// Article
+
+	Adapt.on('articleView:postRender', function(view) {
+		var theme = view.model.get('_theme');
+		
+		if (theme) {
+			new ThemeArticle({
+				model: new Backbone.Model({
+					_themeArticleConfig: theme
+				}),
+				el: view.$el
+			});
+		}
+		
+	});
+
 	// Block
 
 	Adapt.on('blockView:postRender', function(view) {
@@ -40,4 +57,5 @@ define(function(require) {
 		
 	});
 
+	
 });
