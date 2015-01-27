@@ -25,15 +25,17 @@ define(function(require) {
 			if (backgroundImages) {
 
 				if (Adapt.device.screenSize == 'large') {
-					backgroundImage = backgroundImages._desktop;
+					backgroundImage = backgroundImages._large;
+				} else if (Adapt.device.screenSize == 'medium') {
+					backgroundImage = backgroundImages._medium;
 				} else {
-					backgroundImage = backgroundImages._mobile;
+					backgroundImage = backgroundImages._small;
 				};
 
 				this.$el.css({
 					backgroundImage: 'url(' + backgroundImage + ')'
 				});
-				
+
 			} else if (backgroundColor) {
 				this.$el.css({
 					backgroundColor: backgroundColor
@@ -43,7 +45,7 @@ define(function(require) {
 
 		setMinHeight: function() {
 			var minHeight = 0;
-			var minHeights = this.model.get('_themeBlockConfig')._minimumBlockHeights;
+			var minHeights = this.model.get('_themeBlockConfig')._minimumHeights;
 
 			if (minHeights) {
 

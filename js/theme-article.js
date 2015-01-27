@@ -24,7 +24,9 @@ define(function(require) {
 			if (backgroundImages) {
 
 				if (Adapt.device.screenSize == 'large') {
-					backgroundImage = backgroundImages._desktop;
+					backgroundImage = backgroundImages._large;
+				} else if (Adapt.device.screenSize == 'medium') {
+					backgroundImage = backgroundImages._medium;
 				} else {
 					backgroundImage = backgroundImages._mobile;
 				}
