@@ -4,8 +4,8 @@
 .notify {
 
     .notify-popup {
-        background-color: @notify-color;
-        color: @notify-text-color;
+        background-color: @darkGrey;
+        color: @white;
 
         a {
           text-decoration: none;
@@ -14,7 +14,7 @@
 
     .notify-type-prompt, .notify-type-alert {
         .notify-popup-inner {
-            padding-top:@notify-popup-padding;
+            padding: 40px 20px 30px;
         }
     }
 
@@ -23,7 +23,7 @@
             font-size:60px;
             width:60px;
             height:60px;
-            color: @notify-icon-color;
+            color: @white;
         }
     }
 
@@ -32,19 +32,28 @@
         margin-top:10px;
     }
 
+    .notify-popup-title-inner {
+        font-size: 36px;
+    }
+
     .notify-popup-button {
-        background-color:@notify-button-color;
-        color:@notify-button-text-color;
-        padding:@button-padding;
+        background-color: @white;
+        color: @darkGrey;
+        padding: 10px;
+        text-decoration: none;
         display:inline-block;
+        border: none;
+        font-size: 18px;
+        font-weight: 300;
+        min-width: 100px;
+        .transition-all-colors;
+
         .no-touch &:hover {
-            background-color:darken(@notify-button-hover-color, 10%);
-            color:@notify-button-text-hover-color;
+            background-color: darken(@white, 20%);
         }
     }
 
     .notify-popup-content {
-        .responsive-layout
         .ie8 & {
             max-width: @ie8-max-width;
             margin:0 auto;
@@ -67,16 +76,21 @@
     }
 
     .notify-popup-done {
-        padding:@navigation-padding;
+        padding: 5px;
+        margin: 10px;
+        border-radius: 50%;
+        border: 2px solid @white;
         position:absolute;
         top: 0px;
         right:0px;
-    }
+        .transition-border-color;
 
-    .notify-popup-icon-close {
-        color: @notify-icon-color;
         .no-touch &:hover {
-            color:@notify-icon-hover-color;
+            border-color: darken(@white, 20%);
+
+            .notify-popup-icon-close {
+                color: darken(@white, 20%);
+            }
         }
     }
 
