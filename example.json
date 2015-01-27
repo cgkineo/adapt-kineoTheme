@@ -28,5 +28,10 @@
     "_backgroundImage": {
         "_desktop": "course/en/images/base_assets/hero_image.jpg",
         "_mobile": "course/en/images/base_assets/hero_image_mobile.jpg"
+    },
+    "_minimumBlockHeights": {
+        "_large": 500,
+        "_medium": 500,
+        "_small": 300
     }
 }

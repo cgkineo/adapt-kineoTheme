@@ -13,6 +13,7 @@ define(function(require) {
 
 		setStyles: function() {
 			this.setBackground();
+			this.setMinHeight();
 		},
 
 		setBackground: function() {
@@ -30,6 +31,26 @@ define(function(require) {
 
 			this.$el.css({
 				backgroundImage: 'url(' + backgroundImage + ')'
+			});
+		},
+
+		setMinHeight: function() {
+			var minHeight = 0;
+			var minHeights = this.model.get('_themeBlockConfig')._minimumBlockHeights;
+
+			if (minHeights) {
+
+				if(Adapt.device.screenSize == 'large') {
+					minHeight = minHeights._large;
+				} else if (Adapt.device.screenSize == 'medium') {
+					minHeight = minHeights._medium;
+				} else {
+					minHeight = minHeights._small;
+				}
+			}
+
+			this.$el.css({
+				minHeight: minHeight + "px"
 			});
 		}
 
