@@ -29,6 +29,7 @@
         "_desktop": "course/en/images/base_assets/hero_image.jpg",
         "_mobile": "course/en/images/base_assets/hero_image_mobile.jpg"
     },
+    "_backgroundColor": "#EA1B75",
     "_minimumBlockHeights": {
         "_large": 500,
         "_medium": 500,
