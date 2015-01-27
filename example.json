@@ -9,7 +9,9 @@
             "_large": "course/en/images/base_assets/hero_image.jpg",
             "_medium": "course/en/images/base_assets/hero_image.jpg",
             "_small": "course/en/images/base_assets/hero_image_mobile.jpg"
-        }
+        },
+        /* NOTE set either background image or background color - not both on the same header! */
+        "_backgroundColor": "#EA1B75"
     }
 }
 
@@ -19,7 +21,9 @@
     "_backgroundImage": {
         "_desktop": "course/en/images/base_assets/hero_image.jpg",
         "_mobile": "course/en/images/base_assets/hero_image_mobile.jpg"
-    }
+    },
+    /* NOTE set either background image or background color - not both on the same article! */
+    "_backgroundColor": "#EA1B75"
 }
 
 /*Block - add to blocks that need the functionality provided by the theme*/
@@ -29,6 +33,7 @@
         "_desktop": "course/en/images/base_assets/hero_image.jpg",
         "_mobile": "course/en/images/base_assets/hero_image_mobile.jpg"
     },
+    /* NOTE set either background image or background color - not both on the same block! */
     "_backgroundColor": "#EA1B75",
     "_minimumBlockHeights": {
         "_large": 500,

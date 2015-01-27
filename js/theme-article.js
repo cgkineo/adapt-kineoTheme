@@ -17,20 +17,27 @@ define(function(require) {
 
 		setBackground: function() {
 			var backgroundImage = '';
-			var backgrounds = this.model.get('_themeArticleConfig')._backgroundImage;
+			var backgroundImages = this.model.get('_themeArticleConfig')._backgroundImage;
+
+			var backgroundColor = this.model.get('_themeArticleConfig')._backgroundColor;
 			
-			if (backgrounds) {
+			if (backgroundImages) {
 
 				if (Adapt.device.screenSize == 'large') {
-					backgroundImage = backgrounds._desktop;
+					backgroundImage = backgroundImages._desktop;
 				} else {
-					backgroundImage = backgrounds._mobile;
+					backgroundImage = backgroundImages._mobile;
 				}
-			}
 
-			this.$el.css({
-				backgroundImage: 'url(' + backgroundImage + ')'
-			});
+				this.$el.css({
+					backgroundImage: 'url(' + backgroundImage + ')'
+				});
+				
+			} else if (backgroundColor) {
+				this.$el.css({
+					backgroundColor: backgroundColor
+				});
+			}
 		}
 
 	});

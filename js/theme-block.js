@@ -33,6 +33,7 @@ define(function(require) {
 				this.$el.css({
 					backgroundImage: 'url(' + backgroundImage + ')'
 				});
+				
 			} else if (backgroundColor) {
 				this.$el.css({
 					backgroundColor: backgroundColor
