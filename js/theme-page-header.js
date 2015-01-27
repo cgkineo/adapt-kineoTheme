@@ -22,21 +22,29 @@ define(function(require) {
 
 		setBackground: function() {
 			var backgroundImage = '';
-			var backgrounds = this.model.get('_pageHeaderConfig')._backgroundImage;
-			if (backgrounds) {
+			var backgroundImages = this.model.get('_pageHeaderConfig')._backgroundImage;
+
+			var backgroundColor = this.model.get('_pageHeaderConfig')._backgroundColor;
+
+			if (backgroundImages) {
 
 				if (Adapt.device.screenSize == 'large') {
-					backgroundImage = backgrounds._large;
+					backgroundImage = backgroundImages._large;
 				} else if (Adapt.device.screenSize == 'medium') {
-					backgroundImage = backgrounds._medium;
+					backgroundImage = backgroundImages._medium;
 				} else {
-					backgroundImage = backgrounds._small;
-				}
-			}
+					backgroundImage = backgroundImages._small;
+				};
 
-			this.$el.css({
-				backgroundImage: 'url(' + backgroundImage + ')'
-			});
+				this.$el.css({
+					backgroundImage: 'url(' + backgroundImage + ')'
+				});
+
+			} else if (backgroundColor) {
+				this.$el.css({
+					backgroundColor: backgroundColor
+				});
+			}
 		},
 
 		setMinHeight: function() {
