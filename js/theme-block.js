@@ -13,23 +13,53 @@ define(function(require) {
 
 		setStyles: function() {
 			this.setBackground();
+			this.setMinHeight();
 		},
 
 		setBackground: function() {
 			var backgroundImage = '';
-			var backgrounds = this.model.get('_themeBlockConfig')._backgroundImage;
+			var backgroundImages = this.model.get('_themeBlockConfig')._backgroundImage;
+
+			var backgroundColor = this.model.get('_themeBlockConfig')._backgroundColor;
 			
-			if (backgrounds) {
+			if (backgroundImages) {
 
 				if (Adapt.device.screenSize == 'large') {
-					backgroundImage = backgrounds._desktop;
+					backgroundImage = backgroundImages._large;
+				} else if (Adapt.device.screenSize == 'medium') {
+					backgroundImage = backgroundImages._medium;
 				} else {
-					backgroundImage = backgrounds._mobile;
+					backgroundImage = backgroundImages._small;
+				};
+
+				this.$el.css({
+					backgroundImage: 'url(' + backgroundImage + ')'
+				});
+
+			} else if (backgroundColor) {
+				this.$el.css({
+					backgroundColor: backgroundColor
+				});
+			}
+		},
+
+		setMinHeight: function() {
+			var minHeight = 0;
+			var minHeights = this.model.get('_themeBlockConfig')._minimumHeights;
+
+			if (minHeights) {
+
+				if(Adapt.device.screenSize == 'large') {
+					minHeight = minHeights._large;
+				} else if (Adapt.device.screenSize == 'medium') {
+					minHeight = minHeights._medium;
+				} else {
+					minHeight = minHeights._small;
 				}
 			}
 
 			this.$el.css({
-				backgroundImage: 'url(' + backgroundImage + ')'
+				minHeight: minHeight + "px"
 			});
 		}
 
