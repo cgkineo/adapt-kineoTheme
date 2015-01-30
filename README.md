@@ -206,7 +206,7 @@ If the project isn't using google fonts, you would still add your @font-face rul
 
 This step requires you to go into all the component and extension less files and apply the relevant styles and variable changes.
 
-Depending on the level you are developing at this might just mean changing the color variables and font sizes.
+Depending on the development work required, this might only require changing the color variables and font sizes.
 
 More bespoke work can of course be done, the aim of the boilerplate style rules is for quickly covering all the basic styling.
 
