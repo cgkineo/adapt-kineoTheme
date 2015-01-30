@@ -11,6 +11,7 @@
     border-bottom:none;
     background-color:@darkGrey;
     box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+    z-index: 9999;
     
     .ie8 & {
         max-width: @ie8-max-width;
@@ -48,6 +49,7 @@
         transform: translateY(20px);
         transition: all 0.3s ease-in;
         color: @white;
+        -webkit-font-smoothing: initial;
     }
 
     &.show-icon-border {
