@@ -224,6 +224,7 @@ Make sure to check your work across your target browsers and devices. Remember t
  - Mixins
  - Using !important
  - New LESS files
+ - Adding JSON attributes
  - Nesting
  - Code Organisation
  
@@ -254,6 +255,10 @@ Make sure to check your work across your target browsers and devices. Remember t
 ###New LESS files
 
  - Sometimes it might be necessary to setup a  new less file for a new component or extension. It's best to avoid copying all style rules and attributes across from the original file. Keep things simple by only adding theme based style rules and attributes.
+
+###Adding JSON attributes
+
+ - Add new JSON attributes inside ```"_theme": {}```. This will help keep all theme related JSON together.
 
 ###Nesting
 
