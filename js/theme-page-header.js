@@ -49,7 +49,7 @@ define(function(require) {
 
 		setMinHeight: function() {
 			var minHeight = 0;
-			var minHeights = this.model.get('_pageHeaderConfig')._minimumHeaderHeights;
+			var minHeights = this.model.get('_pageHeaderConfig')._minimumHeights;
 			if (minHeights) {
 
 				if (Adapt.device.screenSize == 'large') {
