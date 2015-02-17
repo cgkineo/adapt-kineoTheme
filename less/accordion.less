@@ -21,15 +21,6 @@
 			}
 		}
 
-		&.selected {
-			background-color: darken(@cyan, 20%);
-			color: @white;
-
-			.accordion-item-title-icon {
-				color: @white;
-			}
-		}
-
 		&.visited {
 			background-color: darken(@cyan, 20%);
 			color: @white;
@@ -44,6 +35,22 @@
 
 				.accordion-item-title-icon {
 					color: @white;
+				}
+			}
+		}
+
+		&.selected {
+			background-color: @turquiose;
+			color: @white;
+
+			.accordion-item-title-icon {
+				color: @white;
+			}
+			&.visited {
+				background-color: @turquiose;
+				.no-touch &:hover {
+					background-color: @turquiose;
+					
 				}
 			}
 		}
