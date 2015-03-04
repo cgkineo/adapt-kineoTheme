@@ -3,7 +3,7 @@
 .desktop-text {
 	display: none;
 
-	@media all and (min-width: (@device-width-small + 1px)) {
+	@media all and (min-width: @device-width-medium) {
 		display: block;
 	}
 }
@@ -11,7 +11,7 @@
 .mobile-text {
 	display: none;
 	
-	@media all and (max-width: @device-width-small) {
+	@media all and (max-width: (@device-width-medium - 1px)) {
 		display: block;
 	}
 }
