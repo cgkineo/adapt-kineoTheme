@@ -4,13 +4,13 @@
         <div class="tutor-inner">
                 {{#if feedbackTitle}}
                 <div class="tutor-title">
-                    <div class="tutor-title-inner h5" tabindex="0" role="heading">
+                    <div class="tutor-title-inner h5 accessible-text-block" aria-level="1" tabindex="0" role="heading">
                     {{{feedbackTitle}}}
                     </div>
                 </div>
                 {{/if}}
             <div class="tutor-body">
-                <div class="tutor-body-inner">{{{feedbackMessage}}}</div>
+                <div class="tutor-body-inner">{{{a11y_text feedbackMessage}}}</div>
             </div>
         </div>
     </div>
