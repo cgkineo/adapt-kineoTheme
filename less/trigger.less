@@ -1,0 +1,19 @@
+.trigger {
+
+    .trigger-button {
+        background-color: @pink;
+        
+        &.icon {
+            color: @white;
+        }
+
+        .no-touch & {
+            &:hover {
+                background-color: darken(@pink, 10%);
+                &.icon {
+                    color: @white;
+                }
+            }
+        }
+    }
+}
