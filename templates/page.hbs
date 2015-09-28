@@ -11,7 +11,7 @@
 
     					{{#if displayTitle}}
 					    <div class="page-header-title">
-							<div class="page-title-inner h1" tabindex="0" role="heading" aria-level="2">
+							<div class="page-title-inner h1" tabindex="0" role="heading" aria-level="1">
 					            {{{displayTitle}}}
 					        </div>
 					    </div>
@@ -20,7 +20,7 @@
 					    {{#if body}}
 					    <div class="page-header-body">
 					        <div class="page-header-body-inner">
-					            {{{body}}}
+					            {{{a11y_text body}}}
 					        </div>
 					    </div>
 					    {{/if}}
@@ -28,7 +28,7 @@
 					    {{#if instruction}}
 					    <div class="page-header-instruction">
 					        <div class="page-header-instruction-inner">
-					            {{{instruction}}}
+					            {{{a11y_text instruction}}}
 					        </div>
 					    </div>
 					    {{/if}}
@@ -37,7 +37,7 @@
     			</div>
 
     			{{#if _theme._pageHeader._showScrollButton}}
-    			<a href="#" class="page-header-scroll-button icon icon-controls-down"></a>
+    			<a href="#" class="page-header-scroll-button icon icon-controls-down" role="button" aria-label="{{_accessibility._ariaLabels.scroll}}"></a>
     			{{/if}}
 
     		</div>
