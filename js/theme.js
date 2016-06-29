@@ -1,10 +1,9 @@
-define(function(require) {
-	
-	var Adapt = require('coreJS/adapt');
-	var Backbone = require('backbone');
-	var ThemePageHeader = require('theme/adapt-kineo-theme/js/theme-page-header');
-	var ThemeBlock = require('theme/adapt-kineo-theme/js/theme-block');
-	var ThemeArticle = require('theme/adapt-kineo-theme/js/theme-article');
+define([
+	"coreJS/adapt",
+	'./theme-page-header'.
+	'./theme-block',
+	'./theme-article'
+], function(Adapt, ThemePageHeader, ThemeBlock, ThemeArticle) {
 	
 	// Page Header View
 
