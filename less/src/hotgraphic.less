@@ -1,0 +1,133 @@
+.hotgraphic-component {
+	.hotgraphic-graphic {
+		img {
+			width: 100%;
+		}
+	}
+
+	.hotgraphic-graphic-pin {
+		background-color: @components-color-inverted;
+
+		&.visited {
+			.hotgraphic-graphic-pin-icon {
+				color: @visited-color;
+			}
+		}
+	}
+
+	.hotgraphic-graphic-pin-icon {
+		.components-color(color);
+	}
+
+	.hotgraphic-popup {
+		background-color: @background-color;
+		.components-color(border, 3px, solid);
+		color: @font-body-color;
+	}
+
+	.hotgraphic-popup-toolbar {
+		.components-color(background-color);
+		padding: @item-padding-top @item-padding-right @item-padding-bottom @item-padding-left;
+	}
+
+	.hotgraphic-popup-nav {
+		.components-color(background-color);
+	}
+
+	.hotgraphic-popup-done,
+	.hotgraphic-popup-arrow-l,
+	.hotgraphic-popup-arrow-r,
+	.hotgraphic-popup-close,
+	.hotgraphic-popup-count {
+		color: @components-color-inverted;
+	}
+
+	.hotgraphic-popup-inner {
+		padding: @item-padding-top @item-padding-right @item-padding-bottom @item-padding-left;
+	}
+
+	.hotgraphic-content-title {
+		.item-title;
+		margin-bottom: 20px;
+	}
+}
+
+// overwite component defaults to bring it inline with other buttons
+//
+// note: applies to the pop-up nav bar
+// ================================================================
+.hotgraphic-component {	
+	.hotgraphic-popup-toolbar {
+		.components-color(border-bottom, 2px, solid);
+		height: auto;
+		padding: 0; 
+	}
+
+	.hotgraphic-popup-count {
+		height: 45px;
+		line-height: 46px;
+		padding: 0 10px;
+	}
+
+	.hotgraphic-popup-done {
+		margin: 4px;
+		right: 0;
+		top: 0;
+	}
+
+	.hotgraphic-popup-close {
+		padding: 6px;
+
+		.no-touch &:hover {
+			color: @components-color-inverted;
+		}
+	}
+
+	.hotgraphic-popup-arrow-l,
+	.hotgraphic-popup-arrow-r {
+		padding: 10px;
+
+		.no-touch &:hover {
+			color: @components-color-inverted;
+		}
+	}
+
+	.hotgraphic-popup-arrow-l {
+		.no-touch &:hover {
+			&.icon-controls-small-left:before {
+				display: inline-block;
+				.effect-bounceLeftOnceSmall;
+			}
+		}
+	}
+
+	.hotgraphic-popup-arrow-r {
+		.no-touch &:hover {
+			&.icon-controls-small-right:before {
+				display: inline-block;
+				.effect-bounceRightOnceSmall;
+			}
+		}
+	}
+}
+
+// ================================================================
+
+// Rollover states
+// ================================================================
+.hotgraphic-component {
+	.hotgraphic-graphic-pin {
+		.no-touch &:hover {
+			background-color: @components-color-inverted;
+		}
+
+		.hotgraphic-graphic-pin-icon {
+			.no-touch &:hover {
+				.components-color-hover(color, 20%);
+				.transition-color;
+			}
+		}
+	}
+
+	.hotgraphic-popup-button-rollover-style(@theme-rollover-style);
+};

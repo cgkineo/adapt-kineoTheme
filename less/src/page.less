@@ -1,0 +1,69 @@
+// Page styling
+// ============
+
+.page {
+	background-color: @background-color;
+
+	.page-header {
+		background-color: @background-color-inverted;
+		background-position: center top;
+		background-repeat: no-repeat;
+		position: relative;
+	}
+
+	.page-header-inner {
+		.theme-responsive-sizes();
+	}
+
+	.page-header-content {
+		padding-top: @page-header-padding;
+		padding-bottom: @page-header-padding;
+
+		@media all and (max-width: (@device-width-small)) {
+			padding-top: (@page-header-padding / 2);
+			padding-bottom: (@page-header-padding / 2);
+		}
+	}
+
+	.page-header-content-inner {
+		text-align: center;
+	}
+
+	.page-title {
+		color: @foreground-color-inverted;
+		margin-bottom: @article-title-margin-bottom;
+	}
+
+	.page-body {
+		color: @font-body-color-inverted;
+		margin-bottom: @article-body-margin-bottom;
+	}
+	
+	.page-instruction {
+		.instruction-text;
+		color: @font-body-color-inverted;
+		margin-bottom: @block-instruction-margin-bottom;
+	}
+	
+	.page-header-scroll-button {
+		margin-bottom: @block-body-margin-bottom;
+		text-align: center;
+		z-index: 5;
+	}
+
+	.page-header-scroll-button-inner {
+		color: @ui-button-color-inverted;
+		display: inline-block;
+		padding: 15px;
+
+		.no-touch &:hover:before {
+			display: inline-block;
+			.effect-bounceDownTwice;
+		}
+	}
+
+	.page-footer {
+		background-color: @background-color-inverted;
+		position: relative;
+	}
+}

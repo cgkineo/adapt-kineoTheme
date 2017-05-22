@@ -1,0 +1,77 @@
+.article-block-slider-enabled {
+	&.article {
+		.article-inner {
+			.theme-responsive-sizes();
+			.theme-element-padding(@block-padding, @block-padding);
+		}
+	}
+	
+	// Arrow Buttons
+	.item-button-arrow {
+		.components-color(background-color);
+
+		.icon {
+			color: @components-color-inverted;
+		}
+
+		.no-touch &:hover {
+			.components-color-hover(background-color, 20%);
+			.transition-background-color;
+		
+			.icon {
+				color: @components-color-inverted;
+			}
+
+			&:not([disabled="disabled"]) {
+				.icon {
+					&.icon-controls-left:before {
+						display: inline-block;
+						.effect-bounceLeftOnce;
+					}
+
+					&.icon-controls-right:before {
+						display: inline-block;
+						.effect-bounceRightOnce;
+					}
+				}
+			}
+		}
+
+		&[disabled="disabled"] {
+			background-color: @disabled-color;
+			color: @disabled-color-inverted;
+
+			.no-touch &:hover {
+				background-color: @disabled-color;
+				color: @disabled-color-inverted;
+			}
+		}
+	}
+
+	// Tab Buttons
+	.item-button {
+		.no-touch &:hover {
+			.item-button-inner {
+				.components-color-hover(background-color, 20%);
+				.transition-background-color;
+			}
+		}
+
+		&[disabled="disabled"] {
+			.item-button-inner {
+				background-color: @disabled-color;
+				color: @disabled-color-inverted;
+
+				.no-touch &:hover {
+					background-color: @disabled-color;
+					color: @disabled-color-inverted;
+				}
+			}
+		}
+	}
+
+	.item-button-inner {
+		.components-color(background-color);
+		color: @components-color-inverted;
+	}
+}

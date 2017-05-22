@@ -1,0 +1,1374 @@
+// ==================================================================================================
+// ==================================================================================================
+// RESPONSIVE SETTINGS
+// ==================================================================================================
+
+// DEVICE WIDTHS
+// =============
+
+@device-width-small: 520px;
+@device-width-medium: 760px;
+@device-width-large: 900px;
+
+// Max-widths
+// ==========
+
+@max-width: 1400px;
+@ie8-max-width: 1024px;
+
+// RESPONSIVE MIXIN
+// ================
+
+// This mixin is for setting the respovive widths in the theme.
+// It allows images size to be reduced and simplified. Only two sizes required 900px / 540px.
+
+.theme-responsive-sizes () {
+	margin: auto;
+	max-width: @device-width-large;
+	padding-left: 0;
+	padding-right: 0;
+
+	@media all and (max-width: (@device-width-large + 20px)) {
+		max-width: @device-width-medium;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	@media all and (max-width: (@device-width-medium)) {
+		max-width: @device-width-small;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	@media all and (max-width: (@device-width-small)) {
+		max-width: 100%;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	@media all and (max-width: (321px)) {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+// ==================================================================================================
+// ==================================================================================================
+// SPACINGS
+// ==================================================================================================
+
+@item-padding: 20px;
+@item-margin: 2px;
+
+@component-margin: 20px;
+@component-padding: 20px;
+
+@menu-header-padding: 100px;
+
+@page-header-padding: 100px;
+
+@title-text-margin: 20px;
+
+@body-text-margin: 20px;
+
+@instruction-text-margin: 0px;
+
+@button-padding: 14px;
+@button-margin: 30px;
+
+@notify-padding: 60px;
+
+@navigation-padding: 20px;
+
+// Detailed Spacings setup
+// =======================
+
+// Item
+@item-padding-top: @item-padding;
+@item-padding-bottom: @item-padding;
+@item-padding-left: @item-padding;
+@item-padding-right: @item-padding;
+
+@item-margin-top: @item-margin;
+@item-margin-bottom: @item-margin;
+
+// Page Header
+@page-padding-top: @page-header-padding;
+@page-padding-bottom: @page-header-padding;
+
+// Article
+@article-padding-top: @article-padding;
+@article-padding-bottom: @article-padding;
+
+@article-title-margin-bottom: @title-text-margin;
+
+@article-body-margin-top: @body-text-margin;
+@article-body-margin-bottom: @body-text-margin;
+
+@article-instruction-margin-bottom: @instruction-text-margin;
+
+// Block
+@block-padding-top: @block-padding;
+@block-padding-bottom: @block-padding;
+
+@block-title-margin-bottom: @title-text-margin;
+
+@block-body-margin-top: @body-text-margin;
+@block-body-margin-bottom: @body-text-margin;
+
+@block-instruction-margin-bottom: @instruction-text-margin;
+
+// Component
+@component-margin-top: @component-margin;
+@component-margin-bottom: @component-margin;
+@component-margin-left: @component-margin;
+@component-margin-right: @component-margin;
+
+@component-title-margin-bottom: @title-text-margin;
+
+@component-body-margin-top: @body-text-margin;
+@component-body-margin-bottom: @body-text-margin;
+
+@component-instruction-margin-bottom: @instruction-text-margin;
+
+// Buttons
+@button-padding-top: @button-padding;
+@button-padding-bottom: @button-padding;
+@button-margin-top: @button-margin;
+@button-margin-bottom: @button-margin;
+
+// Drawer
+@drawer-item-padding-top: @item-padding;
+@drawer-item-padding-bottom: @item-padding;
+@drawer-item-padding-left: @item-padding;
+@drawer-item-padding-right: @item-padding;
+
+// Navigation
+// @navigation-padding-top: @navigation-padding;
+// @navigation-padding-bottom: @navigation-padding;
+
+// Menu
+@menu-header-padding-top: @menu-header-padding;
+@menu-header-padding-bottom: @menu-header-padding;
+
+@menu-block-padding-top: @item-padding;
+@menu-block-padding-bottom: @item-padding;
+@menu-block-padding-left: @item-padding;
+@menu-block-padding-right: @item-padding;
+
+@menu-block-title-margin-top: @title-text-margin;
+@menu-block-title-margin-bottom: @title-text-margin;
+
+@menu-block-body-margin-bottom: @body-text-margin;
+
+@menu-block-instruction-margin-bottom: @instruction-text-margin;
+
+// Feedback	
+@notify-padding-top: @notify-padding;
+@notify-padding-bottom: @notify-padding;
+
+@notify-title-padding-bottom: @title-text-margin;
+
+// ELEMENT PADDING MIXIN
+// =====================
+
+.theme-element-padding (@topPadding; @bottomPadding) {
+	padding-top: @topPadding;
+	padding-bottom: @bottomPadding;
+
+	@media all and (max-width: (@device-width-medium)) {
+		padding-top: (@topPadding / 2);
+		padding-bottom: (@bottomPadding / 2);
+	}
+
+	@media all and (max-width: (@device-width-small)) {
+		padding-top: (@topPadding / 3);
+		padding-bottom: (@bottomPadding / 3);
+	}
+}
+
+// ==================================================================================================
+// ==================================================================================================
+// FONTS
+// ==================================================================================================
+
+// Global
+
+@body-text-font-family: @font-body;
+@body-text-font-weight: @font-weight-regular;
+@body-text-line-height: @body-line-height;
+
+@instruction-text-font-family: @font-body;
+@instruction-text-font-weight: @font-weight-bold;
+@instruction-text-line-height: @body-line-height;
+
+@button-text-font-family: @font-body;
+@button-text-font-weight: @font-weight-light;
+@button-text-line-height: @body-line-height;
+
+// Menu 
+
+@menu-title-font-family: @font-headings;
+@menu-title-font-weight: @font-weight-light;
+@menu-title-line-height: @title-line-height;
+
+@menu-item-title-font-family: @font-headings;
+@menu-item-title-font-weight: @font-weight-light;
+@menu-item-title-line-height: @title-line-height;
+
+// Page
+
+@page-title-font-family: @font-headings;
+@page-title-font-weight: @font-weight-light;
+@page-title-line-height: @title-line-height;
+
+@article-title-font-family: @font-headings;
+@article-title-font-weight: @font-weight-light;
+@article-title-line-height: @title-line-height;
+
+@block-title-font-family: @font-headings;
+@block-title-font-weight: @font-weight-light;
+@block-title-line-height: @title-line-height;
+
+@component-title-font-family: @font-headings;
+@component-title-font-weight: @font-weight-light;
+@component-title-line-height: @title-line-height;
+
+@item-title-font-family: @font-headings;
+@item-title-font-weight: @font-weight-light;
+@item-title-line-height: @title-line-height;
+
+@sub-title-font-family: @font-headings;
+@sub-title-font-weight: @font-weight-light;
+@sub-title-line-height: @title-line-height;
+
+@drawer-title-font-family: @font-headings;
+@drawer-title-font-weight: @font-weight-light;
+@drawer-title-line-height: @title-line-height;
+
+@notify-title-font-family: @font-headings;
+@notify-title-font-weight: @font-weight-light;
+@notify-title-line-height: @title-line-height;
+
+// Font setup
+// ==========
+
+html {
+	// preserve HTML font-size (iPhone orientation change)
+	-ms-text-size-adjust: 100%; 
+	-webkit-text-size-adjust: 100%;
+}
+
+.font-smoothing {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	.font-smoothing;
+	color: @font-body-color;
+	font-family: @body-text-font-family;
+	font-size: @body-text-font-size;
+	font-weight: @body-text-font-weight;
+	line-height: @body-text-line-height;
+
+	.ie8 & {
+		font-family: Arial, sans-serif;
+	}
+}
+
+.instruction-text {
+	font-family: @instruction-text-font-family;
+	font-size: @instruction-text-font-size;
+	font-weight: @instruction-text-font-weight;
+	line-height: @instruction-text-line-height;
+}
+
+.button-text {
+	.font-smoothing;
+	font-family: @button-text-font-family;
+	font-size: @button-text-font-size;
+	font-weight: @button-text-font-weight;
+	line-height: @button-text-line-height;
+
+	@media all and (max-width: @device-width-small) {
+		font-size: (@button-text-font-size * 0.85);  
+	}
+}
+
+// Variable set font styling
+// =========================
+
+.menu-title {
+	.font-smoothing;
+	font-family: @menu-title-font-family;
+	font-size: @menu-title-font-size;
+	font-weight: @menu-title-font-weight;
+	line-height: @menu-title-line-height;
+
+	@media all and (max-width: @device-width-small) {
+		font-size: (@menu-title-font-size * 0.85);
+	}
+}
+
+.menu-item-title {
+	.font-smoothing;
+	font-family: @menu-item-title-font-family;
+	font-size: @menu-item-title-font-size;
+	font-weight: @menu-item-title-font-weight;
+	line-height: @menu-item-title-line-height;
+
+	@media all and (max-width: @device-width-small) {
+		font-size: (@menu-item-title-font-size * 0.85);
+	}
+}
+
+.page-title {
+	.font-smoothing;
+	font-family: @page-title-font-family;
+	font-size: @page-title-font-size;
+	font-weight: @page-title-font-weight;
+	line-height: @page-title-line-height;
+
+	@media all and (max-width: @device-width-small) {
+		font-size: (@page-title-font-size * 0.85);
+	}
+}
+
+.article-title {
+	.font-smoothing;
+	font-family: @article-title-font-family;
+	font-size: @article-title-font-size;
+	font-weight: @article-title-font-weight;
+	line-height: @article-title-line-height;
+
+	@media all and (max-width: @device-width-small) {
+		font-size: (@article-title-font-size * 0.85);
+	}
+}
+
+.block-title {
+	.font-smoothing;
+	font-family: @block-title-font-family;
+	font-size: @block-title-font-size;
+	font-weight: @block-title-font-weight;
+	line-height: @block-title-line-height;
+
+	@media all and (max-width: @device-width-small) {
+		font-size: (@block-title-font-size * 0.85);
+	}
+}
+
+.component-title {
+	.font-smoothing;
+	font-family: @component-title-font-family;
+	font-size: @component-title-font-size;
+	font-weight: @component-title-font-weight;
+	line-height: @component-title-line-height;
+
+	@media all and (max-width: @device-width-small) {
+		font-size: (@component-title-font-size * 0.85);
+	}
+}
+
+.item-title {
+	.font-smoothing;
+	font-family: @item-title-font-family;
+	font-size: @item-title-font-size;
+	font-weight: @item-title-font-weight;
+	line-height: @item-title-line-height;
+
+	@media all and (max-width: @device-width-small) {
+		font-size: (@item-title-font-size * 0.85);
+	}
+}
+
+.sub-title {
+	.font-smoothing;
+	font-family: @sub-title-font-family;
+	font-size: @sub-title-font-size;
+	font-weight: @sub-title-font-weight;
+	line-height: @sub-title-line-height;
+
+	@media all and (max-width: @device-width-small) {
+		font-size: (@sub-title-font-size * 0.85);
+	}
+}
+
+.mcq-item {
+	// mirror item title line-height
+	.mcq-item-inner {
+		line-height: (@item-title-font-size * 0.85) * @item-title-line-height;
+	}
+}
+
+.drawer-title {
+	font-family: @drawer-title-font-family;
+	font-size: @drawer-title-font-size;
+	font-weight: @drawer-title-font-weight;
+	line-height: @drawer-title-line-height;
+
+	@media all and (max-width: @device-width-small) {
+		font-size: (@drawer-title-font-size * 0.85);
+	}
+}
+
+.notify-popup-title {
+	.font-smoothing;
+	font-family: @notify-title-font-family;
+	font-size: @notify-title-font-size;
+	font-weight: @notify-title-font-weight;
+	line-height: @notify-title-line-height;
+
+	@media all and (max-width: @device-width-small) {
+		font-size: (@notify-title-font-size * 0.85);
+	}
+}
+
+// Tag styling
+// ===========
+
+ol,
+ul {
+	list-style-position: outside;
+	text-align: left;
+
+	.dir-rtl & {
+		text-align: right;
+	}
+}
+
+ol li,
+ul li {
+	margin-left: 20px;
+
+	.dir-rtl & {
+		margin-left: inherit;
+		margin-right: 20px;
+	}
+}
+
+strong,
+b {
+	font-weight: @font-weight-bold;
+}
+
+select {
+	font-family: @font-body;
+	font-size: @body-text-font-size;
+	font-weight: @font-weight-light;
+	line-height: @body-line-height;
+}
+
+body {
+	p {
+		// Override base.less <p> tag margin
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+// ==================================================================================================
+// ==================================================================================================
+// IMAGE PATH VARIABLES
+// ==================================================================================================
+
+@build: "../../course/en/images/"; // Variable for build image path
+@asset: "assets/"; // Variable for asset image path
+
+// ==================================================================================================
+// ==================================================================================================
+// UI BUTTON HOVER STYLES
+// ==================================================================================================
+
+// Navigation Icons
+.navigation-icon-rollover-style(@rollover-style: default) {
+	.navigation-icon-rollover-args();
+
+	// Default
+	.navigation-icon-rollover-args() when (@rollover-style = default) {
+		.ui-button-color-hover(color, 0%);
+	}
+
+	// Theme
+	.navigation-icon-rollover-args() when (@rollover-style = theme) {
+		.ui-button-color-hover(background-color, 0%);
+		.transition-background-color;
+	}
+}
+
+// Navigation PLP
+.navigation-plp-rollover-style(@rollover-style: default) {
+	.navigation-plp-rollover-args();
+
+	// Default
+	.navigation-plp-rollover-args() when (@rollover-style = default) {
+		.page-level-progress-navigation-completion {
+			.navigation-color-hover(background-color, 0%);
+			.ui-button-color-hover(border, 2px, solid, 0%); 
+		}
+
+		.page-level-progress-navigation-bar {
+			.ui-button-color-hover(background-color, 0%);
+		}
+
+		.page-level-progress-plus-icon {
+			.ui-button-color-hover(color, 0%);
+		}
+	}
+
+	// Theme
+	.navigation-plp-rollover-args() when (@rollover-style = theme) {
+		.ui-button-color-hover(background-color, 0%);
+		.transition-background-color;
+
+		.page-level-progress-navigation-completion {
+			border: 2px solid @navigation-color-inverted;
+		}
+
+		.page-level-progress-navigation-bar {
+			.primary-color-hover(background-color, 0%);
+		}
+	}
+}
+
+// Drawer Close Button
+.drawer-close-button-rollover-style(@rollover-style: default) {
+	.close-button-default {
+		.icon {
+			color: @drawer-color-inverted;
+			padding: @navigation-padding;
+		
+			@media all and (max-width:(@device-width-small - 1px)) {
+				padding: @navigation-padding-mobile;
+			}
+		}
+	}
+
+	.close-button-theme {
+		 .icon {
+			color: @drawer-color-inverted;
+			border: 2px solid @drawer-color-inverted;
+			border-radius: 50%;
+			display: inline-block;
+
+			margin: @navigation-padding - 7px;
+			padding: 5px;
+		}
+	}
+
+	.close-button-rollover-args();
+
+	// Default
+	.close-button-rollover-args() when (@rollover-style = default) {
+		.close-button-default;
+
+		.no-touch &:hover {
+			.icon {
+				.ui-button-color-hover(color, 0%);
+				.transition-color;
+			}
+		}
+	}
+
+	// Theme
+	.close-button-rollover-args() when (@rollover-style = theme) {
+		.close-button-theme;
+
+		.no-touch &:hover {
+			.drawer-color-hover(background-color, 0%);
+			.transition-background-color;
+
+			.icon {
+				.ui-button-color-hover(background-color, 0%);
+				.transition-background-color;
+			}
+		}
+	}
+}
+
+// Hotgraphic Buttons
+.hotgraphic-popup-button-rollover-style(@rollover-style: default) {
+	.close-button-default {
+	}
+
+	.close-button-theme {
+		.hotgraphic-popup-done {
+			top: -2px;
+
+			.hotgraphic-popup-close {
+				border: 2px solid @components-color-inverted;
+				border-radius: 50%;
+			} 
+		}
+	}
+
+	.args();
+
+	// Default
+	.args() when (@rollover-style = default) {
+		.close-button-default;
+
+		// Left-Right Buttons
+		.hotgraphic-popup-controls:not(.disabled) {
+			.no-touch &:hover {
+				.hotgraphic-popup-arrow-l, .hotgraphic-popup-arrow-r {
+					.ui-button-color-hover(color, 0%);
+					.transition-color;
+				}
+			}
+		}
+
+		// Close Button
+		.hotgraphic-popup-done {
+			.no-touch &:hover {
+				.hotgraphic-popup-close {
+					.ui-button-color-hover(color, 0%);
+					.transition-color;
+				}
+			}
+		}
+	}
+
+	// Theme
+	.args() when (@rollover-style = theme) {
+		.close-button-theme;
+
+		// Left-Right Buttons
+		.hotgraphic-popup-controls:not(.disabled) {
+			.no-touch &:hover {
+				.ui-button-color-hover(background-color, 0%);
+				.transition-background-color;
+
+				.hotgraphic-popup-arrow-l, .hotgraphic-popup-arrow-r {
+					color: @components-color-inverted;
+					.transition-color;
+				}
+			}
+		}
+
+		// Close Button
+		.hotgraphic-popup-done {
+			.no-touch &:hover {
+				.hotgraphic-popup-close {
+					.ui-button-color-hover(background-color, 0%);
+					color: @components-color-inverted;
+					.transition-all-colors;
+				}
+			}
+		}
+	}
+}
+
+// ==================================================================================================
+// ==================================================================================================
+// CORE ANIMATIONS
+// ==================================================================================================
+
+// TIMINGS
+// =======
+
+@duration: 0.2s; // for consistency with vanilla
+@colorGlobalDuration: 0.2s;
+@widthGlobalDuration: 0.6s;
+@allGlobalDuration: 0.6s;
+
+// CORE COLOUR TRANSITIONS
+// =======================
+
+.transition-all-colors (@duration: @colorGlobalDuration) {
+	-webkit-transition: background-color @duration ease-in, color @duration ease-in, border-color @duration ease-in;
+	-moz-transition: background-color @duration ease-in, color @duration ease-in, border-color @duration ease-in;
+	-ms-transition: background-color @duration ease-in, color @duration ease-in, border-color @duration ease-in;
+	transition: background-color @duration ease-in, color @duration ease-in, border-color @duration ease-in;
+}
+
+.transition-background-color (@duration: @colorGlobalDuration) {
+	-webkit-transition: background-color @duration ease-in;
+	-moz-transition: background-color @duration ease-in;
+	-ms-transition: background-color @duration ease-in;
+	transition: background-color @duration ease-in;
+}
+
+.transition-border-color (@duration: @colorGlobalDuration) {
+	-webkit-transition: border-color @duration ease-in;
+	-moz-transition: border-color @duration ease-in;
+	-ms-transition: border-color @duration ease-in;
+	transition: border-color @duration ease-in;
+}
+
+.transition-color (@duration: @colorGlobalDuration) {
+	-webkit-transition: color @duration ease-in;
+	-moz-transition: color @duration ease-in;
+	-ms-transition: color @duration ease-in;
+	transition: color @duration ease-in;
+}
+
+// CORE OBJECT TRANSITIONS
+// =======================
+
+.transition-all (@duration: @allGlobalDuration) {
+	-webkit-transition: all @duration ease-in;
+	-moz-transition: all @duration ease-in;
+	-ms-transition: all @duration ease-in;
+	transition: all @duration ease-in;
+}
+
+.transition-width (@duration: @widthGlobalDuration) {
+	-webkit-transition: width @duration ease-in;
+	-moz-transition: width @duration ease-in;
+	-ms-transition: width @duration ease-in;
+	transition: width @duration ease-in;
+}
+
+// CORE EFFECTS
+// ============
+
+// Pulse
+// =====
+// Used in page-level-progress.less
+
+@-webkit-keyframes pulse {
+	from { }
+	to { background-color: rgba(255,255,255,1); }
+}
+
+@keyframes pulse {
+	from { }
+	to { background-color: rgba(255,255,255,1); }
+}
+
+.effect-pulse (@delay: @widthGlobalDuration) {
+	animation-name: pulse;
+	animation-duration: 0.6s;
+	animation-delay: @widthGlobalDuration;
+	animation-iteration-count: 6;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+// scalePulse
+// ==========
+// Used in mcq.less and gmcq.less
+
+@-webkit-keyframes scalePulse {
+	0% { -webkit-transform: none; }
+	50% { -webkit-transform: scale(1.4,1.4); }
+	100% { -webkit-transform: none; }
+}
+
+@keyframes scalePulse {
+	0% { transform: none; }
+	50% { transform: scale(1.4,1.4); }
+	100% { transform: none; }
+}
+
+.effect-scalePulse () {
+	animation-name: scalePulse;
+	animation-duration: 0.6s;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+// bounceDownTwice
+// ==================
+// Used in page.less
+
+@-webkit-keyframes bounceDownTwice {
+	0% { -webkit-transform: translateY(0px); }
+	100% { -webkit-transform: translateY(5px); }
+}
+
+@keyframes bounceDownTwice {
+	0% { transform: translateY(0px); }
+	100% { transform: translateY(5px); }
+}
+
+.effect-bounceDownTwice () {
+	animation-name: bounceDownTwice;
+	animation-duration: 0.25s;
+	animation-iteration-count: 4;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+// bounceLeftTwice
+// ================
+// Used in navigation.less
+
+@-webkit-keyframes bounceLeftTwice {
+	0% { -webkit-transform: translateX(0px); }
+	100% { -webkit-transform: translateX(-5px); }
+}
+
+@keyframes bounceLeftTwice {
+	0% { transform: translateX(0px); }
+	100% { transform: translateX(-5px); }
+}
+
+.effect-bounceLeftTwice () {
+	animation-name: bounceLeftTwice;
+	animation-duration: 0.25s;
+	animation-iteration-count: 4;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+// bounceLeftOnce
+// ======================
+// Used in articleBlockSlider.less, narrative.less, and quicknav.less
+
+@-webkit-keyframes bounceLeftOnce {
+	0% { -webkit-transform: translateX(0px); }
+	100% { -webkit-transform: translateX(-5px); }
+}
+
+@keyframes bounceLeftOnce {
+	0% { transform: translateX(0px); }
+	100% { transform: translateX(-5px); }
+}
+
+.effect-bounceLeftOnce () {
+	animation-name: bounceLeftOnce;
+	animation-duration: 0.25s;
+	animation-iteration-count: 2;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+// bounceRightOnce
+// ======================
+// Used in articleBlockSlider.less, narrative.less, and quicknav.less
+
+@-webkit-keyframes bounceRightOnce {
+	0% { -webkit-transform: translateX(0px); }
+	100% { -webkit-transform: translateX(5px); }
+}
+
+@keyframes bounceRightOnce {
+	0% { transform: translateX(0px); }
+	100% { transform: translateX(5px); }
+}
+
+.effect-bounceRightOnce () {
+	animation-name: bounceRightOnce;
+	animation-duration: 0.25s;
+	animation-iteration-count: 2;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+// bounceLeftOnceSmall
+// ========================
+// Used in hotgraphic.less
+
+@-webkit-keyframes bounceLeftOnceSmall {
+	0% { -webkit-transform: translateX(0px); }
+	100% { -webkit-transform: translateX(-2px); }
+}
+
+@keyframes bounceLeftOnceSmall {
+	0% { transform: translateX(0px); }
+	100% { transform: translateX(-2px); }
+}
+
+.effect-bounceLeftOnceSmall () {
+	animation-name: bounceLeftOnceSmall;
+	animation-duration: 0.25s;
+	animation-iteration-count: 2;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+// bounceRightOnceSmall
+// ========================
+// Used in hotgraphic.less
+
+@-webkit-keyframes bounceRightOnceSmall {
+	0% { -webkit-transform: translateX(0px); }
+	100% { -webkit-transform: translateX(2px); }
+}
+
+@keyframes bounceRightOnceSmall {
+	0% { transform: translateX(0px); }
+	100% { transform: translateX(2px); }
+}
+
+.effect-bounceRightOnceSmall () {
+	animation-name: bounceRightOnceSmall;
+	animation-duration: 0.2s;
+	animation-iteration-count: 2;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+// ==================================================================================================
+// ==================================================================================================
+// COLOUR MIXINS
+// ==================================================================================================
+
+// PRIMARY
+.primary-color(@prop;) {
+	@{prop}: @primary-color;
+}
+.primary-color-lighten(@prop; @ptc) {
+	@{prop}: lighten(@primary-color, @ptc);
+}
+.primary-color-darken(@prop; @ptc) {
+	@{prop}: darken(@primary-color, @ptc);
+}
+.primary-color-fade(@prop; @ptc) {
+	@{prop}: fade(@primary-color, @ptc);
+}
+.primary-color-hover(@prop; @ptc) {
+	@{prop}: darken(@primary-color, @ptc);
+}
+.primary-color(@prop; @width; @line;) {
+	@{prop}: @width @primary-color @line;
+}
+.primary-color-lighten(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line lighten(@primary-color, @ptc);
+}
+.primary-color-darken(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@primary-color, @ptc);
+}
+.primary-color-fade(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line fade(@primary-color, @ptc);
+}
+.primary-color-hover(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@primary-color, @ptc);
+}
+
+// SECONDARY
+.secondary-color(@prop;) {
+	@{prop}: @secondary-color;
+}
+.secondary-color-lighten(@prop; @ptc) {
+	@{prop}: lighten(@secondary-color, @ptc);
+}
+.secondary-color-darken(@prop; @ptc) {
+	@{prop}: darken(@secondary-color, @ptc);
+}
+.secondary-color-fade(@prop; @ptc) {
+	@{prop}: fade(@secondary-color, @ptc);
+}
+.secondary-color-hover(@prop; @ptc) {
+	@{prop}: darken(@secondary-color, @ptc);
+}
+.secondary-color(@prop; @width; @line;) {
+	@{prop}: @width @secondary-color @line;
+}
+.secondary-color-lighten(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line lighten(@secondary-color, @ptc);
+}
+.secondary-color-darken(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@secondary-color, @ptc);
+}
+.secondary-color-fade(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line fade(@secondary-color, @ptc);
+}
+.secondary-color-hover(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@secondary-color, @ptc);
+}
+
+// TERTIARY
+.tertiary-color(@prop;) {
+	@{prop}: @tertiary-color;
+}
+.tertiary-color-lighten(@prop; @ptc) {
+	@{prop}: lighten(@tertiary-color, @ptc);
+}
+.tertiary-color-darken(@prop; @ptc) {
+	@{prop}: darken(@tertiary-color, @ptc);
+}
+.tertiary-color-fade(@prop; @ptc) {
+	@{prop}: fade(@tertiary-color, @ptc);
+}
+.tertiary-color-hover(@prop; @ptc) {
+	@{prop}: darken(@tertiary-color, @ptc);
+}
+.tertiary-color(@prop; @width; @line;) {
+	@{prop}: @width @tertiary-color @line;
+}
+.tertiary-color-lighten(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line lighten(@tertiary-color, @ptc);
+}
+.tertiary-color-darken(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@tertiary-color, @ptc);
+}
+.tertiary-color-fade(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line fade(@tertiary-color, @ptc);
+}
+.tertiary-color-hover(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@tertiary-color, @ptc);
+}
+
+// QUATERNARY
+.quaternary-color(@prop;) {
+	@{prop}: @quaternary-color;
+}
+.quaternary-color-lighten(@prop; @ptc) {
+	@{prop}: lighten(@quaternary-color, @ptc);
+}
+.quaternary-color-darken(@prop; @ptc) {
+	@{prop}: darken(@quaternary-color, @ptc);
+}
+.quaternary-color-fade(@prop; @ptc) {
+	@{prop}: fade(@quaternary-color, @ptc);
+}
+.quaternary-color-hover(@prop; @ptc) {
+	@{prop}: darken(@quaternary-color, @ptc);
+}
+.quaternary-color(@prop; @width; @line;) {
+	@{prop}: @width @quaternary-color @line;
+}
+.quaternary-color-lighten(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line lighten(@quaternary-color, @ptc);
+}
+.quaternary-color-darken(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@quaternary-color, @ptc);
+}
+.quaternary-color-fade(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line fade(@quaternary-color, @ptc);
+}
+.quaternary-color-hover(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@quaternary-color, @ptc);
+}
+
+// LOGICAL ADAPT ELEMENTS
+// ======================
+
+// HEADINGS
+.headings-color(@prop;) {
+	@{prop}: @headings-color;
+}
+.headings-color-lighten(@prop; @ptc) {
+	@{prop}: lighten(@headings-color, @ptc);
+}
+.headings-color-darken(@prop; @ptc) {
+	@{prop}: darken(@headings-color, @ptc);
+}
+.headings-color-fade(@prop; @ptc) {
+	@{prop}: fade(@headings-color, @ptc);
+}
+.headings-color-hover(@prop; @ptc) {
+	@{prop}: darken(@headings-color, @ptc);
+}
+.headings-color(@prop; @width; @line;) {
+	@{prop}: @width @headings-color @line;
+}
+.headings-color-lighten(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line lighten(@headings-color, @ptc);
+}
+.headings-color-darken(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@headings-color, @ptc);
+}
+.headings-color-fade(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line fade(@headings-color, @ptc);
+}
+.headings-color-hover(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@headings-color, @ptc);
+}
+
+// COMPONENTS
+.components-color(@prop;) {
+	@{prop}: @components-color;
+}
+.components-color-lighten(@prop; @ptc) {
+	@{prop}: lighten(@components-color, @ptc);
+}
+.components-color-darken(@prop; @ptc) {
+	@{prop}: darken(@components-color, @ptc);
+}
+.components-color-fade(@prop; @ptc) {
+	@{prop}: fade(@components-color, @ptc);
+}
+.components-color-hover(@prop; @ptc) {
+	@{prop}: darken(@components-color, @ptc);
+}
+.components-color(@prop; @width; @line;) {
+	@{prop}: @width @components-color @line;
+}
+.components-color-lighten(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line lighten(@components-color, @ptc);
+}
+.components-color-darken(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@components-color, @ptc);
+}
+.components-color-fade(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line fade(@components-color, @ptc);
+}
+.components-color-hover(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@components-color, @ptc);
+}
+
+// UI SETS
+// =======
+
+// NAVIGATION
+.navigation-color(@prop;) {
+	@{prop}: @navigation-color;
+}
+.navigation-color-lighten(@prop; @ptc) {
+	@{prop}: lighten(@navigation-color, @ptc);
+}
+.navigation-color-darken(@prop; @ptc) {
+	@{prop}: darken(@navigation-color, @ptc);
+}
+.navigation-color-fade(@prop; @ptc) {
+	@{prop}: fade(@navigation-color, @ptc);
+}
+.navigation-color-hover(@prop; @ptc) {
+	@{prop}: darken(@navigation-color, @ptc);
+}
+.navigation-color(@prop; @width; @line;) {
+	@{prop}: @width @navigation-color @line;
+}
+.navigation-color-lighten(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line lighten(@navigation-color, @ptc);
+}
+.navigation-color-darken(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@navigation-color, @ptc);
+}
+.navigation-color-fade(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line fade(@navigation-color, @ptc);
+}
+.navigation-color-hover(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@navigation-color, @ptc);
+}
+
+// DRAWER
+.drawer-color(@prop;) {
+	@{prop}: @drawer-color;
+}
+.drawer-color-lighten(@prop; @ptc) {
+	@{prop}: lighten(@drawer-color, @ptc);
+}
+.drawer-color-darken(@prop; @ptc) {
+	@{prop}: darken(@drawer-color, @ptc);
+}
+.drawer-color-fade(@prop; @ptc) {
+	@{prop}: fade(@drawer-color, @ptc);
+}
+.drawer-color-hover(@prop; @ptc) {
+	@{prop}: darken(@drawer-color, @ptc);
+}
+.drawer-color(@prop; @width; @line;) {
+	@{prop}: @width @drawer-color @line;
+}
+.drawer-color-lighten(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line lighten(@drawer-color, @ptc);
+}
+.drawer-color-darken(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@drawer-color, @ptc);
+}
+.drawer-color-fade(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line fade(@drawer-color, @ptc);
+}
+.drawer-color-hover(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@drawer-color, @ptc);
+}
+
+// NOTIFY
+.notify-color(@prop;) {
+	@{prop}: @notify-color;
+}
+.notify-color-lighten(@prop; @ptc) {
+	@{prop}: lighten(@notify-color, @ptc);
+}
+.notify-color-darken(@prop; @ptc) {
+	@{prop}: darken(@notify-color, @ptc);
+}
+.notify-color-fade(@prop; @ptc) {
+	@{prop}: fade(@notify-color, @ptc);
+}
+.notify-color-hover(@prop; @ptc) {
+	@{prop}: darken(@notify-color, @ptc);
+}
+.notify-color(@prop; @width; @line;) {
+	@{prop}: @width @notify-color @line;
+}
+.notify-color-lighten(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line lighten(@notify-color, @ptc);
+}
+.notify-color-darken(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@notify-color, @ptc);
+}
+.notify-color-fade(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line fade(@notify-color, @ptc);
+}
+.notify-color-hover(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@notify-color, @ptc);
+}
+
+// NOTIFY UI
+.notify-ui-color(@prop;) {
+	@{prop}: @notify-ui-color;
+}
+.notify-ui-color-lighten(@prop; @ptc) {
+	@{prop}: lighten(@notify-ui-color, @ptc);
+}
+.notify-ui-color-darken(@prop; @ptc) {
+	@{prop}: darken(@notify-ui-color, @ptc);
+}
+.notify-ui-color-fade(@prop; @ptc) {
+	@{prop}: fade(@notify-ui-color, @ptc);
+}
+.notify-ui-color-hover(@prop; @ptc) {
+	@{prop}: darken(@notify-ui-color, @ptc);
+}
+.notify-ui-color(@prop; @width; @line;) {
+	@{prop}: @width @notify-ui-color @line;
+}
+.notify-ui-color-lighten(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line lighten(@notify-ui-color, @ptc);
+}
+.notify-ui-color-darken(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@notify-ui-color, @ptc);
+}
+.notify-ui-color-fade(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line fade(@notify-ui-color, @ptc);
+}
+.notify-ui-color-hover(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@notify-ui-color, @ptc);
+}
+
+// UI BUTTONS
+.ui-button-color(@prop;) {
+	@{prop}: @ui-button-color;
+}
+.ui-button-color-lighten(@prop; @ptc) {
+	@{prop}: lighten(@ui-button-color, @ptc);
+}
+.ui-button-color-darken(@prop; @ptc) {
+	@{prop}: darken(@ui-button-color, @ptc);
+}
+.ui-button-color-fade(@prop; @ptc) {
+	@{prop}: fade(@ui-button-color, @ptc);
+}
+.ui-button-color-hover(@prop; @ptc) {
+	@{prop}: darken(@ui-button-color, @ptc);
+}
+.ui-button-color(@prop; @width; @line;) {
+	@{prop}: @width @ui-button-color @line;
+}
+.ui-button-color-lighten(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line lighten(@ui-button-color, @ptc);
+}
+.ui-button-color-darken(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@ui-button-color, @ptc);
+}
+.ui-button-color-fade(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line fade(@ui-button-color, @ptc);
+}
+.ui-button-color-hover(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@ui-button-color, @ptc);
+}
+
+// SUMBIT BUTTONS
+.submit-button-color(@prop;) {
+	@{prop}: @submit-button-color;
+}
+.submit-button-color-lighten(@prop; @ptc) {
+	@{prop}: lighten(@submit-button-color, @ptc);
+}
+.submit-button-color-darken(@prop; @ptc) {
+	@{prop}: darken(@submit-button-color, @ptc);
+}
+.submit-button-color-fade(@prop; @ptc) {
+	@{prop}: fade(@submit-button-color, @ptc);
+}
+.submit-button-color-hover(@prop; @ptc) {
+	@{prop}: darken(@submit-button-color, @ptc);
+}
+.submit-button-color(@prop; @width; @line;) {
+	@{prop}: @width @submit-button-color @line;
+}
+.submit-button-color-lighten(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line lighten(@submit-button-color, @ptc);
+}
+.submit-button-color-darken(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@submit-button-color, @ptc);
+}
+.submit-button-color-fade(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line fade(@submit-button-color, @ptc);
+}
+.submit-button-color-hover(@prop; @width; @line; @ptc) {
+	@{prop}: @width @line darken(@submit-button-color, @ptc);
+}
+
+// ==================================================================================================
+// ==================================================================================================
+// HEADING STYLES 
+// ==================================================================================================
+
+// Magazine style headings - add to theme JSON to apply 
+// ====================================================
+
+/*"_theme": {
+	"_themePalette": "palette-01",
+	"_headings": {
+		"_isEnabled": true,
+		"_pageHeading": "magazine",
+		"_articleHeading": "magazine",
+		"_blockHeading": "magazine",
+		"_componentHeading": "magazine"
+	}
+}*/
+
+@mag-heading-padding: 10px;
+
+// Magazine headings
+
+.magazine {
+	.page-title-inner,
+	.article-title-inner,
+	.block-title-inner,
+	.component-title-inner {
+		line-height: 140% !important;
+		margin: 0 !important;
+		overflow: hidden;
+		padding: (@mag-heading-padding / 2) 0 !important;
+		padding-left: (@mag-heading-padding * 2) !important;
+		position: relative;
+	}
+
+	.page-title-inner > span,
+	.article-title-inner > span,
+	.block-title-inner > span,
+	.component-title-inner > span {
+		.headings-color(background-color);
+		color: @headings-color-inverted;
+		padding: (@mag-heading-padding * 1.2) 0 !important;
+		line-height: 140% !important;
+	}
+
+	.page-title-inner span span,
+	.article-title-inner span span,
+	.block-title-inner span span,
+	.component-title-inner span span {
+		left: -@mag-heading-padding !important;
+		position: relative;
+		z-index: 2;
+	}
+
+	.page-title-inner:before,
+	.article-title-inner:before,
+	.block-title-inner:before,
+	.component-title-inner:before {
+		.headings-color(background-color);
+		bottom: 0;
+		content: "";
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: (@mag-heading-padding * 2);
+		z-index: 1;
+	}
+}

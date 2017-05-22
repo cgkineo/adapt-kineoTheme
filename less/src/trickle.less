@@ -1,0 +1,43 @@
+.trickle-button-component {
+	.trickle-button-inner { 
+		// Overwrite component styling
+		background-color: none;
+		padding: 0;
+	}
+
+	&.trickle-round-arrow {
+		button {
+			.ui-button-color(background-color);
+			// Override default trickle transition
+			-webkit-transition: none;
+			-moz-transition: none;
+			-ms-transition: none;
+			transition: none;
+
+			.no-touch &:hover {
+				.ui-button-color-hover(background-color, 20%);
+				.transition-background-color;
+			}
+		}
+	}
+
+	&.trickle-full-width.trickle-round-arrow {
+		.trickle-button-inner {
+			&.locking {
+				button {
+					.ui-button-color(background-color);
+					// Override default trickle transition
+					-webkit-transition: none;
+					-moz-transition: none;
+					-ms-transition: none;
+					transition: none;
+
+					.no-touch &:hover {
+						.ui-button-color-hover(background-color, 20%);
+						.transition-background-color;
+					}
+				}
+			}
+		}
+	}
+}

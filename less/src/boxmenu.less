@@ -1,0 +1,176 @@
+// .menu {
+// 	background: @background-color;
+
+// 	.menu-container {
+// 		width: 100%;
+// 	}
+
+// 	.menu-container-inner {
+// 		padding: 0;
+// 	}
+
+// 	.menu-header {
+// 		background-color: @background-color-inverted;
+// 		margin-bottom: -30px;
+// 	}
+
+// 	.menu-header-inner {
+// 		margin: auto;
+// 		max-width: @device-width-large;
+// 		padding: @menu-header-padding-top 0 @menu-header-padding-bottom;
+// 		text-align: center;
+
+// 		@media all and (max-width: (@device-width-large + 20px)) {
+// 			padding: (@menu-header-padding-top / 2) 20px @menu-header-padding-bottom;
+// 		}
+
+// 		@media all and (max-width: (@device-width-small + 20px)) {
+// 			padding: 20px 10px 20px;
+// 		}
+// 	}
+
+// 	.menu-title {
+// 		color: @inverted-foreground-color;
+// 		margin: @menu-block-title-margin-bottom 0;
+// 	}
+
+// 	.menu-body {
+// 		color: @inverted-foreground-color;
+// 		margin: @menu-block-body-margin-bottom 0;
+// 	}
+
+// 	.menu-item {
+// 		margin: 0 auto 30px;
+
+// 		&.nth-child-even{
+// 			.menu-item-inner{
+// 				margin-left: 2%;
+
+// 				.dir-rtl & {
+// 					margin-right: 2%;
+// 				}
+// 			}
+// 		}
+
+// 		&.nth-child-odd {
+// 			.menu-item-inner {
+// 				margin-right: 2%;
+
+// 				.dir-rtl & {
+// 					margin-left: 2%;
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	.menu-item-inner {
+// 		.primary-color(background-color);
+// 		color: @primary-color-inverted;
+// 		margin: auto;
+// 		max-width: (@device-width-large / 2) - (@item-padding * 2);
+// 		padding: @menu-block-padding-top @menu-block-padding-right @menu-block-padding-bottom @menu-block-padding-left;
+// 		position: relative;
+// 	}
+	
+// 	.menu-item-title {
+// 		.menu-item-title;
+// 		margin: @menu-block-title-margin-bottom 0;
+// 		padding: 0;
+// 	}
+
+// 	.menu-item-body {
+// 		margin-bottom: @menu-block-body-margin-bottom;
+// 		padding: 0;
+// 	}
+
+// 	.menu-item-instruction {
+// 		margin-bottom: @menu-block-instruction-margin-bottom;
+// 		padding: 0;
+// 	}
+
+// 	.page-level-progress-menu-item {
+// 		height: 6px;
+// 		padding: 0;
+// 		width: 60px;
+// 		position: absolute;
+// 		right: (@menu-block-padding-right+4);
+// 		bottom: (@menu-block-padding-bottom+6);
+ 		 
+// 		.dir-rtl & {
+// 			left: (@menu-block-padding-left+4);
+// 			right: auto;
+// 		}
+// 	}
+
+// 	.page-level-progress-menu-item-indicator {
+// 		.primary-color-darken(background-color, 20%);
+// 		.primary-color-darken(border, 2px, solid, 20%);
+// 		border-radius: 25px;
+// 		height: 6px;
+// 		width: 60px;
+// 	}
+
+// 	.page-level-progress-menu-item-indicator-bar {
+// 		background-color: @primary-color-inverted;
+// 		border-radius: 25px;
+// 		height: 6px;
+// 	}
+
+// 	.menu-item-duration {
+// 		position: absolute;
+// 		right: @menu-block-padding-right;
+
+// 		.dir-rtl & {
+// 			left: (@menu-block-padding-left);
+// 			right: auto;
+// 		}
+// 	}
+
+// 	.menu-item-button {
+// 		padding: 0;
+		
+// 		button {
+// 			.secondary-color(background-color);
+// 			color: @ui-button-color-inverted;
+// 			padding: @button-padding 40px;
+			
+// 			.no-touch &:hover {
+// 				.secondary-color-hover(background-color; 40%);
+// 				color: @ui-button-color-inverted;
+// 			}
+			
+// 			&.visited {
+// 				.secondary-color(background-color);
+// 				color: @ui-button-color-inverted;
+// 				// uncomment if you want visited states and remove above
+// 				//background-color: @visited-color;
+// 				//color: @visited-color-inverted;
+// 			}
+// 		}
+// 	}
+// }
+
+// @media all and (max-width: 760px) {
+// 	.menu {
+// 		.menu-inner {
+// 			padding: 0;
+// 		}
+
+// 		.menu-title-inner {
+// 			padding: 0;
+// 		}
+
+// 		.menu-body-inner {
+// 			padding: 0;
+// 		}
+
+// 		.menu-item {
+// 			&.nth-child-even, 
+// 			&.nth-child-odd {
+// 				.menu-item-inner{
+// 					margin: 0 auto;
+// 				}
+// 			}
+// 		}
+// 	}
+// }

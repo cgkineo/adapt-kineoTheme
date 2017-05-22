@@ -1,0 +1,113 @@
+// Navigation PLP
+// ==============
+
+.page-level-progress-navigation {
+	// Override defaults in extension
+	padding: (@navigation-padding + 6) @navigation-padding!important;
+	//margin: 5px 0;
+	
+	.page-level-progress-navigation-completion {
+		.navigation-color(background-color); 
+		border: 2px solid @navigation-color-inverted;
+		-webkit-border-radius: 50px; 
+		-moz-border-radius: 50px;
+		border-radius: 50px;
+		height: 8px;
+	}
+
+	.page-level-progress-navigation-bar {
+		.primary-color(background-color);
+		left: 0;
+		.transition-width;
+
+		&.complete {
+			.effect-pulse;
+		}
+	}
+
+	.page-level-progress-plus-icon {
+		color: @navigation-color-inverted;
+		right: 9px;
+	}
+
+	&.base {
+		.no-touch &:hover {
+			.navigation-plp-rollover-style(@theme-rollover-style);
+		}
+	}
+}
+
+// Drawer PLP
+// ==========
+
+.drawer {
+	.page-level-progress {
+		.page-level-progress-item {
+			.page-level-progress-item-title-inner {
+				width: 80%;
+			}
+
+			.page-level-progress-indicator {
+				background-color: transparent;
+				border: 1px solid @drawer-color-inverted;
+				height: 8px;
+				width: 15%;
+
+				.page-level-progress-indicator-bar {
+					height: 10px;
+				}
+			}
+
+			.page-level-progress-item-title {
+				.drawer-color(background-color);
+				color: @drawer-color-inverted;
+
+				.no-touch &:hover {
+					.ui-button-color-hover(background-color, 0%);
+					color: @ui-button-color-inverted;
+					.transition-all-colors;
+
+					.page-level-progress-indicator {
+						border: 1px solid @ui-button-color-inverted;
+						.transition-border-color;
+					}
+				}
+
+				&.disabled {
+					background-color: @disabled-color;
+					color: @disabled-color-inverted;
+					cursor: default;
+
+					.page-level-progress-indicator {
+						border: 1px solid @disabled-color-inverted;
+					}
+
+					.no-touch &:hover {
+						background-color: @disabled-color;
+						color: @disabled-color-inverted;
+
+						.page-level-progress-indicator {
+							background-color: transparent;
+							border: 1px solid @disabled-color-inverted;
+						}
+					}
+				}
+
+				.page-level-progress-indicator-complete {
+					.page-level-progress-indicator-bar {
+						.primary-color(background-color);
+					}
+				}
+
+				.no-touch &:hover {
+					.page-level-progress-indicator-complete {
+						.page-level-progress-indicator-bar {
+							.primary-color-hover(background-color, 10%);
+							.transition-background-color;
+						}
+					}
+				}
+			}
+		}
+	}
+}

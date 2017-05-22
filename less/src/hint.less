@@ -1,0 +1,33 @@
+.hint-extension {
+	.hint-extension-button {
+		.components-color(background-color);
+		color: @components-color-inverted;
+
+		.no-touch &:hover {
+			.components-color-hover(background-color, 20%);
+			color: @components-color-inverted;
+			.transition-all-colors;
+		}
+	}
+
+	.hint-extension-widget {
+		background-color: @background-color;
+
+		.ie8 & {
+			border: 2px solid darken(@background-color, 10%);
+		}
+	}
+
+	.hint-extension-item {
+		&:nth-child(even) {
+			background-color: darken(@background-color, 10%);
+		}
+
+		.ie8 & {
+			&.item-1,
+			&.item-3 {
+				background-color: darken(@background-color, 10%);
+			}
+		}
+	}
+}

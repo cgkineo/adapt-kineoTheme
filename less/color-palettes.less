@@ -1,0 +1,952 @@
+// ==================================================================
+// ==================================================================
+// EXAMPLE USE 
+// ===========
+//
+// for palette-01 change the following variables:
+//
+// @headings-color-set01
+// @components-color-set01
+// @ui-button-color-set01
+//                     .....etc.
+//
+// for palette-02
+// @headings-color-set02
+// @components-color-set02
+//                     .....etc.
+//
+// Note:
+// Important!
+// Only un-comment the mixins you need to use.
+//
+// ==================================================================
+// ==================================================================
+
+// HEADINGS PALETTE
+@headings-color-set01: @kineo-cyan;
+@headings-color-set02: @kineo-pink;
+@headings-color-set03: @kineo-blue;
+@headings-color-set04: @kineo-purple;
+@headings-color-set05: @kineo-green;
+@headings-color-set06: @theme-red;
+
+// COMPONENT PALETTE
+@components-color-set01: @kineo-cyan;
+@components-color-set02: @kineo-pink;
+@components-color-set03: @kineo-blue;
+@components-color-set04: @kineo-purple;
+@components-color-set05: @kineo-green;
+@components-color-set06: @theme-red;
+
+// UI BUTTON HOVER COLOUR PALETTE
+@ui-button-color-set01: @kineo-cyan;
+@ui-button-color-set02: @kineo-pink;
+@ui-button-color-set03: @kineo-blue;
+@ui-button-color-set04: @kineo-purple;
+@ui-button-color-set05: @kineo-green;
+@ui-button-color-set06: @theme-red;
+
+// SUBMIT BUTTON PALETTE
+@submit-button-color-set01: @kineo-cyan;
+@submit-button-color-set02: @kineo-pink;
+@submit-button-color-set03: @kineo-blue;
+@submit-button-color-set04: @kineo-purple;
+@submit-button-color-set05: @kineo-green;
+@submit-button-color-set06: @theme-red;
+
+// NAVIGATION PALETTE
+@navigation-color-set01: @kineo-cyan;
+@navigation-color-set02: @kineo-pink;
+@navigation-color-set03: @kineo-blue;
+@navigation-color-set04: @kineo-purple;
+@navigation-color-set05: @kineo-green;
+@navigation-color-set06: @theme-red;
+
+// NOTIFY PALETTE
+@notify-color-set01: @kineo-cyan;
+@notify-color-set02: @kineo-pink;
+@notify-color-set03: @kineo-blue;
+@notify-color-set04: @kineo-purple;
+@notify-color-set05: @kineo-green;
+@notify-color-set06: @theme-red;
+
+// NOTIFY UI PALETTE
+@notify-ui-color-set01: @kineo-cyan;
+@notify-ui-color-set02: @kineo-pink;
+@notify-ui-color-set03: @kineo-blue;
+@notify-ui-color-set04: @kineo-purple;
+@notify-ui-color-set05: @kineo-green;
+@notify-ui-color-set06: @theme-red;
+
+// DRAWER PALETTE
+@drawer-color-set01: @kineo-cyan;
+@drawer-color-set02: @kineo-pink;
+@drawer-color-set03: @kineo-blue;
+@drawer-color-set04: @kineo-purple;
+@drawer-color-set05: @kineo-green;
+@drawer-color-set06: @theme-red;
+
+// PRIMARY PALETTE
+@primary-color-set01: @kineo-cyan;
+@primary-color-set02: @kineo-pink;
+@primary-color-set03: @kineo-blue;
+@primary-color-set04: @kineo-purple;
+@primary-color-set05: @kineo-green;
+@primary-color-set06: @theme-red;
+
+// ==================================================================================================
+// ==================================================================================================
+// HEADINGS
+// ==================================================================================================
+
+.headings-color(@prop) {
+	.palette-01 & { @{prop}: @headings-color-set01; }
+	.palette-02 & { @{prop}: @headings-color-set02; }
+	.palette-03 & {	@{prop}: @headings-color-set03; }
+	.palette-04 & {	@{prop}: @headings-color-set04; }
+	.palette-05 & {	@{prop}: @headings-color-set05; }
+	.palette-06 & {	@{prop}: @headings-color-set06; }
+}
+
+.headings-color-lighten(@prop; @ptc) {
+	.palette-01 & { @{prop}: lighten(@headings-color-set01, @ptc); }
+	.palette-02 & { @{prop}: lighten(@headings-color-set02, @ptc); }
+	.palette-03 & { @{prop}: lighten(@headings-color-set03, @ptc); }
+	.palette-04 & { @{prop}: lighten(@headings-color-set04, @ptc); }
+	.palette-05 & { @{prop}: lighten(@headings-color-set05, @ptc); }
+	.palette-06 & { @{prop}: lighten(@headings-color-set06, @ptc); }
+}
+
+.headings-color-darken(@prop; @ptc) {
+	.palette-01 & { @{prop}: darken(@headings-color-set01, @ptc); }
+	.palette-02 & { @{prop}: darken(@headings-color-set02, @ptc); }
+	.palette-03 & { @{prop}: darken(@headings-color-set03, @ptc); }
+	.palette-04 & { @{prop}: darken(@headings-color-set04, @ptc); }
+	.palette-05 & { @{prop}: darken(@headings-color-set05, @ptc); }
+	.palette-06 & { @{prop}: darken(@headings-color-set06, @ptc); }
+}
+
+.headings-color-fade(@prop; @ptc) {
+	.palette-01 & { @{prop}: fade(@headings-color-set01, @ptc); }
+	.palette-02 & { @{prop}: fade(@headings-color-set02, @ptc); }
+	.palette-03 & { @{prop}: fade(@headings-color-set03, @ptc); }
+	.palette-04 & { @{prop}: fade(@headings-color-set04, @ptc); }
+	.palette-05 & { @{prop}: fade(@headings-color-set05, @ptc); }
+	.palette-06 & { @{prop}: fade(@headings-color-set06, @ptc); }
+}
+
+.headings-color-hover(@prop; @ptc) {
+	.palette-01& { @{prop}: darken(@headings-color-set01, @ptc); }
+	.palette-02& { @{prop}: darken(@headings-color-set02, @ptc); }
+	.palette-03& { @{prop}: darken(@headings-color-set03, @ptc); }
+	.palette-04& { @{prop}: darken(@headings-color-set04, @ptc); }
+	.palette-05& { @{prop}: darken(@headings-color-set05, @ptc); }
+	.palette-06& { @{prop}: darken(@headings-color-set06, @ptc); }
+}
+
+.headings-color(@prop, @width, @line) {
+	.palette-01 & { @{prop}: @width @headings-color-set01 @line; }
+	.palette-02 & { @{prop}: @width @headings-color-set02 @line; }
+	.palette-03 & { @{prop}: @width @headings-color-set03 @line; }
+	.palette-04 & { @{prop}: @width @headings-color-set04 @line; }
+	.palette-05 & { @{prop}: @width @headings-color-set05 @line; }
+	.palette-06 & { @{prop}: @width @headings-color-set06 @line; }
+}
+
+.headings-color-lighten(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line lighten(@headings-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line lighten(@headings-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line lighten(@headings-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line lighten(@headings-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line lighten(@headings-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line lighten(@headings-color-set06, @ptc); }
+}
+
+.headings-color-darken(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line darken(@headings-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line darken(@headings-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line darken(@headings-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line darken(@headings-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line darken(@headings-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line darken(@headings-color-set06, @ptc); }
+}
+
+.headings-color-fade(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line fade(@headings-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line fade(@headings-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line fade(@headings-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line fade(@headings-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line fade(@headings-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line fade(@headings-color-set06, @ptc); }
+}
+
+.headings-color-hover(@prop; @width; @line; @ptc) {
+	.palette-01& { @{prop}: @width @line darken(@headings-color-set01, @ptc); }
+	.palette-02& { @{prop}: @width @line darken(@headings-color-set02, @ptc); }
+	.palette-03& { @{prop}: @width @line darken(@headings-color-set03, @ptc); }
+	.palette-04& { @{prop}: @width @line darken(@headings-color-set04, @ptc); }
+	.palette-05& { @{prop}: @width @line darken(@headings-color-set05, @ptc); }
+	.palette-06& { @{prop}: @width @line darken(@headings-color-set06, @ptc); }
+}
+
+// ==================================================================================================
+// ==================================================================================================
+// COMPONENTS
+// ==================================================================================================
+
+.components-color(@prop) {
+	.palette-01 & { @{prop}: @components-color-set01; }
+	.palette-02 & { @{prop}: @components-color-set02; }
+	.palette-03 & { @{prop}: @components-color-set03; }
+	.palette-04 & { @{prop}: @components-color-set04; }
+	.palette-05 & { @{prop}: @components-color-set05; }
+	.palette-06 & { @{prop}: @components-color-set06; }
+}
+
+.components-color-lighten(@prop; @ptc) {
+	.palette-01 & { @{prop}: lighten(@components-color-set01, @ptc); }
+	.palette-02 & { @{prop}: lighten(@components-color-set02, @ptc); }
+	.palette-03 & { @{prop}: lighten(@components-color-set03, @ptc); }
+	.palette-04 & { @{prop}: lighten(@components-color-set04, @ptc); }
+	.palette-05 & { @{prop}: lighten(@components-color-set05, @ptc); }
+	.palette-06 & { @{prop}: lighten(@components-color-set06, @ptc); }
+}
+
+.components-color-darken(@prop; @ptc) {
+	.palette-01 & { @{prop}: darken(@components-color-set01, @ptc); }
+	.palette-02 & { @{prop}: darken(@components-color-set02, @ptc); }
+	.palette-03 & { @{prop}: darken(@components-color-set03, @ptc); }
+	.palette-04 & { @{prop}: darken(@components-color-set04, @ptc); }
+	.palette-05 & { @{prop}: darken(@components-color-set05, @ptc); }
+	.palette-06 & { @{prop}: darken(@components-color-set06, @ptc); }
+}
+
+.components-color-fade(@prop; @ptc) {
+	.palette-01 & { @{prop}: fade(@components-color-set01, @ptc); }
+	.palette-02 & { @{prop}: fade(@components-color-set02, @ptc); }
+	.palette-03 & { @{prop}: fade(@components-color-set03, @ptc); }
+	.palette-04 & { @{prop}: fade(@components-color-set04, @ptc); }
+	.palette-05 & { @{prop}: fade(@components-color-set05, @ptc); }
+	.palette-06 & { @{prop}: fade(@components-color-set06, @ptc); }
+}
+
+.components-color-hover(@prop; @ptc) {
+	.palette-01& { @{prop}: darken(@components-color-set01, @ptc); }
+	.palette-02& { @{prop}: darken(@components-color-set02, @ptc); }
+	.palette-03& { @{prop}: darken(@components-color-set03, @ptc); }
+	.palette-04& { @{prop}: darken(@components-color-set04, @ptc); }
+	.palette-05& { @{prop}: darken(@components-color-set05, @ptc); }
+	.palette-06& { @{prop}: darken(@components-color-set06, @ptc); }
+}
+
+.components-color(@prop, @width, @line) {
+	.palette-01 & { @{prop}: @width @components-color-set01 @line; }
+	.palette-02 & { @{prop}: @width @components-color-set02 @line; }
+	.palette-03 & { @{prop}: @width @components-color-set03 @line; }
+	.palette-04 & { @{prop}: @width @components-color-set04 @line; }
+	.palette-05 & { @{prop}: @width @components-color-set05 @line; }
+	.palette-06 & { @{prop}: @width @components-color-set06 @line; }
+}
+
+.components-color-lighten(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line lighten(@components-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line lighten(@components-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line lighten(@components-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line lighten(@components-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line lighten(@components-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line lighten(@components-color-set06, @ptc); }
+}
+
+.components-color-darken(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line darken(@components-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line darken(@components-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line darken(@components-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line darken(@components-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line darken(@components-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line darken(@components-color-set06, @ptc); }
+}
+
+.components-color-fade(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line fade(@components-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line fade(@components-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line fade(@components-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line fade(@components-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line fade(@components-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line fade(@components-color-set06, @ptc); }
+}
+
+.components-color-hover(@prop; @width; @line; @ptc) {
+	.palette-01& { @{prop}: @width @line darken(@components-color-set01, @ptc); }
+	.palette-02& { @{prop}: @width @line darken(@components-color-set02, @ptc); }
+	.palette-03& { @{prop}: @width @line darken(@components-color-set03, @ptc); }
+	.palette-04& { @{prop}: @width @line darken(@components-color-set04, @ptc); }
+	.palette-05& { @{prop}: @width @line darken(@components-color-set05, @ptc); }
+	.palette-06& { @{prop}: @width @line darken(@components-color-set06, @ptc); }
+}
+
+// ==================================================================================================
+// ==================================================================================================
+// UI BUTTONS
+// ==================================================================================================
+
+/*.ui-button-color(@prop) {
+	.palette-01 & { @{prop}: @ui-button-color-set01; }
+	.palette-02 & { @{prop}: @ui-button-color-set02; }
+	.palette-03 & { @{prop}: @ui-button-color-set03; }
+	.palette-04 & { @{prop}: @ui-button-color-set04; }
+	.palette-05 & { @{prop}: @ui-button-color-set05; }
+	.palette-06 & { @{prop}: @ui-button-color-set06; }
+}
+
+.ui-button-color-lighten(@prop; @ptc) {
+	.palette-01 & { @{prop}: lighten(@ui-button-color-set01, @ptc); }
+	.palette-02 & { @{prop}: lighten(@ui-button-color-set02, @ptc); }
+	.palette-03 & { @{prop}: lighten(@ui-button-color-set03, @ptc); }
+	.palette-04 & { @{prop}: lighten(@ui-button-color-set04, @ptc); }
+	.palette-05 & { @{prop}: lighten(@ui-button-color-set05, @ptc); }
+	.palette-06 & { @{prop}: lighten(@ui-button-color-set06, @ptc); }
+}
+
+.ui-button-color-darken(@prop; @ptc) {
+	.palette-01 & { @{prop}: darken(@ui-button-color-set01, @ptc); }
+	.palette-02 & { @{prop}: darken(@ui-button-color-set02, @ptc); }
+	.palette-03 & { @{prop}: darken(@ui-button-color-set03, @ptc); }
+	.palette-04 & { @{prop}: darken(@ui-button-color-set04, @ptc); }
+	.palette-05 & { @{prop}: darken(@ui-button-color-set05, @ptc); }
+	.palette-06 & { @{prop}: darken(@ui-button-color-set06, @ptc); }
+}
+
+.ui-button-color-fade(@prop; @ptc) {
+	.palette-01 & { @{prop}: fade(@ui-button-color-set01, @ptc); }
+	.palette-02 & { @{prop}: fade(@ui-button-color-set02, @ptc); }
+	.palette-03 & { @{prop}: fade(@ui-button-color-set03, @ptc); }
+	.palette-04 & { @{prop}: fade(@ui-button-color-set04, @ptc); }
+	.palette-05 & { @{prop}: fade(@ui-button-color-set05, @ptc); }
+	.palette-06 & { @{prop}: fade(@ui-button-color-set06, @ptc); }
+}
+
+.ui-button-color-hover(@prop; @ptc) {
+	.palette-01& { @{prop}: darken(@ui-button-color-set01, @ptc); }
+	.palette-02& { @{prop}: darken(@ui-button-color-set02, @ptc); }
+	.palette-03& { @{prop}: darken(@ui-button-color-set03, @ptc); }
+	.palette-04& { @{prop}: darken(@ui-button-color-set04, @ptc); }
+	.palette-05& { @{prop}: darken(@ui-button-color-set05, @ptc); }
+	.palette-06& { @{prop}: darken(@ui-button-color-set06, @ptc); }
+}
+
+.ui-button-color(@prop, @width, @line) {
+	.palette-01 & { @{prop}: @width @ui-button-color-set01 @line; }
+	.palette-02 & { @{prop}: @width @ui-button-color-set02 @line; }
+	.palette-03 & { @{prop}: @width @ui-button-color-set03 @line; }
+	.palette-04 & { @{prop}: @width @ui-button-color-set04 @line; }
+	.palette-05 & { @{prop}: @width @ui-button-color-set05 @line; }
+	.palette-06 & { @{prop}: @width @ui-button-color-set06 @line; }
+}
+
+.ui-button-color-lighten(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line lighten(@ui-button-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line lighten(@ui-button-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line lighten(@ui-button-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line lighten(@ui-button-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line lighten(@ui-button-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line lighten(@ui-button-color-set06, @ptc); }
+}
+
+.ui-button-color-darken(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line darken(@ui-button-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line darken(@ui-button-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line darken(@ui-button-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line darken(@ui-button-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line darken(@ui-button-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line darken(@ui-button-color-set06, @ptc); }
+}
+
+.ui-button-color-fade(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line fade(@ui-button-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line fade(@ui-button-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line fade(@ui-button-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line fade(@ui-button-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line fade(@ui-button-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line fade(@ui-button-color-set06, @ptc); }
+}
+
+.ui-button-color-hover(@prop; @width; @line; @ptc) {
+	.palette-01& { @{prop}: @width @line darken(@ui-button-color-set01, @ptc); }
+	.palette-02& { @{prop}: @width @line darken(@ui-button-color-set02, @ptc); }
+	.palette-03& { @{prop}: @width @line darken(@ui-button-color-set03, @ptc); }
+	.palette-04& { @{prop}: @width @line darken(@ui-button-color-set04, @ptc); }
+	.palette-05& { @{prop}: @width @line darken(@ui-button-color-set05, @ptc); }
+	.palette-06& { @{prop}: @width @line darken(@ui-button-color-set06, @ptc); }
+}*/
+
+// ==================================================================================================
+// ==================================================================================================
+// SUBMIT BUTTONS
+// ==================================================================================================
+
+/*.submit-button-color(@prop) {
+	.palette-01 & {	@{prop}: @submit-button-color-set01; }
+	.palette-02 & { @{prop}: @submit-button-color-set02; }
+	.palette-03 & { @{prop}: @submit-button-color-set03; }
+	.palette-04 & { @{prop}: @submit-button-color-set04; }
+	.palette-05 & { @{prop}: @submit-button-color-set05; }
+	.palette-06 & { @{prop}: @submit-button-color-set06; }
+}
+
+.submit-button-color-lighten(@prop; @ptc) {
+	.palette-01 & { @{prop}: lighten(@submit-button-color-set01, @ptc); }
+	.palette-02 & { @{prop}: lighten(@submit-button-color-set02, @ptc); }
+	.palette-03 & { @{prop}: lighten(@submit-button-color-set03, @ptc); }
+	.palette-04 & { @{prop}: lighten(@submit-button-color-set04, @ptc); }
+	.palette-05 & { @{prop}: lighten(@submit-button-color-set05, @ptc); }
+	.palette-06 & { @{prop}: lighten(@submit-button-color-set06, @ptc); }
+}
+
+.submit-button-color-darken(@prop; @ptc) {
+	.palette-01 & { @{prop}: darken(@submit-button-color-set01, @ptc); }
+	.palette-02 & { @{prop}: darken(@submit-button-color-set02, @ptc); }
+	.palette-03 & { @{prop}: darken(@submit-button-color-set03, @ptc); }
+	.palette-04 & { @{prop}: darken(@submit-button-color-set04, @ptc); }
+	.palette-05 & { @{prop}: darken(@submit-button-color-set05, @ptc); }
+	.palette-06 & { @{prop}: darken(@submit-button-color-set06, @ptc); }
+}
+
+.submit-button-color-fade(@prop; @ptc) {
+	.palette-01 & { @{prop}: fade(@submit-button-color-set01, @ptc); }
+	.palette-02 & { @{prop}: fade(@submit-button-color-set02, @ptc); }
+	.palette-03 & { @{prop}: fade(@submit-button-color-set03, @ptc); }
+	.palette-04 & { @{prop}: fade(@submit-button-color-set04, @ptc); }
+	.palette-05 & { @{prop}: fade(@submit-button-color-set05, @ptc); }
+	.palette-06 & { @{prop}: fade(@submit-button-color-set06, @ptc); }
+}
+
+.submit-button-color-hover(@prop; @ptc) {
+	.palette-01& { @{prop}: darken(@submit-button-color-set01, @ptc); }
+	.palette-02& { @{prop}: darken(@submit-button-color-set02, @ptc); }
+	.palette-03& { @{prop}: darken(@submit-button-color-set03, @ptc); }
+	.palette-04& { @{prop}: darken(@submit-button-color-set04, @ptc); }
+	.palette-05& { @{prop}: darken(@submit-button-color-set05, @ptc); }
+	.palette-06& { @{prop}: darken(@submit-button-color-set06, @ptc); }
+}
+
+.submit-button-color(@prop, @width, @line) {
+	.palette-01 & { @{prop}: @width @submit-button-color-set01 @line; }
+	.palette-02 & { @{prop}: @width @submit-button-color-set02 @line; }
+	.palette-03 & { @{prop}: @width @submit-button-color-set03 @line; }
+	.palette-04 & { @{prop}: @width @submit-button-color-set04 @line; }
+	.palette-05 & { @{prop}: @width @submit-button-color-set05 @line; }
+	.palette-06 & { @{prop}: @width @submit-button-color-set06 @line; }
+}
+
+.submit-button-color-lighten(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line lighten(@submit-button-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line lighten(@submit-button-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line lighten(@submit-button-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line lighten(@submit-button-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line lighten(@submit-button-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line lighten(@submit-button-color-set06, @ptc); }
+}
+
+.submit-button-color-darken(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line darken(@submit-button-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line darken(@submit-button-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line darken(@submit-button-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line darken(@submit-button-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line darken(@submit-button-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line darken(@submit-button-color-set06, @ptc); }
+}
+
+.submit-button-color-fade(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line fade(@submit-button-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line fade(@submit-button-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line fade(@submit-button-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line fade(@submit-button-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line fade(@submit-button-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line fade(@submit-button-color-set06, @ptc); }
+}
+
+.submit-button-color-hover(@prop; @width; @line; @ptc) {
+	.palette-01& { @{prop}: @width @line darken(@submit-button-color-set01, @ptc); }
+	.palette-02& { @{prop}: @width @line darken(@submit-button-color-set02, @ptc); }
+	.palette-03& { @{prop}: @width @line darken(@submit-button-color-set03, @ptc); }
+	.palette-04& { @{prop}: @width @line darken(@submit-button-color-set04, @ptc); }
+	.palette-05& { @{prop}: @width @line darken(@submit-button-color-set05, @ptc); }
+	.palette-06& { @{prop}: @width @line darken(@submit-button-color-set06, @ptc); }
+}*/
+
+// ==================================================================================================
+// ==================================================================================================
+// NAVIGATION
+// ==================================================================================================
+
+/*.navigation-color(@prop) {
+	.palette-01 & { @{prop}: @navigation-color-set01; }
+	.palette-02 & { @{prop}: @navigation-color-set02; }
+	.palette-03 & { @{prop}: @navigation-color-set03; }
+	.palette-04 & { @{prop}: @navigation-color-set04; }
+	.palette-05 & { @{prop}: @navigation-color-set05; }
+	.palette-06 & { @{prop}: @navigation-color-set06; }
+}
+
+.navigation-color-lighten(@prop; @ptc) {
+	.palette-01 & { @{prop}: lighten(@navigation-color-set01, @ptc); }
+	.palette-02 & { @{prop}: lighten(@navigation-color-set02, @ptc); }
+	.palette-03 & { @{prop}: lighten(@navigation-color-set03, @ptc); }
+	.palette-04 & { @{prop}: lighten(@navigation-color-set04, @ptc); }
+	.palette-05 & { @{prop}: lighten(@navigation-color-set05, @ptc); }
+	.palette-06 & { @{prop}: lighten(@navigation-color-set06, @ptc); }
+}
+
+.navigation-color-darken(@prop; @ptc) {
+	.palette-01 & { @{prop}: darken(@navigation-color-set01, @ptc); }
+	.palette-02 & { @{prop}: darken(@navigation-color-set02, @ptc); }
+	.palette-03 & { @{prop}: darken(@navigation-color-set03, @ptc); }
+	.palette-04 & { @{prop}: darken(@navigation-color-set04, @ptc); }
+	.palette-05 & { @{prop}: darken(@navigation-color-set05, @ptc); }
+	.palette-06 & { @{prop}: darken(@navigation-color-set06, @ptc); }
+}
+
+.navigation-color-fade(@prop; @ptc) {
+	.palette-01 & { @{prop}: fade(@navigation-color-set01, @ptc); }
+	.palette-02 & { @{prop}: fade(@navigation-color-set02, @ptc); }
+	.palette-03 & { @{prop}: fade(@navigation-color-set03, @ptc); }
+	.palette-04 & { @{prop}: fade(@navigation-color-set04, @ptc); }
+	.palette-05 & { @{prop}: fade(@navigation-color-set05, @ptc); }
+	.palette-06 & { @{prop}: fade(@navigation-color-set06, @ptc); }
+}
+
+.navigation-color-hover(@prop; @ptc) {
+	.palette-01& { @{prop}: darken(@navigation-color-set01, @ptc); }
+	.palette-02& { @{prop}: darken(@navigation-color-set02, @ptc); }
+	.palette-03& { @{prop}: darken(@navigation-color-set03, @ptc); }
+	.palette-04& { @{prop}: darken(@navigation-color-set04, @ptc); }
+	.palette-05& { @{prop}: darken(@navigation-color-set05, @ptc); }
+	.palette-06& { @{prop}: darken(@navigation-color-set06, @ptc); }
+}
+
+.navigation-color(@prop, @width, @line) {
+	.palette-01 & { @{prop}: @width @navigation-color-set01 @line; }
+	.palette-02 & { @{prop}: @width @navigation-color-set02 @line; }
+	.palette-03 & { @{prop}: @width @navigation-color-set03 @line; }
+	.palette-04 & { @{prop}: @width @navigation-color-set04 @line; }
+	.palette-05 & { @{prop}: @width @navigation-color-set05 @line; }
+	.palette-06 & { @{prop}: @width @navigation-color-set06 @line; }
+}
+
+.navigation-color-lighten(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line lighten(@navigation-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line lighten(@navigation-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line lighten(@navigation-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line lighten(@navigation-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line lighten(@navigation-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line lighten(@navigation-color-set06, @ptc); }
+}
+
+.navigation-color-darken(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line darken(@navigation-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line darken(@navigation-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line darken(@navigation-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line darken(@navigation-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line darken(@navigation-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line darken(@navigation-color-set06, @ptc); }
+}
+
+.navigation-color-fade(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line fade(@navigation-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line fade(@navigation-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line fade(@navigation-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line fade(@navigation-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line fade(@navigation-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line fade(@navigation-color-set06, @ptc); }
+}
+
+.navigation-color-hover(@prop; @width; @line; @ptc) {
+	.palette-01& { @{prop}: @width @line darken(@navigation-color-set01, @ptc); }
+	.palette-02& { @{prop}: @width @line darken(@navigation-color-set02, @ptc); }
+	.palette-03& { @{prop}: @width @line darken(@navigation-color-set03, @ptc); }
+	.palette-04& { @{prop}: @width @line darken(@navigation-color-set04, @ptc); }
+	.palette-05& { @{prop}: @width @line darken(@navigation-color-set05, @ptc); }
+	.palette-06& { @{prop}: @width @line darken(@navigation-color-set06, @ptc); }
+}*/
+
+// ==================================================================================================
+// ==================================================================================================
+// DRAWER
+// ==================================================================================================
+
+/*.drawer-color(@prop) {
+	.palette-01 & { @{prop}: @drawer-color-set01; }
+	.palette-02 & { @{prop}: @drawer-color-set02; }
+	.palette-03 & { @{prop}: @drawer-color-set03; }
+	.palette-04 & { @{prop}: @drawer-color-set04; }
+	.palette-05 & { @{prop}: @drawer-color-set05; }
+	.palette-06 & { @{prop}: @drawer-color-set06; }
+}
+
+.drawer-color-lighten(@prop; @ptc) {
+	.palette-01 & { @{prop}: lighten(@drawer-color-set01, @ptc); }
+	.palette-02 & { @{prop}: lighten(@drawer-color-set02, @ptc); }
+	.palette-03 & { @{prop}: lighten(@drawer-color-set03, @ptc); }
+	.palette-04 & { @{prop}: lighten(@drawer-color-set04, @ptc); }
+	.palette-05 & { @{prop}: lighten(@drawer-color-set05, @ptc); }
+	.palette-06 & { @{prop}: lighten(@drawer-color-set06, @ptc); }
+}
+
+.drawer-color-darken(@prop; @ptc) {
+	.palette-01 & { @{prop}: darken(@drawer-color-set01, @ptc); }
+	.palette-02 & { @{prop}: darken(@drawer-color-set02, @ptc); }
+	.palette-03 & { @{prop}: darken(@drawer-color-set03, @ptc); }
+	.palette-04 & { @{prop}: darken(@drawer-color-set04, @ptc); }
+	.palette-05 & { @{prop}: darken(@drawer-color-set05, @ptc); }
+	.palette-06 & { @{prop}: darken(@drawer-color-set06, @ptc); }
+}
+
+.drawer-color-fade(@prop; @ptc) {
+	.palette-01 & { @{prop}: fade(@drawer-color-set01, @ptc); }
+	.palette-02 & { @{prop}: fade(@drawer-color-set02, @ptc); }
+	.palette-03 & { @{prop}: fade(@drawer-color-set03, @ptc); }
+	.palette-04 & { @{prop}: fade(@drawer-color-set04, @ptc); }
+	.palette-05 & { @{prop}: fade(@drawer-color-set05, @ptc); }
+	.palette-06 & { @{prop}: fade(@drawer-color-set06, @ptc); }
+}
+
+.drawer-color-hover(@prop; @ptc) {
+	.palette-01& { @{prop}: darken(@drawer-color-set01, @ptc); }
+	.palette-02& { @{prop}: darken(@drawer-color-set02, @ptc); }
+	.palette-03& { @{prop}: darken(@drawer-color-set03, @ptc); }
+	.palette-04& { @{prop}: darken(@drawer-color-set04, @ptc); }
+	.palette-05& { @{prop}: darken(@drawer-color-set05, @ptc); }
+	.palette-06& { @{prop}: darken(@drawer-color-set06, @ptc); }
+}
+
+.drawer-color(@prop, @width, @line) {
+	.palette-01 & { @{prop}: @width @drawer-color-set01 @line; }
+	.palette-02 & { @{prop}: @width @drawer-color-set02 @line; }
+	.palette-03 & { @{prop}: @width @drawer-color-set03 @line; }
+	.palette-04 & { @{prop}: @width @drawer-color-set04 @line; }
+	.palette-05 & { @{prop}: @width @drawer-color-set05 @line; }
+	.palette-06 & { @{prop}: @width @drawer-color-set06 @line; }
+}
+
+.drawer-color-lighten(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line lighten(@drawer-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line lighten(@drawer-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line lighten(@drawer-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line lighten(@drawer-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line lighten(@drawer-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line lighten(@drawer-color-set06, @ptc); }
+}
+
+.drawer-color-darken(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line darken(@drawer-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line darken(@drawer-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line darken(@drawer-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line darken(@drawer-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line darken(@drawer-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line darken(@drawer-color-set06, @ptc); }
+}
+
+.drawer-color-fade(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line fade(@drawer-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line fade(@drawer-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line fade(@drawer-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line fade(@drawer-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line fade(@drawer-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line fade(@drawer-color-set06, @ptc); }
+}
+
+.drawer-color-hover(@prop; @width; @line; @ptc) {
+	.palette-01& { @{prop}: @width @line darken(@drawer-color-set01, @ptc); }
+	.palette-02& { @{prop}: @width @line darken(@drawer-color-set02, @ptc); }
+	.palette-03& { @{prop}: @width @line darken(@drawer-color-set03, @ptc); }
+	.palette-04& { @{prop}: @width @line darken(@drawer-color-set04, @ptc); }
+	.palette-05& { @{prop}: @width @line darken(@drawer-color-set05, @ptc); }
+	.palette-06& { @{prop}: @width @line darken(@drawer-color-set06, @ptc); }
+}*/
+
+// ==================================================================================================
+// ==================================================================================================
+// NOTIFY
+// ==================================================================================================
+
+/*.notify-color(@prop) {
+	.palette-01 & { @{prop}: @notify-color-set01; }
+	.palette-02 & { @{prop}: @notify-color-set02; }
+	.palette-03 & { @{prop}: @notify-color-set03; }
+	.palette-04 & { @{prop}: @notify-color-set04; }
+	.palette-05 & { @{prop}: @notify-color-set05; }
+	.palette-06 & { @{prop}: @notify-color-set06; }
+}
+
+.notify-color-lighten(@prop; @ptc) {
+	.palette-01 & { @{prop}: lighten(@notify-color-set01, @ptc); }
+	.palette-02 & { @{prop}: lighten(@notify-color-set02, @ptc); }
+	.palette-03 & { @{prop}: lighten(@notify-color-set03, @ptc); }
+	.palette-04 & { @{prop}: lighten(@notify-color-set04, @ptc); }
+	.palette-05 & { @{prop}: lighten(@notify-color-set05, @ptc); }
+	.palette-06 & { @{prop}: lighten(@notify-color-set06, @ptc); }
+}
+
+.notify-color-darken(@prop; @ptc) {
+	.palette-01 & { @{prop}: darken(@notify-color-set01, @ptc); }
+	.palette-02 & { @{prop}: darken(@notify-color-set02, @ptc); }
+	.palette-03 & { @{prop}: darken(@notify-color-set03, @ptc); }
+	.palette-04 & { @{prop}: darken(@notify-color-set04, @ptc); }
+	.palette-05 & { @{prop}: darken(@notify-color-set05, @ptc); }
+	.palette-06 & { @{prop}: darken(@notify-color-set06, @ptc); }
+}
+
+.notify-color-fade(@prop; @ptc) {
+	.palette-01 & { @{prop}: fade(@notify-color-set01, @ptc); }
+	.palette-02 & { @{prop}: fade(@notify-color-set02, @ptc); }
+	.palette-03 & { @{prop}: fade(@notify-color-set03, @ptc); }
+	.palette-04 & { @{prop}: fade(@notify-color-set04, @ptc); }
+	.palette-05 & { @{prop}: fade(@notify-color-set05, @ptc); }
+	.palette-06 & { @{prop}: fade(@notify-color-set06, @ptc); }
+}
+
+.notify-color-hover(@prop; @ptc) {
+	.palette-01& { @{prop}: darken(@notify-color-set01, @ptc); }
+	.palette-02& { @{prop}: darken(@notify-color-set02, @ptc); }
+	.palette-03& { @{prop}: darken(@notify-color-set03, @ptc); }
+	.palette-04& { @{prop}: darken(@notify-color-set04, @ptc); }
+	.palette-05& { @{prop}: darken(@notify-color-set05, @ptc); }
+	.palette-06& { @{prop}: darken(@notify-color-set06, @ptc); }
+}
+
+.notify-color(@prop, @width, @line) {
+	.palette-01 & { @{prop}: @width @notify-color-set01 @line; }
+	.palette-02 & { @{prop}: @width @notify-color-set02 @line; }
+	.palette-03 & { @{prop}: @width @notify-color-set03 @line; }
+	.palette-04 & { @{prop}: @width @notify-color-set04 @line; }
+	.palette-05 & { @{prop}: @width @notify-color-set05 @line; }
+	.palette-06 & { @{prop}: @width @notify-color-set06 @line; }
+}
+
+.notify-color-lighten(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line lighten(@notify-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line lighten(@notify-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line lighten(@notify-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line lighten(@notify-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line lighten(@notify-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line lighten(@notify-color-set06, @ptc); }
+}
+
+.notify-color-darken(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line darken(@notify-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line darken(@notify-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line darken(@notify-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line darken(@notify-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line darken(@notify-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line darken(@notify-color-set06, @ptc); }
+}
+
+.notify-color-fade(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line fade(@notify-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line fade(@notify-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line fade(@notify-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line fade(@notify-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line fade(@notify-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line fade(@notify-color-set06, @ptc); }
+}
+
+.notify-color-hover(@prop; @width; @line; @ptc) {
+	.palette-01& { @{prop}: @width @line darken(@notify-color-set01, @ptc); }
+	.palette-02& { @{prop}: @width @line darken(@notify-color-set02, @ptc); }
+	.palette-03& { @{prop}: @width @line darken(@notify-color-set03, @ptc); }
+	.palette-04& { @{prop}: @width @line darken(@notify-color-set04, @ptc); }
+	.palette-05& { @{prop}: @width @line darken(@notify-color-set05, @ptc); }
+	.palette-06& { @{prop}: @width @line darken(@notify-color-set06, @ptc); }
+}*/
+
+// ==================================================================================================
+// ==================================================================================================
+// NOTIFY UI
+// ==================================================================================================
+
+/*.notify-ui-color(@prop) {
+	.palette-01 & { @{prop}: @notify-ui-color-set01; }
+	.palette-02 & { @{prop}: @notify-ui-color-set02; }
+	.palette-03 & { @{prop}: @notify-ui-color-set03; }
+	.palette-04 & { @{prop}: @notify-ui-color-set04; }
+	.palette-05 & { @{prop}: @notify-ui-color-set05; }
+	.palette-06 & { @{prop}: @notify-ui-color-set06; }
+}
+
+.notify-ui-color-lighten(@prop; @ptc) {
+	.palette-01 & { @{prop}: lighten(@notify-ui-color-set01, @ptc); }
+	.palette-02 & { @{prop}: lighten(@notify-ui-color-set02, @ptc); }
+	.palette-03 & { @{prop}: lighten(@notify-ui-color-set03, @ptc); }
+	.palette-04 & { @{prop}: lighten(@notify-ui-color-set04, @ptc); }
+	.palette-05 & { @{prop}: lighten(@notify-ui-color-set05, @ptc); }
+	.palette-06 & { @{prop}: lighten(@notify-ui-color-set06, @ptc); }
+}
+
+.notify-ui-color-darken(@prop; @ptc) {
+	.palette-01 & { @{prop}: darken(@notify-ui-color-set01, @ptc); }
+	.palette-02 & { @{prop}: darken(@notify-ui-color-set02, @ptc); }
+	.palette-03 & { @{prop}: darken(@notify-ui-color-set03, @ptc); }
+	.palette-04 & { @{prop}: darken(@notify-ui-color-set04, @ptc); }
+	.palette-05 & { @{prop}: darken(@notify-ui-color-set05, @ptc); }
+	.palette-06 & { @{prop}: darken(@notify-ui-color-set06, @ptc); }
+}
+
+.notify-ui-color-fade(@prop; @ptc) {
+	.palette-01 & { @{prop}: fade(@notify-ui-color-set01, @ptc); }
+	.palette-02 & { @{prop}: fade(@notify-ui-color-set02, @ptc); }
+	.palette-03 & { @{prop}: fade(@notify-ui-color-set03, @ptc); }
+	.palette-04 & { @{prop}: fade(@notify-ui-color-set04, @ptc); }
+	.palette-05 & { @{prop}: fade(@notify-ui-color-set05, @ptc); }
+	.palette-06 & { @{prop}: fade(@notify-ui-color-set06, @ptc); }
+}
+
+.notify-ui-color-hover(@prop; @ptc) {
+	.palette-01& { @{prop}: darken(@notify-ui-color-set01, @ptc); }
+	.palette-02& { @{prop}: darken(@notify-ui-color-set02, @ptc); }
+	.palette-03& { @{prop}: darken(@notify-ui-color-set03, @ptc); }
+	.palette-04& { @{prop}: darken(@notify-ui-color-set04, @ptc); }
+	.palette-05& { @{prop}: darken(@notify-ui-color-set05, @ptc); }
+	.palette-06& { @{prop}: darken(@notify-ui-color-set06, @ptc); }
+}
+
+.notify-ui-color(@prop, @width, @line) {
+	.palette-01 & { @{prop}: @width @notify-ui-color-set01 @line; }
+	.palette-02 & { @{prop}: @width @notify-ui-color-set02 @line; }
+	.palette-03 & { @{prop}: @width @notify-ui-color-set03 @line; }
+	.palette-04 & { @{prop}: @width @notify-ui-color-set04 @line; }
+	.palette-05 & { @{prop}: @width @notify-ui-color-set05 @line; }
+	.palette-06 & { @{prop}: @width @notify-ui-color-set06 @line; }
+}
+
+.notify-ui-color-lighten(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line lighten(@notify-ui-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line lighten(@notify-ui-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line lighten(@notify-ui-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line lighten(@notify-ui-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line lighten(@notify-ui-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line lighten(@notify-ui-color-set06, @ptc); }
+}
+
+.notify-ui-color-darken(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line darken(@notify-ui-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line darken(@notify-ui-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line darken(@notify-ui-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line darken(@notify-ui-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line darken(@notify-ui-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line darken(@notify-ui-color-set06, @ptc); }
+}
+
+.notify-ui-color-fade(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line fade(@notify-ui-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line fade(@notify-ui-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line fade(@notify-ui-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line fade(@notify-ui-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line fade(@notify-ui-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line fade(@notify-ui-color-set06, @ptc); }
+}
+
+.notify-ui-color-hover(@prop; @width; @line; @ptc) {
+	.palette-01& { @{prop}: @width @line darken(@notify-ui-color-set01, @ptc); }
+	.palette-02& { @{prop}: @width @line darken(@notify-ui-color-set02, @ptc); }
+	.palette-03& { @{prop}: @width @line darken(@notify-ui-color-set03, @ptc); }
+	.palette-04& { @{prop}: @width @line darken(@notify-ui-color-set04, @ptc); }
+	.palette-05& { @{prop}: @width @line darken(@notify-ui-color-set05, @ptc); }
+	.palette-06& { @{prop}: @width @line darken(@notify-ui-color-set06, @ptc); }
+}*/
+
+// ==================================================================================================
+// ==================================================================================================
+// PALETTE SETS
+// ==================================================================================================
+
+// Use theses mixins for addding the pallette colours to addition places not specified above
+
+.primary-color(@prop) {
+	.palette-01 & { @{prop}: @primary-color-set01; }
+	.palette-02 & { @{prop}: @primary-color-set02; }
+	.palette-03 & { @{prop}: @primary-color-set03; }
+	.palette-04 & { @{prop}: @primary-color-set04; }
+	.palette-05 & { @{prop}: @primary-color-set05; }
+	.palette-06 & { @{prop}: @primary-color-set06; }
+}
+
+.primary-color-lighten(@prop; @ptc) {
+	.palette-01 & { @{prop}: lighten(@primary-color-set01, @ptc); }
+	.palette-02 & { @{prop}: lighten(@primary-color-set02, @ptc); }
+	.palette-03 & { @{prop}: lighten(@primary-color-set03, @ptc); }
+	.palette-04 & { @{prop}: lighten(@primary-color-set04, @ptc); }
+	.palette-05 & { @{prop}: lighten(@primary-color-set05, @ptc); }
+	.palette-06 & { @{prop}: lighten(@primary-color-set06, @ptc); }
+}
+
+.primary-color-darken(@prop; @ptc) {
+	.palette-01 & { @{prop}: darken(@primary-color-set01, @ptc); }
+	.palette-02 & { @{prop}: darken(@primary-color-set02, @ptc); }
+	.palette-03 & { @{prop}: darken(@primary-color-set03, @ptc); }
+	.palette-04 & { @{prop}: darken(@primary-color-set04, @ptc); }
+	.palette-05 & { @{prop}: darken(@primary-color-set05, @ptc); }
+	.palette-06 & { @{prop}: darken(@primary-color-set06, @ptc); }
+}
+
+.primary-color-fade(@prop; @ptc) {
+	.palette-01 & { @{prop}: fade(@primary-color-set01, @ptc); }
+	.palette-02 & { @{prop}: fade(@primary-color-set02, @ptc); }
+	.palette-03 & { @{prop}: fade(@primary-color-set03, @ptc); }
+	.palette-04 & { @{prop}: fade(@primary-color-set04, @ptc); }
+	.palette-05 & { @{prop}: fade(@primary-color-set05, @ptc); }
+	.palette-06 & { @{prop}: fade(@primary-color-set06, @ptc); }
+}
+
+.primary-color-hover(@prop; @ptc) {
+	.palette-01& { @{prop}: darken(@primary-color-set01, @ptc); }
+	.palette-02& { @{prop}: darken(@primary-color-set02, @ptc); }
+	.palette-03& { @{prop}: darken(@primary-color-set03, @ptc); }
+	.palette-04& { @{prop}: darken(@primary-color-set04, @ptc); }
+	.palette-05& { @{prop}: darken(@primary-color-set05, @ptc); }
+	.palette-06& { @{prop}: darken(@primary-color-set06, @ptc); }
+}
+
+.primary-color(@prop, @width, @line) {
+	.palette-01 & { @{prop}: @width @primary-color-set01 @line; }
+	.palette-02 & { @{prop}: @width @primary-color-set02 @line; }
+	.palette-03 & { @{prop}: @width @primary-color-set03 @line; }
+	.palette-04 & { @{prop}: @width @primary-color-set04 @line; }
+	.palette-05 & { @{prop}: @width @primary-color-set05 @line; }
+	.palette-06 & { @{prop}: @width @primary-color-set06 @line; }
+}
+
+.primary-color-lighten(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line lighten(@primary-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line lighten(@primary-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line lighten(@primary-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line lighten(@primary-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line lighten(@primary-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line lighten(@primary-color-set06, @ptc); }
+}
+
+.primary-color-darken(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line darken(@primary-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line darken(@primary-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line darken(@primary-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line darken(@primary-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line darken(@primary-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line darken(@primary-color-set06, @ptc); }
+}
+
+.primary-color-fade(@prop; @width; @line; @ptc) {
+	.palette-01 & { @{prop}: @width @line fade(@primary-color-set01, @ptc); }
+	.palette-02 & { @{prop}: @width @line fade(@primary-color-set02, @ptc); }
+	.palette-03 & { @{prop}: @width @line fade(@primary-color-set03, @ptc); }
+	.palette-04 & { @{prop}: @width @line fade(@primary-color-set04, @ptc); }
+	.palette-05 & { @{prop}: @width @line fade(@primary-color-set05, @ptc); }
+	.palette-06 & { @{prop}: @width @line fade(@primary-color-set06, @ptc); }
+}
+
+.primary-color-hover(@prop; @width; @line; @ptc) {
+	.palette-01& { @{prop}: @width @line darken(@primary-color-set01, @ptc); }
+	.palette-02& { @{prop}: @width @line darken(@primary-color-set02, @ptc); }
+	.palette-03& { @{prop}: @width @line darken(@primary-color-set03, @ptc); }
+	.palette-04& { @{prop}: @width @line darken(@primary-color-set04, @ptc); }
+	.palette-05& { @{prop}: @width @line darken(@primary-color-set05, @ptc); }
+	.palette-06& { @{prop}: @width @line darken(@primary-color-set06, @ptc); }
+}

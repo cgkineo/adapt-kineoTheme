@@ -1,0 +1,20 @@
+// Layout
+// ======
+
+#wrapper {
+	margin: auto;
+	max-width: @max-width;
+	overflow-x: hidden;
+	padding-top: (@navigation-padding * 2) + @icon-size;
+	width: 100%;
+
+	.ie8 & {
+		margin: 0 auto;
+		max-width: @ie8-max-width;
+	}
+}
+
+// Bug fix for focusguard on touch devices. Last <a> tag inherits display: inline on touch devices which causes a 20px white box to appear at the bottom of every page.
+#a11y-focusguard {
+	display: block;
+}

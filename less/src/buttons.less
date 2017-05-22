@@ -1,0 +1,168 @@
+// Button styling
+// ==============
+
+// ==== Use this mixin to add a border to question buttons ====
+// ============================================================
+
+@button-border: 0px;
+@submit-button-border-color: @submit-button-color;
+
+.submit-button-border-color() {
+	border: @button-border solid @submit-button-border-color;
+}
+
+// ============================================================
+
+#accessibility-toggle {
+	min-height: inherit;
+}
+
+.button,
+button {
+	.button-text;
+	.submit-button-color(background-color);
+	.submit-button-border-color();
+	color: @submit-button-color-inverted; 
+	display: inline-block;
+	min-height: 55px + @button-border;
+	padding: 0px 25px; // please do not change padding left/right
+	text-decoration: none;
+	text-align: center;
+
+	div {
+		// padding: 18px 0px;
+	}
+
+	.no-touch &:hover {
+		.submit-button-color-hover(background-color, 20%);
+		color: @submit-button-color-inverted;
+		.transition-all-colors;
+	}
+
+	&.base {
+		// Override button styles on <a> tags coverted to <button> tags
+		// Could be improved so that buttons are divided into groups, default / submit / nav / icon
+		background-color: transparent;
+		padding: 0;
+		min-height: inherit;
+		text-align: left;
+		-webkit-transition: none;
+		-moz-transition: none;
+		-ms-transition: none;
+		transition: none;
+
+		.no-touch &:hover {
+			background-color: transparent;
+		}
+
+		.dir-rtl & {
+			text-align: right;
+		}
+	}
+
+	.disabled-style() {
+		background-color: @disabled-color !important;
+		border-color: @button-border-disabled-color;
+		color: @disabled-color-inverted !important;
+		cursor: default;
+
+		.no-touch &:hover {
+			border-color: @button-border-disabled-color;
+		}
+	}
+
+	&.disabled { .disabled-style; }
+	&:disabled { .disabled-style; }
+	// IE8 fix needed to be in its own line
+	&[disabled="disabled"] { .disabled-style; }
+}
+
+.button {
+	border: 0;
+}
+
+// fix for media component
+.media-component {
+	.mejs-container {
+		button {
+			min-height: 0;
+		}
+	}
+}
+
+.buttons {
+	margin-top: @button-margin-top;
+	//margin-bottom: @button-margin-bottom;
+	//margin-bottom: 0px;
+	position: relative;
+
+	button {
+		float: left;
+		width: 49.5%;
+
+		&.buttons-action {
+			margin-right: 0.5%;
+		}
+
+		&.buttons-feedback {
+			margin-left: 0.5%;
+		}
+		
+		.dir-rtl & {
+			float: right;
+		}
+	}
+
+	.buttons-display {
+		.submit-button-border-color();
+		background-color: @background-color-inverted;
+		border-top: none;
+		color: @font-body-color-inverted;
+		position: relative;
+	}
+
+	.buttons-marking-icon {
+		.submit-button-border-color();
+		box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+		border-radius: 50%;
+		color: @submit-button-color-inverted;
+		font-size: 32px;
+		height: 42px;
+		left: 50%;
+		line-height: 42px;
+		margin-left: -21px;
+		margin-top: -21px;
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		width: 42px;
+
+		.dir-rtl & {
+			left: inherit;
+			margin-left: inherit;
+			margin-right: -(40px/2);
+			right: 50%;
+		}
+		
+		&.icon-tick {
+			background-color: @validation-success;
+		}
+
+		&.icon-cross {
+			background-color: @validation-error;
+		}
+
+		@media all and (max-width: @device-width-small) {
+			height: 38px;
+			line-height: 38px;
+			margin-left: -20px;
+			margin-top: -20px;
+			width: 38px;
+		}
+	}
+
+	.buttons-display-inner {
+		padding: @button-padding;
+		text-align: center;
+	}
+}

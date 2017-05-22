@@ -1,0 +1,83 @@
+.accordion-component {
+	.accordion-item {
+		margin-bottom: @item-margin-bottom;
+	}
+
+	.accordion-item-title-icon {
+		.dir-rtl & {
+			left: inherit;
+			right: @item-padding-left;
+		}
+	}
+
+	.accordion-item-title {
+		.item-title;
+		.components-color(background-color);
+		color: @components-color-inverted;
+		padding-top: @item-padding-top;
+		padding-bottom: @item-padding-bottom;
+		padding-left: (@icon-size+(@item-padding-left*2));
+
+		.dir-rtl & {
+			padding-left: inherit;
+			padding-right: (@icon-size+(@item-padding-left*2));
+		}
+
+		&.visited {
+			background-color: @visited-color;
+			color: @components-color-inverted;
+
+			.accordion-item-title-icon {
+				color: @components-color-inverted;
+			}
+		}
+
+		&.selected {
+			.components-color-darken(background-color, 20%);
+			color: @components-color-inverted;
+
+			.accordion-item-title-icon {
+				color: @components-color-inverted;
+			}
+		}
+
+		.no-touch &:hover {
+			.components-color-hover(background-color, 20%);
+			color: @components-color-inverted;
+			.transition-all-colors;
+
+			.accordion-item-title-icon {
+				color: @components-color-inverted;
+			}
+
+			&.visited {
+				.components-color-hover(background-color, 20%);
+				color: @components-color-inverted;
+
+				.accordion-item-title-icon {
+					color: @components-color-inverted;
+				}
+			}
+
+			&.selected {
+				.components-color-hover(background-color, 20%);
+			}
+		}
+	}
+
+	.accordion-item-body {
+		// theme style
+		.components-color-darken(background-color, 20%);
+		color: @components-color-inverted;
+
+		// Vanilla style uncomment to use
+		/*background-color: @background-color;
+		.components-color-darken(border, 3px, solid, 20%);
+		border-top: 0;
+		color: @font-body-color;*/
+	}
+
+	.accordion-item-body-inner {
+		padding: @item-padding-top @item-padding-right @item-padding-bottom @item-padding-left;
+	}
+}

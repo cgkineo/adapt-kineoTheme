@@ -1,0 +1,41 @@
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0
+}
+	
+.hotgrid-component {
+	.hotgrid-item-image {
+		margin: 2.5%;
+		width: 95%;
+	}
+	
+	/* use css states - remove states img src's from json */
+	.hotgrid-grid-item {
+		.hotgrid-item-image {
+			border: 3px solid transparent;
+			border-radius: 50%; /* remove if square items */
+		}
+		.no-touch & {
+			button.hotgrid-item-image:hover {
+				border: 3px solid @components-color !important;				
+			}
+		}
+		&.visited {
+			button {
+				position: relative;	
+			}
+			button:after {
+				content: " ";
+				display: block;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				background-color: rgba(111,120,125,0.8);
+				border-radius: 50%; /* remove if square items */
+			}
+		}
+	}
+	/* use css states */
+}

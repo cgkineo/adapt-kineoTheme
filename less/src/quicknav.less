@@ -1,0 +1,18 @@
+.quicknav {
+	.button,
+	button {
+		.no-touch &:hover {
+			&:not([disabled="disabled"]) {
+				&.icon-controls-left:before {
+					display: inline-block;
+					.effect-bounceLeftOnce;
+				}
+
+				&.icon-controls-right:before {
+					display: inline-block;
+					.effect-bounceRightOnce;
+				}
+			}
+		}
+	}
+}

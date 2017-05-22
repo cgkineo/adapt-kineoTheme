@@ -1,0 +1,76 @@
+.textinput-item {
+	.components-color(background-color);
+	.components-color(border, 3px, solid);
+	margin-bottom: 2px;
+	position: relative;
+
+	.component-full & {
+		padding: 1%;
+	}
+
+	.component-left &,
+	.component-right & {
+		padding: 2%;
+	}
+}
+
+.textinput-item label {
+	background-color: transparent;
+	color: @components-color-inverted;
+	cursor: default;
+	float: left;
+	line-height: 32px;
+	padding: 0px;
+	text-align: center;
+
+	.dir-rtl & {
+		float: right;
+	}
+}
+
+.textinput-item-prefix {
+	width: 20%;
+}
+
+.textinput-item-textbox {
+	float: left;
+	height: 28px;
+	padding: 0 5px 0 5px;
+	width: 54%;
+
+	.component-full & {
+		width: 98%;
+	}
+
+	.component-left &,
+	.component-right & {
+		width: 96%;
+	}
+
+	&.prefix,
+	&.suffix {
+		width: 60%;
+	}
+
+	&.textinput-validation-error {
+		border: 2px solid @validation-error;
+	}
+
+	.dir-rtl & {
+		float: right;
+	}
+}
+
+.textinput-item-suffix {
+	width: 10%;
+}
+
+.textinput-widget {
+	.textinput-correct-icon {
+		color: @validation-success;
+	}
+
+	.textinput-incorrect-icon {
+		color: @validation-error;
+	}
+}

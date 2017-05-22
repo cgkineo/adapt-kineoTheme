@@ -1,0 +1,88 @@
+// Drawer styling
+// ==============
+
+.drawer {
+	.drawer-color(background-color);
+	color: @drawer-color-inverted;
+
+	.drawer-toolbar {
+		.drawer-color-darken(border-bottom, 1px, solid, 20%);
+	}
+	
+	.drawer-toolbar {
+		.drawer-close-button {
+			float: right;
+
+			.dir-rtl & {
+				float: left;
+			}
+			
+			/* STANDARD CSS FOR CLOSE BUTTON
+			.icon {
+				color: @drawer-color-inverted;
+				padding: @navigation-padding;
+			
+				@media all and (max-width:(@device-width-small - 1px)) {
+					padding: @navigation-padding-mobile;
+				}
+			}
+						
+			.no-touch &:hover {
+				.transition-all-colors;
+				.ui-button-color-hover(background-color, 0%);
+			}
+			 */
+			
+			.drawer-close-button-rollover-style(@theme-rollover-style);
+		}
+
+		.drawer-back-button {
+			float: left;
+
+			.dir-rtl & {
+				float: right;
+			}
+			
+			.drawer-close-button-rollover-style(@theme-rollover-style);
+		}
+	}
+
+	.drawer-inner {
+		.drawer-color-darken(border-left, 5px, solid, 20%);
+
+		.dir-rtl & {
+			border-left: inherit;
+			.drawer-color-darken(border-right, 5px, solid, 20%);
+		}
+	}
+
+	.drawer-item {
+		.drawer-item-title {
+			.drawer-title;
+		}
+
+		.drawer-item-description {
+			font-size: @body-text-font-size;
+			line-height: @body-text-line-height;
+		}
+		
+		.drawer-item-open {
+			.drawer-color-darken(border-bottom, 1px, solid, 5%);
+			color: @drawer-color-inverted;
+			font-size: @button-text-font-size;
+			padding: @drawer-item-padding-top @drawer-item-padding-right @drawer-item-padding-bottom @drawer-item-padding-left;
+			text-decoration: none;
+			width: 100%; 
+
+			&.disabled {
+				width: auto;
+			}
+
+			.no-touch &:hover {
+				.ui-button-color-hover(background-color, 0%);
+				color: @drawer-color-inverted;
+				.transition-all-colors;
+			}
+		}
+	}
+}

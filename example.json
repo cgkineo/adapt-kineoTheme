@@ -1,50 +1,70 @@
-/*Page Content Object - add to all content objects and configure as necessary*/
+// KINEO THEME EXAMPLE JSON - The below config is optional to apply additional theme styles.
+// ========================
+
+// Page Content Object - add to all content objects and configure as necessary
+
+"_classes": "" // ContentObject classes are now appended to .page elemnts as additional class selectors
 
 "_theme": {
-    "_pageHeader": {
+    "_themePalette": "palette-01", // define theme palette for multiple theme palettes
+    "_pageHeader": { // enable page header and apply background color/image and min-height
         "_isEnabled": true,
-        "_layout": "left",
-        "_showScrollButton": true,
+        "_showScrollButton": true, // add scroll button to header
+        "_backgroundColor": "#546e7a",
         "_backgroundImage": {
             "_large": "course/en/images/base_assets/hero_image.jpg",
             "_medium": "course/en/images/base_assets/hero_image.jpg",
             "_small": "course/en/images/base_assets/hero_image_mobile.jpg"
         },
-        /* NOTE set either background image or background color - not both on the same header! */
-        "_backgroundColor": "#EA1B75",
         "_minimumHeights": {
             "_large": 500,
-            "_medium": 500,
+            "_medium": 400,
+            "_small": 300
+        }
+    },
+    "_pageFooter": { // enable page footer and apply background color/image and min-height
+        "_isEnabled": true,
+        "_backgroundColor": "#546e7a",
+        "_backgroundImage": {
+            "_large": "course/en/images/base_assets/hero_image.jpg",
+            "_medium": "course/en/images/base_assets/hero_image.jpg",
+            "_small": "course/en/images/base_assets/hero_image_mobile.jpg"
+        },
+        "_minimumHeights": {
+            "_large": 500,
+            "_medium": 400,
             "_small": 300
         }
     }
 }
 
-/*Article - add to articles that need the functionality provided by the theme*/
+// Article - add to articles that need the functionality provided by the theme
 
-"_theme": {
+"_theme": { // apply background color/image to article
+    "_backgroundColor": "#546e7a",
     "_backgroundImage": {
             "_large": "course/en/images/base_assets/hero_image.jpg",
             "_medium": "course/en/images/base_assets/hero_image.jpg",
             "_small": "course/en/images/base_assets/hero_image_mobile.jpg"
-    },
-    /* NOTE set either background image or background color - not both on the same article! */
-    "_backgroundColor": "#EA1B75"
+    }
 }
 
-/*Block - add to blocks that need the functionality provided by the theme*/
+// Block - add to blocks that need the functionality provided by the theme
 
-"_theme": {
+"_theme": { // apply background color/image and min-height to block
+    "_backgroundColor": "#546e7a",
     "_backgroundImage": {
             "_large": "course/en/images/base_assets/hero_image.jpg",
             "_medium": "course/en/images/base_assets/hero_image.jpg",
             "_small": "course/en/images/base_assets/hero_image_mobile.jpg"
     },
-    /* NOTE set either background image or background color - not both on the same block! */
-    "_backgroundColor": "#EA1B75",
     "_minimumHeights": {
         "_large": 500,
-        "_medium": 500,
+        "_medium": 400,
         "_small": 300
     }
 }
+
+// Component - layout styles
+
+"_layout": "full/left/right/medium" // medium is a single span component which inherits medium max-width

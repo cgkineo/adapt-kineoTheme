@@ -1,0 +1,30 @@
+.search-extension {
+	.search-container {
+		.drawer-color-darken(border-bottom, 1px, solid, 5%);
+	}
+
+	.search-title {
+		.drawer-title;
+	}
+
+	.start-search {
+		.no-touch &:hover {
+			.transition-color;
+		}
+	}
+
+	.result-title,
+	.no-results {
+		.drawer-color-darken(border-bottom, 1px, solid, 5%);
+		color: @drawer-color-inverted;
+	}
+
+	.result-title {
+		.no-touch &:hover {
+			.ui-button-color-hover(background-color, 0%);
+			color: @drawer-color-inverted;
+			.transition-all-colors;
+		}
+	}
+}
+ 

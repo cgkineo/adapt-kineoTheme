@@ -14,6 +14,7 @@ define(function(require) {
 		setStyles: function() {
 			this.setBackground();
 			this.setMinHeight();
+			this.setDividerBlock();
 		},
 
 		setBackground: function() {
@@ -21,6 +22,12 @@ define(function(require) {
 			var backgroundImages = this.model.get('_themeBlockConfig')._backgroundImage;
 
 			var backgroundColor = this.model.get('_themeBlockConfig')._backgroundColor;
+
+			if (backgroundColor) {
+				this.$el.css({
+					backgroundColor: backgroundColor
+				});
+			}
 			
 			if (backgroundImages) {
 
@@ -32,14 +39,10 @@ define(function(require) {
 					backgroundImage = backgroundImages._small;
 				};
 
-				this.$el.css({
+				this.$el.addClass('block-image').css({
 					backgroundImage: 'url(' + backgroundImage + ')'
 				});
 
-			} else if (backgroundColor) {
-				this.$el.css({
-					backgroundColor: backgroundColor
-				});
 			}
 		},
 
@@ -61,10 +64,17 @@ define(function(require) {
 			this.$el.css({
 				minHeight: minHeight + "px"
 			});
-		}
+		},
 
+		setDividerBlock: function() {
+			var dividerBlock = this.model.get('_themeBlockConfig')._isDividerBlock;
+
+			if (dividerBlock) {
+				this.$el.addClass('divider-block');
+			}
+		}
 	});
 
 	return ThemeBlockView;
-	
+
 });

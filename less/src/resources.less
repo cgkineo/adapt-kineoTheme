@@ -1,0 +1,25 @@
+.resources {
+	.resources-filter button {
+		.drawer-color-darken(border-bottom, 1px, solid, 5%);
+		color: @drawer-color-inverted;
+		font-size: @body-text-font-size;
+		padding: 0;
+		text-align: center;
+
+		span {
+			border: none;
+			padding: 15px 0px;
+		}
+
+		&.selected {
+			.primary-color(background-color);
+			color: @primary-color-inverted;
+		}
+
+		.no-touch &:hover {
+			.ui-button-color-hover(background-color, 0%);
+			color: @ui-button-color-inverted;
+			.transition-all-colors;
+		}
+	}
+}

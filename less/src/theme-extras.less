@@ -1,0 +1,58 @@
+// Additional theme classes or attributes to be applied in JSON for more custom style 
+// ==================================================================================
+
+// Divider block - used to separate content or break up pages. 
+// =============
+
+// Class applies inverted background color and component styling
+
+.divider-block {
+	background-color: @background-color-inverted;
+	color: @font-body-color-inverted;
+	
+	.block-title,
+	.block-body,
+	.block-instruction,
+	.component-full .component-title,
+	.component-full .component-body,
+	.component-full .component-instruction {
+		color: @font-body-color-inverted;
+		text-align: center;
+	}
+
+	.narrative-content-inner {
+		text-align: left;
+	}
+}
+
+// Class applies primary colour to background and component styling
+// ((this needs updating - SN))
+
+.primary-divider-block {
+	.primary-color(background-color);
+	color: @primary-color-inverted;
+	
+	.block-title,
+	.block-body,
+	.block-instruction,
+	.component-full .component-title,
+	.component-full .component-body,
+	.component-full .component-instruction {
+		color: @font-body-color-inverted;
+		text-align: center;
+	}
+
+	.narrative-content-inner {
+		text-align: left;
+	}
+}
+
+// Title underlines - kitchen sink AD
+.menu-title-inner,
+.page-title-inner {
+	background-image: url('@{asset}white-underline.jpg');
+	background-repeat: no-repeat;
+	background-size: 250px 2px;
+	background-position: bottom center;
+	padding-bottom: 20px;
+}

@@ -1,0 +1,120 @@
+// Narrative styling
+// ==================
+.narrative-component {
+	.narrative-content-title {
+		.item-title;
+		margin-bottom: @title-text-margin;
+	}
+
+	.narrative-content {
+		.components-color(background-color);
+		color: @components-color-inverted;
+	}
+
+	.narrative-controls {
+		.components-color(background-color);
+		display: block;
+		height: (@icon-size*2.5);
+		margin-top: -(@icon-size*2);
+		position: absolute;
+		text-decoration: none;
+		top: 50%;
+		width: (@icon-size*2.5);
+		z-index: 10;
+
+		.no-touch &:hover {
+			.components-color-hover(background-color, 20%);
+			.transition-background-color;
+
+			.icon {
+				color: @components-color-inverted;
+
+				&.icon-controls-left:before {
+					display: inline-block;
+					.effect-bounceLeftOnce;
+				}
+
+				&.icon-controls-right:before {
+					display: inline-block;
+					.effect-bounceRightOnce;
+				}
+			}
+		}
+
+		.icon {
+			color: @components-color-inverted;
+			font-size: (@icon-size*1.25);
+			font-weight: bold;
+			margin: (@icon-size/1.5);
+		}
+	}
+
+	.narrative-progress {
+		background-color: darken(@background-color, 20%);
+		border: inherit;
+
+		&.selected {
+			.components-color(background-color);
+		}
+	}
+
+	.narrative-strapline-title {
+		.item-title;
+		.components-color(background-color);
+		color: @components-color-inverted;
+		float: left;
+		position: relative;
+		text-decoration: none;
+
+		.dir-rtl & {
+			float: right;
+		}
+
+		.icon {
+			color: @components-color-inverted;
+			display: block;
+			right: 0;
+			padding: @item-padding-top @item-padding-right @item-padding-bottom;
+			position: absolute;
+			top: 0;
+
+			.dir-rtl & {
+				right: inherit;
+				left: 0;
+			}
+		}
+
+		.no-touch &:hover {
+			.components-color-hover(background-color, 20%);
+			color: @components-color-inverted;
+			.transition-all-colors;
+
+			.icon {
+				color: @components-color-inverted;
+			}
+		}
+
+		.no-touch &:focus .focus-rect {
+			outline: none;
+		}
+
+		.no-touch.accessibility &:focus .focus-rect {
+			bottom: extract(@focus-outline, 1);
+			left: extract(@focus-outline, 1);
+			outline: @focus-outline;
+			position: absolute;
+			right: extract(@focus-outline, 1);
+			top: extract(@focus-outline, 1);
+		}
+	}
+
+	.narrative-strapline-title-inner {
+		padding-left: (@item-padding-left);
+		padding-right: (@item-padding-left + @item-padding-right + @icon-size);
+		
+		.dir-rtl & {
+			padding-left: (@item-padding-left + @item-padding-right + @icon-size);
+			padding-right: (@item-padding-left);
+		}
+	}
+}

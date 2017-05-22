@@ -1,22 +1,37 @@
-{{! Maintainers - Daryl Hedley}}
 {{! .component-container: Adapt will place the blocks components inside this class}}
+
+{{themeConfig}}
 <div class="block-inner">
-    {{! Check if a page title exist and render it}}
-    {{#if displayTitle}}
-    <div class="block-title">
-        <div class="block-title-inner h3" tabindex="0" role="heading" aria-level="4">
-            {{{displayTitle}}}
-        </div>
-    </div>
-    {{/if}}
-    {{! Check if page body exists and render it}}
-    {{#if body}}
-    <div class="block-body">
-        <div class="block-body-inner">
-            {{{a11y_text body}}}
-        </div>
-    </div>
-    {{/if}}
-    <div class="component-container">
-    </div>
+
+	{{! Check if a page title exist and render it}}
+	{{#if displayTitle}}
+		<div class="block-title {{#if _theme._headings._isEnabled}}{{{_theme._headings._blockHeading}}}{{/if}}">
+			<div role="heading" tabindex="0" class="block-title-inner h3"  aria-level="3">
+				{{#if _theme._headings._isEnabled}}{{#if_value_equals _theme._headings._blockHeading "magazine"}}<span><span>{{/if_value_equals}}{{/if}}
+				{{{displayTitle}}}
+				{{#if _theme._headings._isEnabled}}{{#if_value_equals _theme._headings._blockHeading "magazine"}}</span></span>{{/if_value_equals}}{{/if}}
+			</div>
+		</div>
+	{{/if}}
+
+	{{! Check if page body exists and render it}}
+	{{#if body}}
+		<div class="block-body">
+			<div class="block-body-inner">
+				{{{a11y_text body}}}
+			</div>
+		</div>
+	{{/if}}
+
+	{{! Check if page body exists and render it}}
+	{{#if instruction}}
+		<div class="block-instruction">
+			<div class="block-instruction-inner">
+				{{{a11y_text instruction}}}
+			</div>
+		</div>
+	{{/if}}
+
+	<div class="component-container"></div>
+	
 </div>

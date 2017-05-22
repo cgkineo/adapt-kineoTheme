@@ -1,0 +1,64 @@
+.tabs-component {
+	.tabs-navigation-item-inner {
+		.components-color(background-color);
+		color: @components-color-inverted;
+		padding: 15px;
+
+		&.visited {
+			background-color: @visited-color;
+			color: @components-color-inverted;
+		}
+
+		&.selected {
+			.components-color-darken(background-color, 20%);
+			color: @components-color-inverted;
+
+			&:after {
+				.components-color-darken(border-left-color, 20%);
+			}
+		}
+
+		.no-touch &:hover {
+			.components-color-hover(background-color, 20%);
+			color: @components-color-inverted;
+			.transition-all-colors;
+
+			&.visited {
+				.components-color-hover(background-color, 20%);
+				color: @components-color-inverted;
+			}
+
+			&.selected {
+				.components-color-hover(background-color, 20%);
+				color: @components-color-inverted;
+			}
+		}
+
+		&:after {
+			.components-color(border-left-color);
+			border-width: 10.5px 0 10.5px 13px;
+			margin-top: -8.25px;
+			right: -13px;
+		}
+	}
+
+	.tabs-content-items {
+		background: @background-color;
+		.components-color(border, 1px, solid);
+		max-height: 400px;
+		min-height: 400px;
+	}
+
+	// Top Layout
+	&.tab-layout-top {
+		.tabs-widget {
+			padding-top: 49px;
+		}
+	}
+
+	@media all and (max-width: @device-width-medium) {
+		.tabs-content-icon {
+			color: @theme-black;
+		}
+	}
+}

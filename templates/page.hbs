@@ -1,59 +1,92 @@
-{{! .article-container: Adapt will place the pages articles inside this class}}
-<div class="page-inner article-container" role="main" aria-label="{{_accessibility._ariaLabels.page}}">
+<div class="page-inner article-container">
+	{{{a11y_aria_label _accessibility._ariaLabels.page}}}
 
-    {{#if _theme._pageHeader._isEnabled}}
+	{{#if _theme._pageHeader._isEnabled}}
+	<div class="page-header{{#if _theme._pageHeader._showScrollButton}} has-scroll{{/if}}">
+		<div class="page-header-inner clearfix">
 
-    	<div class="page-header">
-    		<div class="page-header-inner clearfix">
+			<div class="page-header-content">
+				<div class="page-header-content-inner">
 
-    			<div class="page-header-content">
-    				<div class="page-header-content-inner">
+					{{#if displayTitle}}
+					<div class="page-title {{#if _theme._headings._isEnabled}}{{{_theme._headings._pageHeading}}}{{/if}}">
+						<div class="page-title-inner h1" role="heading" tabindex="0" aria-level="1">
+							{{#if _theme._headings._isEnabled}}{{#if_value_equals _theme._headings._pageHeading "magazine"}}<span><span>{{/if_value_equals}}{{/if}}
+							{{{displayTitle}}}
+							{{#if _theme._headings._isEnabled}}{{#if_value_equals _theme._headings._pageHeading "magazine"}}</span></span>{{/if_value_equals}}{{/if}}
+						</div>
+					</div>
+					{{/if}}
 
-    					{{#if displayTitle}}
-					    <div class="page-header-title">
-							<div class="page-title-inner h1" tabindex="0" role="heading" aria-level="1">
-					            {{{displayTitle}}}
-					        </div>
-					    </div>
-					    {{/if}}
+					{{#if body}}
+					<div class="page-body">
+						<div class="page-body-inner">
+							{{#if pageBody}}
+								{{{a11y_text pageBody}}}
+							{{else}}
+								{{{a11y_text body}}}
+							{{/if}}
+						</div>
+					</div>
+					{{/if}}
 
-					    {{#if body}}
-					    <div class="page-header-body">
-					        <div class="page-header-body-inner">
-					            {{{a11y_text body}}}
-					        </div>
-					    </div>
-					    {{/if}}
+					{{#if instruction}}
+					<div class="page-instruction">
+						<div class="page-instruction-inner">
+							{{{a11y_text instruction}}}
+						</div>
+					</div>
+					{{/if}}
 
-					    {{#if instruction}}
-					    <div class="page-header-instruction">
-					        <div class="page-header-instruction-inner">
-					            {{{a11y_text instruction}}}
-					        </div>
-					    </div>
-					    {{/if}}
+				</div>
+			</div>
 
-    				</div>
-    			</div>
+			{{#if _theme._pageHeader._showScrollButton}}
+			<div class="page-header-scroll-button">
+				<button class="base page-header-scroll-button-inner icon icon-controls-down a11y-ignore" tabindex="-1" aria-hidden="true"></button>
+			</div>
+			{{/if}}
 
-    			{{#if _theme._pageHeader._showScrollButton}}
-    			<a href="#" class="page-header-scroll-button icon icon-controls-down" role="button" aria-label="{{_accessibility._ariaLabels.scroll}}"></a>
-    			{{/if}}
+		</div>
+	</div>
+	{{else}}
+	<div class="page-header">
+		<div class="page-header-inner clearfix">
 
-    		</div>
-    	</div>
+			<div class="page-header-content">
+				<div class="page-header-content-inner">
 
-    {{else}}
+					{{#if displayTitle}}
+					<div class="page-title">
+						<div class="page-title-inner h1" role="heading" tabindex="0" aria-level="1">
+							{{{displayTitle}}}
+						</div>
+					</div>
+					{{/if}}
 
-	    {{#if displayTitle}}
-	    <div class="page-title">
-	        <div class="page-title-inner h1" tabindex="0" role="heading" aria-level="2">
-	            {{{displayTitle}}}
-	        </div>
-	    </div>
-	    {{/if}}
+					{{#if body}}
+					<div class="page-body">
+						<div class="page-body-inner">
+							{{#if pageBody}}
+								{{{a11y_text pageBody}}}
+							{{else}}
+								{{{a11y_text body}}}
+							{{/if}}
+						</div>
+					</div>
+					{{/if}}
+					
+				</div>
+			</div>
 
-    {{/if}}
+		</div>
+	</div>
+	{{/if}}
 
-    
 </div>
+
+{{#if _theme._pageFooter._isEnabled}}
+	<div class="page-footer" style="background-color:{{_theme._pageFooter._backgroundColor}};">
+		<div class="page-footer-inner clearfix"></div>
+	</div>
+{{/if}}

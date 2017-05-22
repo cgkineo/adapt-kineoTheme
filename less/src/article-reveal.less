@@ -1,0 +1,44 @@
+.article-reveal-open-button,
+.article-reveal-close-button {
+	.article-reveal-open-button-icon,
+	.article-reveal-close-button-icon {
+		.components-color(background-color);
+		color: @components-color-inverted;
+	}
+
+	// visited state commented out as button should display as disabled once visited 
+	/*&.visited {
+		.article-reveal-open-button-icon,
+		.article-reveal-close-button-icon {
+			.components-color-darken(background-color, 20%);
+			color: @components-color-inverted;
+		}
+	}*/
+
+	.no-touch &:hover {
+		.article-reveal-open-button-icon,
+		.article-reveal-close-button-icon {
+			.components-color-hover(background-color, 20%);
+			color: @components-color-inverted;
+			.transition-all-colors;
+		}
+	}
+
+	&.disabled {
+		cursor: none;
+
+		.article-reveal-open-button-icon,
+		.article-reveal-close-button-icon {
+			background-color: @disabled-color;
+			color: @disabled-color-inverted;
+		}
+
+		.no-touch &:hover {
+			.article-reveal-open-button-icon,
+			.article-reveal-close-button-icon {
+				background-color: @disabled-color;
+				color: @disabled-color-inverted;
+			}
+		}
+	}
+}

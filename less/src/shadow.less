@@ -1,0 +1,16 @@
+// Shadow styling
+// ==============
+
+.shadow {
+	background-color: @transparency;
+	bottom: 0px;
+	position: fixed;
+	right: 0px;
+	left: 0px;
+	top: 0px;
+	z-index: 500;
+
+	.no-opacity & {
+		background-image: @transparency-fallback-png;
+	}
+}

@@ -1,0 +1,31 @@
+// Block styling
+// =============
+
+.block {
+	background-color: @background-color;
+
+	.block-inner {
+		.theme-responsive-sizes();
+		.theme-element-padding(@block-padding, @block-padding);
+	}
+
+	.block-title {
+		.headings-color(color);
+		margin-bottom: @block-title-margin-bottom;
+		text-align: left;
+
+		.dir-rtl & {
+			text-align: right;
+		}
+	}
+
+	.block-body {
+		margin-top: @block-body-margin-top;
+	}
+
+	.block-instruction {
+		.instruction-text;
+		margin-top: @block-body-margin-top;
+		margin-bottom: @block-instruction-margin-bottom;
+	}
+}

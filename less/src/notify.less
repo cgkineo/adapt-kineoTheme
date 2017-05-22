@@ -1,0 +1,241 @@
+// Notify styling
+// ==============
+
+.notify {
+	.notify-popup {
+		&.notify-type-prompt {
+			.notify-color(background-color);
+			color: @notify-color-inverted;
+		}
+
+		&.notify-type-popup {
+			.notify-color(background-color);
+			color: @notify-color-inverted;
+		}
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	.notify-popup-inner {
+		margin: auto;
+		max-width: @device-width-large;
+		padding: @notify-padding-top 0 @notify-padding-bottom;
+		position: relative;
+
+		@media all and (max-width: (@device-width-large + 20px)) {
+			padding: @notify-padding-top 20px @notify-padding-bottom;
+		}
+
+		@media all and (max-width: (@device-width-small + 20px)) {
+			padding: @notify-padding-top 10px @notify-padding-bottom;
+		}
+	}
+
+	.notify-popup-content {
+		.ie8 & {
+			margin: 0 auto;
+			max-width: @ie8-max-width;
+		}
+	}
+
+	// .notify-type-prompt {
+	// 	.notify-popup-content-inner {
+	// 		padding-left: 80px;
+
+	// 		.dir-rtl & {
+	// 			padding-left: inherit;
+	// 			padding-right: 80px;
+	// 		}
+			
+	// 		@media all and (max-width:(@device-width-medium - 1px)) {
+	// 			padding-left: 0px;
+
+	// 			.dir-rtl & {
+	// 				padding-left: inherit;
+	// 				padding-right: 0px;
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	.notify-popup-title {
+		margin-bottom: @notify-title-padding-bottom;
+		padding-right: 60px;
+
+		.dir-rtl & {
+			padding-right: inherit;
+			padding-left: 60px;
+		}
+	}
+
+	.notify-type-prompt {
+		.notify-popup-body {
+			padding-right: 60px;
+
+			.dir-rtl & {
+				padding-right: inherit;
+				padding-left: 60px;
+			}
+		}
+	}
+
+	.notify-popup-body {
+		a {
+			color: @notify-color-inverted;
+			text-decoration: underline;
+		}
+	}
+
+	.notify-popup-content-inner {
+		.notify-popup-icon {
+			padding-bottom: (@notify-padding-bottom / 3);
+			position: absolute;
+			right: 0;
+			left: inherit;
+
+			.icon {
+				color: @notify-color-inverted;
+				font-size: 60px;
+				height: 60px;
+				width: 60px;
+			}
+
+			.dir-rtl & {
+				left: 0;
+				right: inherit;
+			}
+		}
+	}
+
+	.notify-popup-buttons {
+		clear: both;
+		padding-top: @notify-padding-bottom;
+		text-align: center;
+	}
+
+	.notify-popup-button {
+		.button-text;
+		.ui-button-color(background-color);
+		border: none;
+		color: @ui-button-color-inverted;
+		display: inline-block;
+		min-width: 100px;
+		padding: 10px;
+		text-decoration: none;
+		
+		.no-touch &:hover {
+			.ui-button-color-hover(background-color, 20%);
+			color: @notify-color-inverted;
+			.transition-all-colors;
+		}
+	}
+
+	.notify-popup-done {
+		border: 2px solid @notify-color-inverted;
+		border-radius: 50%;
+		margin: 20px 10px;
+		padding: 5px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		
+		.notify-popup-icon-close {
+			color: @notify-color-inverted;
+		}
+		
+		.no-touch &:hover {
+			.ui-button-color-hover(background-color, 0%);
+			.transition-background-color;
+			
+			.notify-popup-icon-close {
+				.transition-color;
+			}
+		}
+
+		.dir-rtl & {
+			left: 0;
+			right: inherit;
+		}
+	}
+
+	.notify-shadow {
+		background-color: @transparency;
+
+		.no-opacity & {
+			background-image: @transparency-fallback-png;
+		}
+	}
+}
+
+.notify-push {
+	.notify-color(background-color);
+	border: 1px solid @notify-color-inverted;
+	border-radius: 3px;
+	color: #fff;
+	margin-top: -30px;
+	opacity: 0;
+	position: fixed;
+	right: 20px;
+	top: (@navigation-height + 20px);
+	transition: all 0.3s;
+	width: 380px;
+	z-index: 50;
+
+	@media all and (max-width: @device-width-medium) {
+		max-width: 380px;
+		right: 5%;
+		top: (@navigation-height-mobile + 20px);
+		width: 90%;
+
+		.dir-rtl & {
+			left: 5%;
+			right: inherit;
+		}
+	}
+
+	.dir-rtl & {
+		left: 20px;
+		right: inherit;
+	}
+
+	&.show {
+		margin-top: 0;
+		opacity: 1;
+	}
+}
+
+.notify-push-inner {
+	cursor: pointer;
+	margin-right: (30px + @icon-size*2);
+	padding: 30px 0px 30px 30px;
+
+	.dir-rtl & {
+		margin-left: (30px + @icon-size*2);
+		margin-right: inherit;
+		padding: 30px 30px 30px 0px;
+	}
+}
+
+.notify-push-close {
+	display: inline-block;
+	margin-top: -(@icon-size/2);
+	position: absolute;
+	right: 30px;
+	text-decoration: none;
+	top: 50%;
+
+	.dir-rtl & {
+		left: 30px;
+		right: inherit;
+	}
+
+	.icon {
+		color: @notify-color-inverted;
+		
+		.no-touch &:hover {
+			.ui-button-color-hover(background-color, 0%);
+		}
+	}
+}

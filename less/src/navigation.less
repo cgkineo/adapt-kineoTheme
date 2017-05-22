@@ -1,0 +1,31 @@
+// Navigation styling
+// ==================
+
+.navigation {
+	max-width: @max-width;
+	width: 100%;
+	height: (@navigation-padding * 2) + @icon-size;
+	margin: auto;
+	overflow: hidden;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+	.navigation-color(background-color); 
+	
+
+	.ie8 & {
+		max-width: @ie8-max-width;
+	}
+
+	.icon {
+		color: @navigation-color-inverted;
+		padding: @navigation-padding;
+
+		.no-touch &:hover {
+			.navigation-icon-rollover-style(@theme-rollover-style);
+		}
+
+		.no-touch &.navigation-back-button:hover:before {
+			display: inline-block;
+			.effect-bounceLeftTwice;
+		}
+	}
+}

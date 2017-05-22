@@ -20,30 +20,31 @@ define(function(require) {
 			var backgroundImages = this.model.get('_themeArticleConfig')._backgroundImage;
 
 			var backgroundColor = this.model.get('_themeArticleConfig')._backgroundColor;
+
+			if (backgroundColor) {
+				this.$el.css({
+					backgroundColor: backgroundColor
+				});
+			}
 			
 			if (backgroundImages) {
-
 				if (Adapt.device.screenSize == 'large') {
 					backgroundImage = backgroundImages._large;
 				} else if (Adapt.device.screenSize == 'medium') {
 					backgroundImage = backgroundImages._medium;
 				} else {
-					backgroundImage = backgroundImages._mobile;
+					backgroundImage = backgroundImages._small;
 				}
 
-				this.$el.css({
+				this.$el.addClass('article-image').css({
 					backgroundImage: 'url(' + backgroundImage + ')'
 				});
 				
-			} else if (backgroundColor) {
-				this.$el.css({
-					backgroundColor: backgroundColor
-				});
 			}
 		}
 
 	});
 
 	return ThemeArticleView;
-	
+
 });
