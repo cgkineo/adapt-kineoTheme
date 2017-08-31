@@ -1,7 +1,7 @@
 Adapt Kineo Theme
 ================
 
-###Contents
+### Contents
 
  - Overview
  - Theme Guide
@@ -9,7 +9,7 @@ Adapt Kineo Theme
  - Best Practices
  - Maintenance
 
-##Overview
+## Overview
 
 The Adapt Kineo theme's main purpose is to make styling courses more efficient for Kineo's current production process. The theme will also aid in making styles more consistent, reducing boilerplate code and adding extra functionality such as the ability to add background images via JSON.
 
@@ -18,7 +18,7 @@ Using this theme requires intermediate knowledge in styling with Adapt and the d
 Experience using the [Adapt Vanilla Theme](https://github.com/adaptlearning/adapt-contrib-vanilla) would be useful.
 
 
-##Theme Guide
+## Theme Guide
 
  - Variables
  -  The "_theme" attribute
@@ -29,7 +29,7 @@ Experience using the [Adapt Vanilla Theme](https://github.com/adaptlearning/adap
  - JS
 
 
-###Variables
+### Variables
 
 One of the fist thing's you'll notice is that almost all variables have been removed. Technically they are still there in a new file called adapt-defaults.less. This is to maintain compatibility with open source.
 
@@ -42,7 +42,7 @@ widths.less
 
 As you can imagine, both files contain variables relevant to their file names.
 
-####Colors.less
+#### Colors.less
 
 ```
 @green: #97C93C;
@@ -51,7 +51,7 @@ As you can imagine, both files contain variables relevant to their file names.
 
 Colors are now defined by the actual color name rather than using confusing names such as primary/secondary color. It's also much easier to read styling in another file by seeing color variables named as actual colors.
 
-####Widths.less
+#### Widths.less
 
 ```
 @device-width-small: 520px;
@@ -61,7 +61,7 @@ Colors are now defined by the actual color name rather than using confusing name
 
 Use widths to set consistent breakpoints for media queries.
 
-###The "_theme" attribute
+### The "_theme" attribute
 
 ```
 "_theme": {}
@@ -73,7 +73,7 @@ This also helps keep all theming JSON in one place, and makes it easier to port 
 
 **Examples complete with comments can be found in the [example.json](https://github.com/cgkineo/adapt-kineo-theme/blob/master/example.json) file.**
 
-###Background Images & Colors
+### Background Images & Colors
 
 It's now possible to add background images/colors to articles and blocks entirely via JSON.
 
@@ -102,13 +102,13 @@ Example of background color:
 **Only include either a background image or color.**
 
 
-###Boilerplate LESS files
+### Boilerplate LESS files
 
 You'll notice that as part of this theme there a lot of extra files in the less folder compared to the Adapt vanilla theme. These files have all the CSS style rules for all current Adapt components/extensions (contrib & Kineo) setup and ready to go.
 
 Files will be added to the theme as new components and extensions are built.
 
-###Page Header
+### Page Header
 
 ```
 "_theme": {
@@ -138,17 +138,17 @@ The attributes are largely self explanatory, "_showScrollButton" adds a button t
 
 Any custom styling can be done in the page-header.less file.
 
-###Templates
+### Templates
 
 Templates are mostly the same, page header functionality has been added to the page.hbs, not much else has changed from the Vanilla theme.
 
-###JS
+### JS
 
 The Kineo theme adds functionality that can't be achieved solely via html/css in the JS folder.
 
 There are theme-views for article, block and the page header. The theme attribute is used to pass in configuration to the view.
 
-##Workflow 
+## Workflow 
 
 We have found that following the below process has been the most efficient:
 
@@ -159,7 +159,7 @@ We have found that following the below process has been the most efficient:
  - Components/Extensions
  - Test
 
-###Setup
+### Setup
 
 A good starting point is to have all the components and extensions needed for your course installed. You can use the [command line tools](https://github.com/cgkineo/cgkineo-cli) for this.
 
@@ -175,7 +175,7 @@ Use the theme attribute (explained in the The "_theme" attribute section of this
 
 This is also a good time to assess how the content layout should be structured. Sometimes you'll need only one article per page, but depending on background image use, you might need more. It might mean reworking how the JSON is structured in your setup.
 
-###Variables
+### Variables
 
 At Kineo we are provided with an Art Direction and a style guide to work from. These are extremely useful to have since they guide you in styling your course.
 
@@ -196,13 +196,13 @@ It might be worth just adding to the colors file rather than replacing. Once you
 
 During this step you should also make any necessary changes in the widths.less file.
 
-###Fonts
+### Fonts
 
 Most of the projects at Kineo use google fonts. Use the @import statement in the fonts.less file and setup all the global sizes and weights.
 
 If the project isn't using google fonts, you would still add your @font-face rules to fonts.less file.
 
-###Components/Extensions
+### Components/Extensions
 
 This step requires you to go into all the component and extension less files and apply the relevant styles and variable changes.
 
@@ -213,12 +213,12 @@ More bespoke work can of course be done, the aim of the boilerplate style rules 
 If new components or extensions are created/added you will need to setup a less file for it in the theme. It's recommended that even if the component or extension is unique to the course, to setup a separate less file in the theme to keep the code organised and consistent.
 
 
-###Test
+### Test
 
 Make sure to check your work across your target browsers and devices. Remember that transparent colors and rounded corners aren't support in IE8, so now's a good time to make sure this doesn't affect the course too much.
 
 
-##Best Practices
+## Best Practices
 
  - Variables
  - Mixins
@@ -228,50 +228,50 @@ Make sure to check your work across your target browsers and devices. Remember t
  - Nesting
  - Code Organisation
  
-###Variables
+### Variables
  - **Don't use variables from the adapt-defaults.less file for theming**, these are only there for compatibility reasons and for building new components and extensions.
  - Do try to keep a low number of variables, a large number of variables makes the project more confusing when working in a team.
  - Keep related variables in the same file.
  - Instead of defining variables for different shades of a color, use the darken and lighten functions to achieve the same effect. See the [LESS documentation for more info.](http://lesscss.org/functions/#color-operations)
  - **Use clear and and easy to understand variable names.** For example, @colOne is much less useful than @red.
 
-###Fonts
+### Fonts
 
  - Set a fallback font for any imported font. Usually this would be Arial or Times depending on the main font used. This [explanation](http://maconprinting.com/serif-versus-san-serif-fonts) will help shed some light on which fallback font to use.
  - Try not to use too many web fonts since this impacts loading times. A good idea is to stick to two fonts maximum with 2-3 weights each.
  - IE8 tends to be really bad at rendering web fonts, the theme currently defaults IE8 to use Arial, change this to Times if you are using a serif font.
 
  
-###Mixins
+### Mixins
  - Use mixins wherever you find yourself repeating the same style rules. For an example see the transitions.less file
  - Mixins, while a powerful tool can be made quite complicated for others in your team to understand. Try to comment anything unusual.
  - Documentation for mixins can be found [here.](http://lesscss.org/features/#mixins-feature)
 
-###Using !important
+### Using !important
 
  - **!important should only be used sparingly where necessary**. Where possible code should be overwritten at the route where it is being set. If you find your code is being overwritten it's best practice to inspect the element to find out.
  - A good example for using the !important statement it to make sure a disabled state color is applied
 
-###New LESS files
+### New LESS files
 
  - Sometimes it might be necessary to setup a  new less file for a new component or extension. It's best to avoid copying all style rules and attributes across from the original file. Keep things simple by only adding theme based style rules and attributes.
 
-###Adding JSON attributes
+### Adding JSON attributes
 
  - Add new JSON attributes inside ```"_theme": {}```. This will help keep all theme related JSON together.
 
-###Nesting
+### Nesting
 
  - LESS allows you the ability to nest style rules. While this is a very useful feature, try to avoid deep nesting. This makes overwriting rules more difficult and can be much harder to follow. The theme tries to stick to 2 levels deep, only going over if necessary.
 
 
-###Code Organisation
+### Code Organisation
 
  - Keep general style rules in the relevant LESS files. For example, all block styles should be in blocks.less
  - If you are styling for example a very bespoke block with a lot of style rules, it is a good idea to move this into it's own file.
  - **Keep new LESS file names relevant.**
 
-##Maintenance
+## Maintenance
 
 This theme is intended to be a good starting point for all new projects. While we have tried to cover all possible use cases there will be a need to keep the theme updated to the latest changes in the Adapt framework.
 
@@ -282,17 +282,4 @@ It will also be very useful to log any issues or improvements to Github. Try not
 It's also a good idea to check to see if the issue you are having hasn't already been reported.
 
 The Kineo theme is being maintained by the Kineo Front End Developer team.
-
- 
-
-
- 
-
-
-
-
-
-
-
-
 
