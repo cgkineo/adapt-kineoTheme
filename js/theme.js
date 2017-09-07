@@ -1,74 +1,38 @@
-define(function(require) {
-	
-	var Adapt = require('coreJS/adapt');
-	var Backbone = require('backbone');
-	var ThemePage = require('./theme-page');
-	var ThemeArticle = require('./theme-article');
-	var ThemeBlock = require('./theme-block');
-	var currentPage;
-	
-	// themeConfig page helper
-	// =======================
-	Adapt.on('pageView:preRender', function(view) {
-		currentPage = view.model;
-	});
-	
-	Adapt.on('remove', function(view) {
-		currentPage = undefined;
-	});
-	
-	Adapt.once("app:dataReady" , function() { 
-		Handlebars.registerHelper("themeConfig", function(options){	
-			// console.log(currentPage);
-			if (!currentPage) return;
-			options.data.root._theme = _.extend({}, currentPage.get("_theme"), options.data.root._theme);
-		});
-	});
-	
-	// Page View
-	// =========
-	Adapt.on('pageView:postRender', function(view) {
-		var theme = view.model.get('_theme');
+define([
+	"core/js/adapt",
+	"./themePageView",
+	"./themeArticleView",
+	"./themeBlockView",
+	"./themeView"
+], function(Adapt, ThemePageView, ThemeBlockView, ThemeView) {
 
-		if (theme) {
-			new ThemePage({
-				model: new Backbone.Model({
-					_themePageConfig: theme
-				}),
-				el: view.$el
-			});
-		}
-		
-	});
+	function onDataReady() {
+		$("html").addClass(Adapt.course.get("_courseStyle"));
+	}
 
-	// Article View
-	// ============
-	Adapt.on('articleView:postRender', function(view) {
-		var theme = view.model.get('_theme');
-		
-		if (theme) {
-			new ThemeArticle({
-				model: new Backbone.Model({
-					_themeArticleConfig: theme
-				}),
-				el: view.$el
-			});
-		}
-		
-	});
+	function onPostRender(view) {
+		var model = view.model;
+		var theme = model.get("_theme");
 
-	// Block View
-	// ==========
-	Adapt.on('blockView:postRender', function(view) {
-		var theme = view.model.get('_theme');
-		
-		if (theme) {
-			new ThemeBlock({
-				model: new Backbone.Model({
-					_themeBlockConfig: theme
-				}),
-				el: view.$el
-			});
+		if (!theme) return;
+
+		switch (model.get("_type")) {
+			case "page":
+				new ThemePageView({ model: new Backbone.Model(theme), el: view.$el });
+				break;
+			case "article":
+				new ThemeArticleView({ model: new Backbone.Model(theme), el: view.$el });
+				break;
+			case "block":
+				new ThemeBlockView({ model: new Backbone.Model(theme), el: view.$el });
+				break;
+			default:
+				new ThemeView({ model: new Backbone.Model(theme), el: view.$el });
 		}
+	}
+
+	Adapt.on({
+		"app:dataReady": onDataReady,
+		"pageView:postRender articleView:postRender blockView:postRender": onPostRender
 	});
 });
