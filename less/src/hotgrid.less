@@ -1,41 +1,42 @@
-button::-moz-focus-inner {
-	padding: 0;
-	border: 0
-}
-	
 .hotgrid-component {
-	.hotgrid-item-image {
-		margin: 2.5%;
-		width: 95%;
-	}
-	
-	/* use css states - remove states img src's from json */
 	.hotgrid-grid-item {
 		.hotgrid-item-image {
 			border: 3px solid transparent;
-			border-radius: 50%; /* remove if square items */
-		}
-		.no-touch & {
-			button.hotgrid-item-image:hover {
-				border: 3px solid @components-color !important;				
+			margin: 2.5%;
+			width: 95%;
+
+			&.visited {
+				.hotgrid-item-image {
+					position: relative;
+
+					&:after {
+						content: "";
+						background-color: fade(@visited-color, 50%);
+						position: absolute;
+						left: 0;
+						top: 0;
+						height: 100%;
+						width: 100%;
+					}
+				}
+			}
+
+			&.border-radius {
+				border-radius: 50%;
+
+				&.visited {
+					&:after {
+						border-radius: 50%;
+					}
+				}
 			}
 		}
-		&.visited {
-			button {
-				position: relative;	
-			}
-			button:after {
-				content: " ";
-				display: block;
-				height: 100%;
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				background-color: rgba(111,120,125,0.8);
-				border-radius: 50%; /* remove if square items */
+
+		.no-touch &:hover {
+			.hotgrid-item-states-css.hotgrid-item-image {
+				border-color: @components-color;
+				.transition-border-color;
 			}
 		}
 	}
-	/* use css states */
 }
