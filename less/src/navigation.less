@@ -2,15 +2,16 @@
 // ==================
 
 .navigation {
-	max-width: @max-width;
-	width: 100%;
-	height: (@navigation-padding * 2) + @icon-size;
-	margin: auto;
-	overflow: hidden;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.26);
-	.navigation-color(background-color);
 	left: 0;
 	right: 0;
+	margin: auto;
+	max-width: @max-width;
+	overflow: hidden;
+	height: (@navigation-padding * 2) + @icon-size;
+	width: 100%;
+	z-index: 499;
+	.navigation-color(background-color);
+	box-shadow: 0 2px 5px fade(@theme-rich-black, 25%);
 
 	.ie8 & {
 		max-width: @ie8-max-width;
