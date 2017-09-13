@@ -8,7 +8,6 @@
 "_theme": {
     "_themePalette": "palette-01", // define theme palette for multiple theme palettes
     "_pageHeader": { // enable page header and apply background color/image and min-height
-        "_isEnabled": true,
         "_showScrollButton": true, // add scroll button to header
         "_backgroundColor": "#546e7a",
         "_backgroundImage": {

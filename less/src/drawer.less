@@ -7,8 +7,11 @@
 
 	.drawer-toolbar {
 		.drawer-color-darken(border-bottom, 1px, solid, 20%);
+		position: absolute;
+		top: 0;
+		width: 100%;
 	}
-	
+
 	.drawer-toolbar {
 		.drawer-close-button {
 			float: right;
@@ -45,6 +48,10 @@
 			
 			.drawer-close-button-rollover-style(@theme-rollover-style);
 		}
+	}
+
+	.drawer-holder {
+		padding-top: ((@navigation-padding * 2) + @icon-size + 1);
 	}
 
 	.drawer-inner {

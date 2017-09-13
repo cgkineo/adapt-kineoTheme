@@ -1,7 +1,9 @@
+{{! make the _globals object in course.json available to this template}}
+{{import_globals}}
+
 <div class="page-inner article-container">
 	{{{a11y_aria_label _accessibility._ariaLabels.page}}}
 
-	{{#if _theme._pageHeader._isEnabled}}
 	<div class="page-header{{#if _theme._pageHeader._showScrollButton}} has-scroll{{/if}}">
 		<div class="page-header-inner clearfix">
 
@@ -10,9 +12,9 @@
 
 					{{#if displayTitle}}
 					<div class="page-title {{#if _theme._headings._isEnabled}}{{{_theme._headings._pageHeading}}}{{/if}}">
-						<div class="page-title-inner h1" role="heading" tabindex="0" aria-level="1">
+						<div class="page-title-inner h1" aria-level="1" role="heading" tabindex="0">
 							{{#if _theme._headings._isEnabled}}{{#if_value_equals _theme._headings._pageHeading "magazine"}}<span><span>{{/if_value_equals}}{{/if}}
-							{{{displayTitle}}}
+							{{{compile displayTitle this}}}
 							{{#if _theme._headings._isEnabled}}{{#if_value_equals _theme._headings._pageHeading "magazine"}}</span></span>{{/if_value_equals}}{{/if}}
 						</div>
 					</div>
@@ -22,9 +24,9 @@
 					<div class="page-body">
 						<div class="page-body-inner">
 							{{#if pageBody}}
-								{{{a11y_text pageBody}}}
+							{{{compile_a11y_text pageBody this}}}
 							{{else}}
-								{{{a11y_text body}}}
+							{{{compile_a11y_text body this}}}
 							{{/if}}
 						</div>
 					</div>
@@ -33,7 +35,7 @@
 					{{#if instruction}}
 					<div class="page-instruction">
 						<div class="page-instruction-inner">
-							{{{a11y_text instruction}}}
+							{{{compile_a11y_text instruction}}}
 						</div>
 					</div>
 					{{/if}}
@@ -49,44 +51,13 @@
 
 		</div>
 	</div>
-	{{else}}
-	<div class="page-header">
-		<div class="page-header-inner clearfix">
-
-			<div class="page-header-content">
-				<div class="page-header-content-inner">
-
-					{{#if displayTitle}}
-					<div class="page-title">
-						<div class="page-title-inner h1" role="heading" tabindex="0" aria-level="1">
-							{{{displayTitle}}}
-						</div>
-					</div>
-					{{/if}}
-
-					{{#if body}}
-					<div class="page-body">
-						<div class="page-body-inner">
-							{{#if pageBody}}
-								{{{a11y_text pageBody}}}
-							{{else}}
-								{{{a11y_text body}}}
-							{{/if}}
-						</div>
-					</div>
-					{{/if}}
-					
-				</div>
-			</div>
-
-		</div>
-	</div>
-	{{/if}}
 
 </div>
 
 {{#if _theme._pageFooter._isEnabled}}
-	<div class="page-footer" style="background-color:{{_theme._pageFooter._backgroundColor}};">
-		<div class="page-footer-inner clearfix"></div>
-	</div>
+<div class="page-footer" style="background-color:{{_theme._pageFooter._backgroundColor}};">
+	<div class="page-footer-inner clearfix"></div>
+</div>
 {{/if}}
+
+<div class="aria-label relative a11y-ignore-focus prevent-default" role="region" tabindex="0">{{_globals._accessibility._ariaLabels.pageEnd}}</div>
