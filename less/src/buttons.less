@@ -1,18 +1,19 @@
+// ====================================================================================================
 // Button styling
-// ==============
+// ====================================================================================================
 
-// ==== Use this mixin to add a border to question buttons ====
-// ============================================================
-
+// Border mixin
+// ==================================================
 @button-border: 0px;
 @submit-button-border-color: @submit-button-color;
 
 .submit-button-border-color() {
 	border: @button-border solid @submit-button-border-color;
 }
+// Use this mixin to add a border to question buttons
 
-// ============================================================
-
+// Global
+// ==================================================
 #accessibility-toggle {
 	min-height: inherit;
 }
@@ -28,10 +29,6 @@ button {
 	padding: 0px 25px; // please do not change padding left/right
 	text-decoration: none;
 	text-align: center;
-
-	div {
-		// padding: 18px 0px;
-	}
 
 	.no-touch &:hover {
 		.submit-button-color-hover(background-color, 20%);
@@ -81,7 +78,8 @@ button {
 	border: 0;
 }
 
-// fix for media component
+// Fix for media component
+// ==================================================
 .media-component {
 	.mejs-container {
 		button {
@@ -90,6 +88,8 @@ button {
 	}
 }
 
+// Button marking
+// ==================================================
 .buttons {
 	margin-top: @button-margin-top;
 	//margin-bottom: @button-margin-bottom;

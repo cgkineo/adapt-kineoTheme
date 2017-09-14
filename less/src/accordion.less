@@ -66,15 +66,22 @@
 	}
 
 	.accordion-item-body {
-		// theme style
+		// Theme style
+		// ==================================================
 		.components-color-darken(background-color, 20%);
 		color: @components-color-inverted;
 
 		// Vanilla style uncomment to use
-		/*background-color: @background-color;
-		.components-color-darken(border, 3px, solid, 20%);
-		border-top: 0;
-		color: @font-body-color;*/
+		// ==================================================
+		// background-color: @background-color;
+		// .components-color-darken(border, 3px, solid, 20%);
+		// border-top: 0;
+		// color: @font-body-color;
+
+		a {
+			color: @components-color-inverted;
+			text-decoration: underline;
+		}
 	}
 
 	.accordion-item-body-inner {

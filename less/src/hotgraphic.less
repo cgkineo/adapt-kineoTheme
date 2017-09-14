@@ -46,6 +46,13 @@
 		padding: @item-padding-top @item-padding-right @item-padding-bottom @item-padding-left;
 	}
 
+	.hotgraphic-item-content {
+		a {
+			color: @font-body-color;
+			text-decoration: underline;
+		}
+	}
+
 	.hotgraphic-content-title {
 		.item-title;
 		margin-bottom: 20px;
@@ -55,12 +62,12 @@
 // overwite component defaults to bring it inline with other buttons
 //
 // note: applies to the pop-up nav bar
-// ================================================================
-.hotgraphic-component {	
+// ==================================================
+.hotgraphic-component {
 	.hotgraphic-popup-toolbar {
 		.components-color(border-bottom, 2px, solid);
 		height: auto;
-		padding: 0; 
+		padding: 0;
 	}
 
 	.hotgraphic-popup-count {
@@ -110,8 +117,6 @@
 		}
 	}
 }
-
-// ================================================================
 
 // Rollover states
 // ================================================================

@@ -12,10 +12,6 @@
 			.notify-color(background-color);
 			color: @notify-color-inverted;
 		}
-
-		a {
-			text-decoration: none;
-		}
 	}
 
 	.notify-popup-inner {
@@ -48,7 +44,7 @@
 	// 			padding-left: inherit;
 	// 			padding-right: 80px;
 	// 		}
-			
+
 	// 		@media all and (max-width:(@device-width-medium - 1px)) {
 	// 			padding-left: 0px;
 
@@ -124,7 +120,7 @@
 		min-width: 100px;
 		padding: 10px;
 		text-decoration: none;
-		
+
 		.no-touch &:hover {
 			.ui-button-color-hover(background-color, 20%);
 			color: @notify-color-inverted;
@@ -140,15 +136,15 @@
 		position: absolute;
 		right: 0;
 		top: 0;
-		
+
 		.notify-popup-icon-close {
 			color: @notify-color-inverted;
 		}
-		
+
 		.no-touch &:hover {
 			.ui-button-color-hover(background-color, 0%);
 			.transition-background-color;
-			
+
 			.notify-popup-icon-close {
 				.transition-color;
 			}
@@ -233,7 +229,7 @@
 
 	.icon {
 		color: @notify-color-inverted;
-		
+
 		.no-touch &:hover {
 			.ui-button-color-hover(background-color, 0%);
 		}

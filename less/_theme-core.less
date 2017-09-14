@@ -1,64 +1,54 @@
-// ==================================================================================================
-// ==================================================================================================
-// RESPONSIVE SETTINGS
-// ==================================================================================================
+// ====================================================================================================
+// Responsive Settings
+// ====================================================================================================
 
-// DEVICE WIDTHS
-// =============
-
+// Device widths
+// ==================================================
 @device-width-small: 520px;
 @device-width-medium: 760px;
 @device-width-large: 900px;
 
 // Max-widths
-// ==========
-
+// ==================================================
 @max-width: 1400px;
 @ie8-max-width: 1024px;
 
-// RESPONSIVE MIXIN
-// ================
-
+// Responsive mixin
+// ==================================================
 // This mixin is for setting the respovive widths in the theme.
 // It allows images size to be reduced and simplified. Only two sizes required 900px / 540px.
 
-.theme-responsive-sizes () {
+.theme-responsive-sizes() {
 	margin: auto;
 	max-width: @device-width-large;
 	padding-left: 0;
 	padding-right: 0;
 
-	@media all and (max-width: (@device-width-large + 20px)) {
+	@media (max-width: (@device-width-large + 20px)) {
 		max-width: @device-width-medium;
 		padding-left: 20px;
 		padding-right: 20px;
 	}
 
-	@media all and (max-width: (@device-width-medium)) {
+	@media (max-width: @device-width-medium) {
 		max-width: @device-width-small;
-		padding-left: 20px;
-		padding-right: 20px;
 	}
 
-	@media all and (max-width: (@device-width-small)) {
+	@media (max-width: @device-width-small) {
 		max-width: 100%;
-		padding-left: 20px;
-		padding-right: 20px;
 	}
 
-	@media all and (max-width: (321px)) {
+	@media (max-width: 321px) {
 		padding-left: 10px;
 		padding-right: 10px;
 	}
 }
 
-// ==================================================================================================
-// ==================================================================================================
-// SPACINGS
-// ==================================================================================================
-
-@item-padding: 20px;
+// ====================================================================================================
+// Spacings
+// ====================================================================================================
 @item-margin: 2px;
+@item-padding: 20px;
 
 @component-margin: 20px;
 @component-padding: 20px;
@@ -80,74 +70,23 @@
 
 @navigation-padding: 20px;
 
-// Detailed Spacings setup
-// =======================
+// Detailed spacings setup
+// ==================================================
 
-// Item
-@item-padding-top: @item-padding;
-@item-padding-bottom: @item-padding;
-@item-padding-left: @item-padding;
-@item-padding-right: @item-padding;
-
-@item-margin-top: @item-margin;
-@item-margin-bottom: @item-margin;
-
-// Page Header
-@page-padding-top: @page-header-padding;
-@page-padding-bottom: @page-header-padding;
-
-// Article
-@article-padding-top: @article-padding;
-@article-padding-bottom: @article-padding;
-
-@article-title-margin-bottom: @title-text-margin;
-
-@article-body-margin-top: @body-text-margin;
-@article-body-margin-bottom: @body-text-margin;
-
-@article-instruction-margin-bottom: @instruction-text-margin;
-
-// Block
-@block-padding-top: @block-padding;
-@block-padding-bottom: @block-padding;
-
-@block-title-margin-bottom: @title-text-margin;
-
-@block-body-margin-top: @body-text-margin;
-@block-body-margin-bottom: @body-text-margin;
-
-@block-instruction-margin-bottom: @instruction-text-margin;
-
-// Component
-@component-margin-top: @component-margin;
-@component-margin-bottom: @component-margin;
-@component-margin-left: @component-margin;
-@component-margin-right: @component-margin;
-
-@component-title-margin-bottom: @title-text-margin;
-
-@component-body-margin-top: @body-text-margin;
-@component-body-margin-bottom: @body-text-margin;
-
-@component-instruction-margin-bottom: @instruction-text-margin;
-
-// Buttons
+// Globals
+// ==================================================
 @button-padding-top: @button-padding;
 @button-padding-bottom: @button-padding;
 @button-margin-top: @button-margin;
 @button-margin-bottom: @button-margin;
 
-// Drawer
-@drawer-item-padding-top: @item-padding;
-@drawer-item-padding-bottom: @item-padding;
-@drawer-item-padding-left: @item-padding;
-@drawer-item-padding-right: @item-padding;
-
 // Navigation
+// ==================================================
 // @navigation-padding-top: @navigation-padding;
 // @navigation-padding-bottom: @navigation-padding;
 
 // Menu
+// ==================================================
 @menu-header-padding-top: @menu-header-padding;
 @menu-header-padding-bottom: @menu-header-padding;
 
@@ -163,37 +102,96 @@
 
 @menu-block-instruction-margin-bottom: @instruction-text-margin;
 
-// Feedback	
+// Page header
+// ==================================================
+@page-padding-top: @page-header-padding;
+@page-padding-bottom: @page-header-padding;
+
+// Article
+// ==================================================
+@article-padding-top: @article-padding;
+@article-padding-bottom: @article-padding;
+
+@article-title-margin-bottom: @title-text-margin;
+
+@article-body-margin-top: @body-text-margin;
+@article-body-margin-bottom: @body-text-margin;
+
+@article-instruction-margin-bottom: @instruction-text-margin;
+
+// Block
+// ==================================================
+@block-padding-top: @block-padding;
+@block-padding-bottom: @block-padding;
+
+@block-title-margin-bottom: @title-text-margin;
+
+@block-body-margin-top: @body-text-margin;
+@block-body-margin-bottom: @body-text-margin;
+
+@block-instruction-margin-bottom: @instruction-text-margin;
+
+// Component
+// ==================================================
+@component-margin-top: @component-margin;
+@component-margin-bottom: @component-margin;
+@component-margin-left: @component-margin;
+@component-margin-right: @component-margin;
+
+@component-title-margin-bottom: @title-text-margin;
+
+@component-body-margin-top: @body-text-margin;
+@component-body-margin-bottom: @body-text-margin;
+
+@component-instruction-margin-bottom: @instruction-text-margin;
+
+// Notify
+// ==================================================
 @notify-padding-top: @notify-padding;
 @notify-padding-bottom: @notify-padding;
 
 @notify-title-padding-bottom: @title-text-margin;
 
-// ELEMENT PADDING MIXIN
-// =====================
+// Item
+// ==================================================
+@item-padding-top: @item-padding;
+@item-padding-bottom: @item-padding;
+@item-padding-left: @item-padding;
+@item-padding-right: @item-padding;
 
+@item-margin-top: @item-margin;
+@item-margin-bottom: @item-margin;
+
+// Drawer
+// ==================================================
+@drawer-item-padding-top: @item-padding;
+@drawer-item-padding-bottom: @item-padding;
+@drawer-item-padding-left: @item-padding;
+@drawer-item-padding-right: @item-padding;
+
+// Element padding mixin
+// ==================================================
 .theme-element-padding (@topPadding; @bottomPadding) {
 	padding-top: @topPadding;
 	padding-bottom: @bottomPadding;
 
-	@media all and (max-width: (@device-width-medium)) {
+	@media (max-width: @device-width-medium) {
 		padding-top: (@topPadding / 2);
 		padding-bottom: (@bottomPadding / 2);
 	}
 
-	@media all and (max-width: (@device-width-small)) {
+	@media (max-width: @device-width-small) {
 		padding-top: (@topPadding / 3);
 		padding-bottom: (@bottomPadding / 3);
 	}
 }
 
-// ==================================================================================================
-// ==================================================================================================
-// FONTS
-// ==================================================================================================
+// ====================================================================================================
+// Fonts
+// ====================================================================================================
 
-// Global
-
+// Globals
+// ==================================================
 @body-text-font-family: @font-body;
 @body-text-font-weight: @font-weight-regular;
 @body-text-line-height: @body-line-height;
@@ -206,8 +204,8 @@
 @button-text-font-weight: @font-weight-light;
 @button-text-line-height: @body-line-height;
 
-// Menu 
-
+// Menu
+// ==================================================
 @menu-title-font-family: @font-headings;
 @menu-title-font-weight: @font-weight-light;
 @menu-title-line-height: @title-line-height;
@@ -216,12 +214,18 @@
 @menu-item-title-font-weight: @font-weight-light;
 @menu-item-title-line-height: @title-line-height;
 
-// Page
-
+// Page header
+// ==================================================
 @page-title-font-family: @font-headings;
 @page-title-font-weight: @font-weight-light;
 @page-title-line-height: @title-line-height;
 
+@page-body-font-family: @font-body;
+@page-body-font-weight: @font-weight-regular;
+@page-body-line-height: @body-line-height;
+
+// Page
+// ==================================================
 @article-title-font-family: @font-headings;
 @article-title-font-weight: @font-weight-light;
 @article-title-line-height: @title-line-height;
@@ -234,6 +238,12 @@
 @component-title-font-weight: @font-weight-light;
 @component-title-line-height: @title-line-height;
 
+@notify-title-font-family: @font-headings;
+@notify-title-font-weight: @font-weight-light;
+@notify-title-line-height: @title-line-height;
+
+// Misc
+// ==================================================
 @item-title-font-family: @font-headings;
 @item-title-font-weight: @font-weight-light;
 @item-title-line-height: @title-line-height;
@@ -246,13 +256,8 @@
 @drawer-title-font-weight: @font-weight-light;
 @drawer-title-line-height: @title-line-height;
 
-@notify-title-font-family: @font-headings;
-@notify-title-font-weight: @font-weight-light;
-@notify-title-line-height: @title-line-height;
-
-// Font setup
-// ==========
-
+// Tag styling
+// ==================================================
 html {
 	// preserve HTML font-size (iPhone orientation change)
 	-ms-text-size-adjust: 100%; 
@@ -265,168 +270,17 @@ html {
 }
 
 body {
-	.font-smoothing;
-	color: @font-body-color;
-	font-family: @body-text-font-family;
-	font-size: @body-text-font-size;
-	font-weight: @body-text-font-weight;
-	line-height: @body-text-line-height;
-
-	.ie8 & {
-		font-family: Arial, sans-serif;
+	p {
+		// Override base.less <p> tag margin
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 }
 
-.instruction-text {
-	font-family: @instruction-text-font-family;
-	font-size: @instruction-text-font-size;
-	font-weight: @instruction-text-font-weight;
-	line-height: @instruction-text-line-height;
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
 }
-
-.button-text {
-	.font-smoothing;
-	font-family: @button-text-font-family;
-	font-size: @button-text-font-size;
-	font-weight: @button-text-font-weight;
-	line-height: @button-text-line-height;
-
-	@media all and (max-width: @device-width-small) {
-		font-size: (@button-text-font-size * 0.85);  
-	}
-}
-
-// Variable set font styling
-// =========================
-
-.menu-title {
-	.font-smoothing;
-	font-family: @menu-title-font-family;
-	font-size: @menu-title-font-size;
-	font-weight: @menu-title-font-weight;
-	line-height: @menu-title-line-height;
-
-	@media all and (max-width: @device-width-small) {
-		font-size: (@menu-title-font-size * 0.85);
-	}
-}
-
-.menu-item-title {
-	.font-smoothing;
-	font-family: @menu-item-title-font-family;
-	font-size: @menu-item-title-font-size;
-	font-weight: @menu-item-title-font-weight;
-	line-height: @menu-item-title-line-height;
-
-	@media all and (max-width: @device-width-small) {
-		font-size: (@menu-item-title-font-size * 0.85);
-	}
-}
-
-.page-title {
-	.font-smoothing;
-	font-family: @page-title-font-family;
-	font-size: @page-title-font-size;
-	font-weight: @page-title-font-weight;
-	line-height: @page-title-line-height;
-
-	@media all and (max-width: @device-width-small) {
-		font-size: (@page-title-font-size * 0.85);
-	}
-}
-
-.article-title {
-	.font-smoothing;
-	font-family: @article-title-font-family;
-	font-size: @article-title-font-size;
-	font-weight: @article-title-font-weight;
-	line-height: @article-title-line-height;
-
-	@media all and (max-width: @device-width-small) {
-		font-size: (@article-title-font-size * 0.85);
-	}
-}
-
-.block-title {
-	.font-smoothing;
-	font-family: @block-title-font-family;
-	font-size: @block-title-font-size;
-	font-weight: @block-title-font-weight;
-	line-height: @block-title-line-height;
-
-	@media all and (max-width: @device-width-small) {
-		font-size: (@block-title-font-size * 0.85);
-	}
-}
-
-.component-title {
-	.font-smoothing;
-	font-family: @component-title-font-family;
-	font-size: @component-title-font-size;
-	font-weight: @component-title-font-weight;
-	line-height: @component-title-line-height;
-
-	@media all and (max-width: @device-width-small) {
-		font-size: (@component-title-font-size * 0.85);
-	}
-}
-
-.item-title {
-	.font-smoothing;
-	font-family: @item-title-font-family;
-	font-size: @item-title-font-size;
-	font-weight: @item-title-font-weight;
-	line-height: @item-title-line-height;
-
-	@media all and (max-width: @device-width-small) {
-		font-size: (@item-title-font-size * 0.85);
-	}
-}
-
-.sub-title {
-	.font-smoothing;
-	font-family: @sub-title-font-family;
-	font-size: @sub-title-font-size;
-	font-weight: @sub-title-font-weight;
-	line-height: @sub-title-line-height;
-
-	@media all and (max-width: @device-width-small) {
-		font-size: (@sub-title-font-size * 0.85);
-	}
-}
-
-.mcq-item {
-	// mirror item title line-height
-	.mcq-item-inner {
-		line-height: (@item-title-font-size * 0.85) * @item-title-line-height;
-	}
-}
-
-.drawer-title {
-	font-family: @drawer-title-font-family;
-	font-size: @drawer-title-font-size;
-	font-weight: @drawer-title-font-weight;
-	line-height: @drawer-title-line-height;
-
-	@media all and (max-width: @device-width-small) {
-		font-size: (@drawer-title-font-size * 0.85);
-	}
-}
-
-.notify-popup-title {
-	.font-smoothing;
-	font-family: @notify-title-font-family;
-	font-size: @notify-title-font-size;
-	font-weight: @notify-title-font-weight;
-	line-height: @notify-title-line-height;
-
-	@media all and (max-width: @device-width-small) {
-		font-size: (@notify-title-font-size * 0.85);
-	}
-}
-
-// Tag styling
-// ===========
 
 ol,
 ul {
@@ -454,48 +308,215 @@ b {
 }
 
 select {
-	font-family: @font-body;
+	font-family: @body-text-font-family;
 	font-size: @body-text-font-size;
-	font-weight: @font-weight-light;
-	line-height: @body-line-height;
+	font-weight: @body-text-font-weight;
+	line-height: @body-text-line-height;
 }
 
+// Variable set font styling
+// ==================================================
 body {
-	p {
-		// Override base.less <p> tag margin
-		margin-top: 0;
-		margin-bottom: 0;
+	.font-smoothing;
+	color: @font-body-color;
+	font-family: @body-text-font-family;
+	font-size: @body-text-font-size;
+	font-weight: @body-text-font-weight;
+	line-height: @body-text-line-height;
+
+	.ie8 & {
+		font-family: Arial, sans-serif;
 	}
 }
 
-button::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+.instruction-text {
+	font-family: @instruction-text-font-family;
+	font-size: @instruction-text-font-size;
+	font-weight: @instruction-text-font-weight;
+	line-height: @instruction-text-line-height;
 }
 
-// ==================================================================================================
-// ==================================================================================================
-// IMAGE PATH VARIABLES
-// ==================================================================================================
+.button-text {
+	.font-smoothing;
+	font-family: @button-text-font-family;
+	font-size: @button-text-font-size;
+	font-weight: @button-text-font-weight;
+	line-height: @button-text-line-height;
 
+	@media (max-width: @device-width-small) {
+		font-size: @button-text-font-size * 0.85;  
+	}
+}
+
+// Menu
+// ==================================================
+.menu-title {
+	.font-smoothing;
+	font-family: @menu-title-font-family;
+	font-size: @menu-title-font-size;
+	font-weight: @menu-title-font-weight;
+	line-height: @menu-title-line-height;
+
+	@media (max-width: @device-width-small) {
+		font-size: @menu-title-font-size * 0.85;
+	}
+}
+
+.menu-item-title {
+	.font-smoothing;
+	font-family: @menu-item-title-font-family;
+	font-size: @menu-item-title-font-size;
+	font-weight: @menu-item-title-font-weight;
+	line-height: @menu-item-title-line-height;
+
+	@media (max-width: @device-width-small) {
+		font-size: @menu-item-title-font-size * 0.85;
+	}
+}
+
+// Page header
+// ==================================================
+.page-title {
+	.font-smoothing;
+	font-family: @page-title-font-family;
+	font-size: @page-title-font-size;
+	font-weight: @page-title-font-weight;
+	line-height: @page-title-line-height;
+
+	@media (max-width: @device-width-small) {
+		font-size: @page-title-font-size * 0.85;
+	}
+}
+
+.page-body {
+	.font-smoothing;
+	font-family: @page-body-font-family;
+	font-size: @page-body-font-size;
+	font-weight: @page-body-font-weight;
+	line-height: @page-body-line-height;
+
+	@media (max-width: @device-width-small) {
+		font-size: @page-body-font-size * 0.8;
+	}
+}
+
+// Page
+// ==================================================
+.article-title {
+	.font-smoothing;
+	font-family: @article-title-font-family;
+	font-size: @article-title-font-size;
+	font-weight: @article-title-font-weight;
+	line-height: @article-title-line-height;
+
+	@media (max-width: @device-width-small) {
+		font-size: @article-title-font-size * 0.85;
+	}
+}
+
+.block-title {
+	.font-smoothing;
+	font-family: @block-title-font-family;
+	font-size: @block-title-font-size;
+	font-weight: @block-title-font-weight;
+	line-height: @block-title-line-height;
+
+	@media (max-width: @device-width-small) {
+		font-size: @block-title-font-size * 0.85;
+	}
+}
+
+.component-title {
+	.font-smoothing;
+	font-family: @component-title-font-family;
+	font-size: @component-title-font-size;
+	font-weight: @component-title-font-weight;
+	line-height: @component-title-line-height;
+
+	@media (max-width: @device-width-small) {
+		font-size: @component-title-font-size * 0.85;
+	}
+}
+
+.notify-popup-title {
+	.font-smoothing;
+	font-family: @notify-title-font-family;
+	font-size: @notify-title-font-size;
+	font-weight: @notify-title-font-weight;
+	line-height: @notify-title-line-height;
+
+	@media (max-width: @device-width-small) {
+		font-size: @notify-title-font-size * 0.85;
+	}
+}
+
+// Misc
+// ==================================================
+.item-title {
+	.font-smoothing;
+	font-family: @item-title-font-family;
+	font-size: @item-title-font-size;
+	font-weight: @item-title-font-weight;
+	line-height: @item-title-line-height;
+
+	@media (max-width: @device-width-small) {
+		font-size: @item-title-font-size * 0.85;
+	}
+}
+
+.sub-title {
+	.font-smoothing;
+	font-family: @sub-title-font-family;
+	font-size: @sub-title-font-size;
+	font-weight: @sub-title-font-weight;
+	line-height: @sub-title-line-height;
+
+	@media (max-width: @device-width-small) {
+		font-size: @sub-title-font-size * 0.85;
+	}
+}
+
+.mcq-item {
+	// mirror item title line-height
+	.mcq-item-inner {
+		line-height: (@item-title-font-size * 0.85) * @item-title-line-height;
+	}
+}
+
+.drawer-title {
+	font-family: @drawer-title-font-family;
+	font-size: @drawer-title-font-size;
+	font-weight: @drawer-title-font-weight;
+	line-height: @drawer-title-line-height;
+
+	@media (max-width: @device-width-small) {
+		font-size: @drawer-title-font-size * 0.85;
+	}
+}
+
+// ====================================================================================================
+// Image Path Variables
+// ====================================================================================================
 @build: "../../course/en/images/"; // Variable for build image path
 @asset: "assets/"; // Variable for asset image path
 
-// ==================================================================================================
-// ==================================================================================================
-// UI BUTTON HOVER STYLES
-// ==================================================================================================
+// ====================================================================================================
+// UI Button Hover Styles
+// ====================================================================================================
 
-// Navigation Icons
+// Navigation icons
+// ==================================================
 .navigation-icon-rollover-style(@rollover-style: default) {
 	.navigation-icon-rollover-args();
 
 	// Default
+	// ==================================================
 	.navigation-icon-rollover-args() when (@rollover-style = default) {
 		.ui-button-color-hover(color, 0%);
 	}
 
 	// Theme
+	// ==================================================
 	.navigation-icon-rollover-args() when (@rollover-style = theme) {
 		.ui-button-color-hover(background-color, 0%);
 		.transition-background-color;
@@ -503,10 +524,12 @@ button::-moz-focus-inner {
 }
 
 // Navigation PLP
+// ==================================================
 .navigation-plp-rollover-style(@rollover-style: default) {
 	.navigation-plp-rollover-args();
 
 	// Default
+	// ==================================================
 	.navigation-plp-rollover-args() when (@rollover-style = default) {
 		.page-level-progress-navigation-completion {
 			.navigation-color-hover(background-color, 0%);
@@ -523,6 +546,7 @@ button::-moz-focus-inner {
 	}
 
 	// Theme
+	// ==================================================
 	.navigation-plp-rollover-args() when (@rollover-style = theme) {
 		.ui-button-color-hover(background-color, 0%);
 		.transition-background-color;
@@ -537,14 +561,15 @@ button::-moz-focus-inner {
 	}
 }
 
-// Drawer Close Button
+// Drawer close button
+// ==================================================
 .drawer-close-button-rollover-style(@rollover-style: default) {
 	.close-button-default {
 		.icon {
 			color: @drawer-color-inverted;
 			padding: @navigation-padding;
 		
-			@media all and (max-width:(@device-width-small - 1px)) {
+			@media (max-width: (@device-width-small - 1px)) {
 				padding: @navigation-padding-mobile;
 			}
 		}
@@ -565,6 +590,7 @@ button::-moz-focus-inner {
 	.close-button-rollover-args();
 
 	// Default
+	// ==================================================
 	.close-button-rollover-args() when (@rollover-style = default) {
 		.close-button-default;
 
@@ -577,6 +603,7 @@ button::-moz-focus-inner {
 	}
 
 	// Theme
+	// ==================================================
 	.close-button-rollover-args() when (@rollover-style = theme) {
 		.close-button-theme;
 
@@ -593,6 +620,7 @@ button::-moz-focus-inner {
 }
 
 // Hotgraphic Buttons
+// ==================================================
 .hotgraphic-popup-button-rollover-style(@rollover-style: default) {
 	.close-button-default {
 	}
@@ -611,10 +639,12 @@ button::-moz-focus-inner {
 	.args();
 
 	// Default
+	// ==================================================
 	.args() when (@rollover-style = default) {
 		.close-button-default;
 
-		// Left-Right Buttons
+		// Left-right buttons
+		// ==================================================
 		.hotgraphic-popup-controls:not(.disabled) {
 			.no-touch &:hover {
 				.hotgraphic-popup-arrow-l, .hotgraphic-popup-arrow-r {
@@ -624,7 +654,8 @@ button::-moz-focus-inner {
 			}
 		}
 
-		// Close Button
+		// Close button
+		// ==================================================
 		.hotgraphic-popup-done {
 			.no-touch &:hover {
 				.hotgraphic-popup-close {
@@ -636,10 +667,12 @@ button::-moz-focus-inner {
 	}
 
 	// Theme
+	// ==================================================
 	.args() when (@rollover-style = theme) {
 		.close-button-theme;
 
-		// Left-Right Buttons
+		// Left-right buttons
+		// ==================================================
 		.hotgraphic-popup-controls:not(.disabled) {
 			.no-touch &:hover {
 				.ui-button-color-hover(background-color, 0%);
@@ -652,7 +685,8 @@ button::-moz-focus-inner {
 			}
 		}
 
-		// Close Button
+		// Close button
+		// ==================================================
 		.hotgraphic-popup-done {
 			.no-touch &:hover {
 				.hotgraphic-popup-close {
@@ -665,22 +699,19 @@ button::-moz-focus-inner {
 	}
 }
 
-// ==================================================================================================
-// ==================================================================================================
-// CORE ANIMATIONS
-// ==================================================================================================
+// ====================================================================================================
+// Core Animations
+// ====================================================================================================
 
-// TIMINGS
-// =======
-
+// Timings
+// ==================================================
 @duration: 0.2s; // for consistency with vanilla
 @colorGlobalDuration: 0.2s;
 @widthGlobalDuration: 0.6s;
 @allGlobalDuration: 0.6s;
 
-// CORE COLOUR TRANSITIONS
-// =======================
-
+// Core colour transitions
+// ==================================================
 .transition-all-colors (@duration: @colorGlobalDuration) {
 	-webkit-transition: background-color @duration ease-in, color @duration ease-in, border-color @duration ease-in;
 	-moz-transition: background-color @duration ease-in, color @duration ease-in, border-color @duration ease-in;
@@ -709,9 +740,8 @@ button::-moz-focus-inner {
 	transition: color @duration ease-in;
 }
 
-// CORE OBJECT TRANSITIONS
-// =======================
-
+// Core object transitions
+// ==================================================
 .transition-all (@duration: @allGlobalDuration) {
 	-webkit-transition: all @duration ease-in;
 	-moz-transition: all @duration ease-in;
@@ -726,13 +756,11 @@ button::-moz-focus-inner {
 	transition: width @duration ease-in;
 }
 
-// CORE EFFECTS
-// ============
+// Core effects
+// ==================================================
 
-// Pulse
-// =====
-// Used in page-level-progress.less
-
+// Pulse - used in page-level-progress.less
+// ==================================================
 @-webkit-keyframes pulse {
 	from { }
 	to { background-color: rgba(255,255,255,1); }
@@ -752,10 +780,8 @@ button::-moz-focus-inner {
 	animation-timing-function: ease-in-out;
 }
 
-// scalePulse
-// ==========
-// Used in mcq.less and gmcq.less
-
+// scalePulse - used in mcq.less and gmcq.less
+// ==================================================
 @-webkit-keyframes scalePulse {
 	0% { -webkit-transform: none; }
 	50% { -webkit-transform: scale(1.4,1.4); }
@@ -776,10 +802,8 @@ button::-moz-focus-inner {
 	animation-timing-function: ease-in-out;
 }
 
-// bounceDownTwice
-// ==================
-// Used in page.less
-
+// bounceDownTwice - used in page.less
+// ==================================================
 @-webkit-keyframes bounceDownTwice {
 	0% { -webkit-transform: translateY(0px); }
 	100% { -webkit-transform: translateY(5px); }
@@ -798,10 +822,8 @@ button::-moz-focus-inner {
 	animation-timing-function: ease-in-out;
 }
 
-// bounceLeftTwice
-// ================
-// Used in navigation.less
-
+// bounceLeftTwice - used in navigation.less
+// ==================================================
 @-webkit-keyframes bounceLeftTwice {
 	0% { -webkit-transform: translateX(0px); }
 	100% { -webkit-transform: translateX(-5px); }
@@ -820,10 +842,8 @@ button::-moz-focus-inner {
 	animation-timing-function: ease-in-out;
 }
 
-// bounceLeftOnce
-// ======================
-// Used in articleBlockSlider.less, narrative.less, and quicknav.less
-
+// bounceLeftOnce - used in articleBlockSlider.less, narrative.less, and quicknav.less
+// ==================================================
 @-webkit-keyframes bounceLeftOnce {
 	0% { -webkit-transform: translateX(0px); }
 	100% { -webkit-transform: translateX(-5px); }
@@ -842,10 +862,8 @@ button::-moz-focus-inner {
 	animation-timing-function: ease-in-out;
 }
 
-// bounceRightOnce
-// ======================
-// Used in articleBlockSlider.less, narrative.less, and quicknav.less
-
+// bounceRightOnce - used in articleBlockSlider.less, narrative.less, and quicknav.less
+// ==================================================
 @-webkit-keyframes bounceRightOnce {
 	0% { -webkit-transform: translateX(0px); }
 	100% { -webkit-transform: translateX(5px); }
@@ -864,10 +882,8 @@ button::-moz-focus-inner {
 	animation-timing-function: ease-in-out;
 }
 
-// bounceLeftOnceSmall
-// ========================
-// Used in hotgraphic.less
-
+// bounceLeftOnceSmall - used in hotgraphic.less
+// ==================================================
 @-webkit-keyframes bounceLeftOnceSmall {
 	0% { -webkit-transform: translateX(0px); }
 	100% { -webkit-transform: translateX(-2px); }
@@ -886,10 +902,8 @@ button::-moz-focus-inner {
 	animation-timing-function: ease-in-out;
 }
 
-// bounceRightOnceSmall
-// ========================
-// Used in hotgraphic.less
-
+// bounceRightOnceSmall - used in hotgraphic.less
+// ==================================================
 @-webkit-keyframes bounceRightOnceSmall {
 	0% { -webkit-transform: translateX(0px); }
 	100% { -webkit-transform: translateX(2px); }
@@ -908,12 +922,12 @@ button::-moz-focus-inner {
 	animation-timing-function: ease-in-out;
 }
 
-// ==================================================================================================
-// ==================================================================================================
-// COLOUR MIXINS
-// ==================================================================================================
+// ====================================================================================================
+// Colours Mixins
+// ====================================================================================================
 
-// PRIMARY
+// Primary
+// ==================================================
 .primary-color(@prop;) {
 	@{prop}: @primary-color;
 }
@@ -945,7 +959,8 @@ button::-moz-focus-inner {
 	@{prop}: @width @line darken(@primary-color, @ptc);
 }
 
-// SECONDARY
+// Secondary
+// ==================================================
 .secondary-color(@prop;) {
 	@{prop}: @secondary-color;
 }
@@ -977,7 +992,8 @@ button::-moz-focus-inner {
 	@{prop}: @width @line darken(@secondary-color, @ptc);
 }
 
-// TERTIARY
+// Tertiary
+// ==================================================
 .tertiary-color(@prop;) {
 	@{prop}: @tertiary-color;
 }
@@ -1009,7 +1025,8 @@ button::-moz-focus-inner {
 	@{prop}: @width @line darken(@tertiary-color, @ptc);
 }
 
-// QUATERNARY
+// Quaternary
+// ==================================================
 .quaternary-color(@prop;) {
 	@{prop}: @quaternary-color;
 }
@@ -1041,10 +1058,11 @@ button::-moz-focus-inner {
 	@{prop}: @width @line darken(@quaternary-color, @ptc);
 }
 
-// LOGICAL ADAPT ELEMENTS
-// ======================
+// Local Adapt elements
+// ==================================================
 
-// HEADINGS
+// Headings
+// ==================================================
 .headings-color(@prop;) {
 	@{prop}: @headings-color;
 }
@@ -1076,7 +1094,8 @@ button::-moz-focus-inner {
 	@{prop}: @width @line darken(@headings-color, @ptc);
 }
 
-// COMPONENTS
+// Components
+// ==================================================
 .components-color(@prop;) {
 	@{prop}: @components-color;
 }
@@ -1108,10 +1127,11 @@ button::-moz-focus-inner {
 	@{prop}: @width @line darken(@components-color, @ptc);
 }
 
-// UI SETS
-// =======
+// UI sets
+// ==================================================
 
-// NAVIGATION
+// Navigation
+// ==================================================
 .navigation-color(@prop;) {
 	@{prop}: @navigation-color;
 }
@@ -1143,7 +1163,8 @@ button::-moz-focus-inner {
 	@{prop}: @width @line darken(@navigation-color, @ptc);
 }
 
-// DRAWER
+// Drawer
+// ==================================================
 .drawer-color(@prop;) {
 	@{prop}: @drawer-color;
 }
@@ -1175,7 +1196,8 @@ button::-moz-focus-inner {
 	@{prop}: @width @line darken(@drawer-color, @ptc);
 }
 
-// NOTIFY
+// Notify
+// ==================================================
 .notify-color(@prop;) {
 	@{prop}: @notify-color;
 }
@@ -1207,7 +1229,8 @@ button::-moz-focus-inner {
 	@{prop}: @width @line darken(@notify-color, @ptc);
 }
 
-// NOTIFY UI
+// Notify UI
+// ==================================================
 .notify-ui-color(@prop;) {
 	@{prop}: @notify-ui-color;
 }
@@ -1239,7 +1262,8 @@ button::-moz-focus-inner {
 	@{prop}: @width @line darken(@notify-ui-color, @ptc);
 }
 
-// UI BUTTONS
+// UI buttons
+// ==================================================
 .ui-button-color(@prop;) {
 	@{prop}: @ui-button-color;
 }
@@ -1271,7 +1295,8 @@ button::-moz-focus-inner {
 	@{prop}: @width @line darken(@ui-button-color, @ptc);
 }
 
-// SUMBIT BUTTONS
+// Submit buttons
+// ==================================================
 .submit-button-color(@prop;) {
 	@{prop}: @submit-button-color;
 }
@@ -1303,28 +1328,26 @@ button::-moz-focus-inner {
 	@{prop}: @width @line darken(@submit-button-color, @ptc);
 }
 
-// ==================================================================================================
-// ==================================================================================================
-// HEADING STYLES 
-// ==================================================================================================
+// ====================================================================================================
+// Heading Styles
+// ====================================================================================================
 
 // Magazine style headings - add to theme JSON to apply 
-// ====================================================
-
-/*"_theme": {
-	"_themePalette": "palette-01",
-	"_headings": {
-		"_isEnabled": true,
-		"_pageHeading": "magazine",
-		"_articleHeading": "magazine",
-		"_blockHeading": "magazine",
-		"_componentHeading": "magazine"
-	}
-}*/
-
-@mag-heading-padding: 10px;
+// ==================================================
+// "_theme": {
+// 	"_themePalette": "palette-01",
+// 	"_headings": {
+// 		"_isEnabled": true,
+// 		"_pageHeading": "magazine",
+// 		"_articleHeading": "magazine",
+// 		"_blockHeading": "magazine",
+// 		"_componentHeading": "magazine"
+// 	}
+// }
 
 // Magazine headings
+// ==================================================
+@mag-heading-padding: 10px;
 
 .magazine {
 	.page-title-inner,
@@ -1353,8 +1376,8 @@ button::-moz-focus-inner {
 	.article-title-inner span span,
 	.block-title-inner span span,
 	.component-title-inner span span {
-		left: -@mag-heading-padding !important;
 		position: relative;
+		left: -@mag-heading-padding !important;
 		z-index: 2;
 	}
 
@@ -1362,13 +1385,13 @@ button::-moz-focus-inner {
 	.article-title-inner:before,
 	.block-title-inner:before,
 	.component-title-inner:before {
-		.headings-color(background-color);
-		bottom: 0;
 		content: "";
-		left: 0;
 		position: absolute;
 		top: 0;
+		bottom: 0;
+		left: 0;
 		width: (@mag-heading-padding * 2);
 		z-index: 1;
+		.headings-color(background-color);
 	}
 }

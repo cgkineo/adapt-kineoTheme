@@ -9,6 +9,11 @@
 	.narrative-content {
 		.components-color(background-color);
 		color: @components-color-inverted;
+
+		a {
+			color: @components-color-inverted;
+			text-decoration: underline;
+		}
 	}
 
 	.narrative-controls {
@@ -21,6 +26,13 @@
 		top: 50%;
 		width: (@icon-size*2.5);
 		z-index: 10;
+
+		.icon {
+			color: @components-color-inverted;
+			font-size: (@icon-size*1.25);
+			font-weight: bold;
+			margin: (@icon-size/1.5);
+		}
 
 		.no-touch &:hover {
 			.components-color-hover(background-color, 20%);
@@ -39,13 +51,6 @@
 					.effect-bounceRightOnce;
 				}
 			}
-		}
-
-		.icon {
-			color: @components-color-inverted;
-			font-size: (@icon-size*1.25);
-			font-weight: bold;
-			margin: (@icon-size/1.5);
 		}
 	}
 
@@ -111,7 +116,7 @@
 	.narrative-strapline-title-inner {
 		padding-left: (@item-padding-left);
 		padding-right: (@item-padding-left + @item-padding-right + @icon-size);
-		
+
 		.dir-rtl & {
 			padding-left: (@item-padding-left + @item-padding-right + @icon-size);
 			padding-right: (@item-padding-left);

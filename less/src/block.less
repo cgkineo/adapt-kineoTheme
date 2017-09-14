@@ -1,6 +1,3 @@
-// Block styling
-// =============
-
 .block {
 	background-color: @background-color;
 
@@ -12,20 +9,25 @@
 	.block-title {
 		.headings-color(color);
 		margin-bottom: @block-title-margin-bottom;
-		text-align: left;
-
-		.dir-rtl & {
-			text-align: right;
-		}
 	}
 
 	.block-body {
 		margin-top: @block-body-margin-top;
+
+		a {
+			color: @font-body-color;
+			text-decoration: underline;
+		}
 	}
 
 	.block-instruction {
 		.instruction-text;
 		margin-top: @block-body-margin-top;
 		margin-bottom: @block-instruction-margin-bottom;
+
+		a {
+			color: @font-body-color;
+			text-decoration: underline;
+		}
 	}
 }
