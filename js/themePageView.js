@@ -37,12 +37,7 @@ define([ "./themeView", "core/js/adapt" ], function(ThemeView, Adapt) {
 		},
 
 		setElementBackground: function($element, config) {
-			var backgroundColour = config._backgroundColor;
 			var backgroundImages = config._backgroundImage;
-
-			if (backgroundColour) {
-				this.$(".page-header").css("background-colour", backgroundColour);
-			}
 
 			if (!backgroundImages) return;
 

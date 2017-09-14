@@ -34,10 +34,7 @@ define([ "core/js/adapt" ], function(Adapt) {
 		},
 
 		setBackground: function() {
-			var backgroundColour = this.model.get("_backgroundColor");
 			var backgroundImages = this.model.get("_backgroundImage");
-
-			if (backgroundColour) this.$el.css("background-color", backgroundColour);
 
 			if (!backgroundImages) return;
 

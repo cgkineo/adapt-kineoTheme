@@ -7,9 +7,8 @@
 
 "_theme": {
     "_themePalette": "palette-01", // define theme palette for multiple theme palettes
-    "_pageHeader": { // enable page header and apply background color/image and min-height
+    "_pageHeader": { // enable page header and apply background image and min-height
         "_showScrollButton": true, // add scroll button to header
-        "_backgroundColor": "#546e7a",
         "_backgroundImage": {
             "_large": "course/en/images/base_assets/hero_image.jpg",
             "_medium": "course/en/images/base_assets/hero_image.jpg",
@@ -21,9 +20,8 @@
             "_small": 300
         }
     },
-    "_pageFooter": { // enable page footer and apply background color/image and min-height
+    "_pageFooter": { // enable page footer and apply background image and min-height
         "_isEnabled": true,
-        "_backgroundColor": "#546e7a",
         "_backgroundImage": {
             "_large": "course/en/images/base_assets/hero_image.jpg",
             "_medium": "course/en/images/base_assets/hero_image.jpg",
@@ -39,8 +37,7 @@
 
 // Article - add to articles that need the functionality provided by the theme
 
-"_theme": { // apply background color/image to article
-    "_backgroundColor": "#546e7a",
+"_theme": { // apply background image to article
     "_backgroundImage": {
             "_large": "course/en/images/base_assets/hero_image.jpg",
             "_medium": "course/en/images/base_assets/hero_image.jpg",
@@ -50,8 +47,7 @@
 
 // Block - add to blocks that need the functionality provided by the theme
 
-"_theme": { // apply background color/image and min-height to block
-    "_backgroundColor": "#546e7a",
+"_theme": { // apply background image and min-height to block
     "_backgroundImage": {
             "_large": "course/en/images/base_assets/hero_image.jpg",
             "_medium": "course/en/images/base_assets/hero_image.jpg",
