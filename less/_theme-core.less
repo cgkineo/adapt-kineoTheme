@@ -47,28 +47,52 @@
 // ====================================================================================================
 // Spacings
 // ====================================================================================================
-@item-margin: 2px;
-@item-padding: 20px;
 
+// Globals
+// ==================================================
+@button-margin: 30px;
+@button-padding: 14px;
+
+@title-text-margin: 0;
+@body-text-margin: 20px;
+@instruction-text-margin: 0;
+
+// Navigation
+// ==================================================
+@navigation-padding: 20px;
+
+// Menu
+// ==================================================
+@menu-header-padding: 100px;
+
+// Page header
+// ==================================================
+@page-header-padding: 100px;
+
+// Article
+// ==================================================
+@first-article-top-padding: 0px;
+
+@article-padding: 0px;
+@article-header-padding: 0px;
+
+// Block
+// ==================================================
+@block-padding: 60px;
+
+// Component
+// ==================================================
 @component-margin: 20px;
 @component-padding: 20px;
 
-@menu-header-padding: 100px;
-
-@page-header-padding: 100px;
-
-@title-text-margin: 20px;
-
-@body-text-margin: 20px;
-
-@instruction-text-margin: 0px;
-
-@button-padding: 14px;
-@button-margin: 30px;
-
+// Notify
+// ==================================================
 @notify-padding: 60px;
 
-@navigation-padding: 20px;
+// Item
+// ==================================================
+@item-margin: 2px;
+@item-padding: 20px;
 
 // Detailed spacings setup
 // ==================================================
@@ -85,8 +109,6 @@
 // @navigation-padding-top: @navigation-padding;
 // @navigation-padding-bottom: @navigation-padding;
 
-// Menu
-// ==================================================
 @menu-header-padding-top: @menu-header-padding;
 @menu-header-padding-bottom: @menu-header-padding;
 
@@ -260,7 +282,7 @@
 // ==================================================
 html {
 	// preserve HTML font-size (iPhone orientation change)
-	-ms-text-size-adjust: 100%; 
+	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
 
@@ -344,7 +366,7 @@ body {
 	line-height: @button-text-line-height;
 
 	@media (max-width: @device-width-small) {
-		font-size: @button-text-font-size * 0.85;  
+		font-size: @button-text-font-size * 0.85;
 	}
 }
 
@@ -533,7 +555,7 @@ body {
 	.navigation-plp-rollover-args() when (@rollover-style = default) {
 		.page-level-progress-navigation-completion {
 			.navigation-color-hover(background-color, 0%);
-			.ui-button-color-hover(border, 2px, solid, 0%); 
+			.ui-button-color-hover(border, 2px, solid, 0%);
 		}
 
 		.page-level-progress-navigation-bar {
@@ -568,7 +590,7 @@ body {
 		.icon {
 			color: @drawer-color-inverted;
 			padding: @navigation-padding;
-		
+
 			@media (max-width: (@device-width-small - 1px)) {
 				padding: @navigation-padding-mobile;
 			}
@@ -632,7 +654,7 @@ body {
 			.hotgraphic-popup-close {
 				border: 2px solid @components-color-inverted;
 				border-radius: 50%;
-			} 
+			}
 		}
 	}
 
@@ -1332,7 +1354,7 @@ body {
 // Heading Styles
 // ====================================================================================================
 
-// Magazine style headings - add to theme JSON to apply 
+// Magazine style headings - add to theme JSON to apply
 // ==================================================
 // "_theme": {
 // 	"_themePalette": "palette-01",
