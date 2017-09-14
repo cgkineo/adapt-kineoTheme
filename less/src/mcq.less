@@ -1,3 +1,6 @@
+// ====================================================================================================
+// MCQ styling
+// ====================================================================================================
 .mcq-component {
 	.mcq-item {
 		// check if this is needed - SN
@@ -13,7 +16,7 @@
 		margin-bottom: @item-margin-bottom;
 		position: relative;
 		z-index: 1;
-		
+
 		.mcq-answer-icon {
 			color: @components-color-inverted;
 
@@ -141,11 +144,11 @@
 
 			.mcq-item label.disabled {
 				background-color: @disabled-color;
-				color: @components-color-inverted;
+				color: @disabled-color-inverted;
 
 				&:hover {
 					background-color: @disabled-color;
-					color: @components-color-inverted;
+					color: @disabled-color-inverted;
 					.transition-all-colors;
 				}
 

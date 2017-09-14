@@ -1,6 +1,9 @@
 // ====================================================================================================
 // Loading overlay styling
 // ====================================================================================================
+@loading-height: 200px;
+@loading-width: 200px;
+
 .loading {
 	background-color: @transparency;
 	position: fixed !important; // Needs to be fixed otherwise loading layout can be incorrect
@@ -11,16 +14,16 @@
 	}
 
 	.loader-gif {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -(@loading-height / 2);
+		margin-left: -(@loading-width / 2);
+		height: @loading-height;
+		width: @loading-width;
 		.item-title;
 		background-image: url('@{asset}ajax-loader.gif');
 		background-position: center;
 		background-repeat: no-repeat;
-		height: 128px;
-		left: 50%;
-		margin-left: -64px;
-		margin-top: -64px;
-		position: absolute;
-		top: 50%;
-		width: 128px;
 	}
 }

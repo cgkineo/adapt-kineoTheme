@@ -23,7 +23,7 @@ button {
 	.button-text;
 	.submit-button-color(background-color);
 	.submit-button-border-color();
-	color: @submit-button-color-inverted; 
+	color: @submit-button-color-inverted;
 	display: inline-block;
 	min-height: 55px + @button-border;
 	padding: 0px 25px; // please do not change padding left/right
@@ -107,7 +107,7 @@ button {
 		&.buttons-feedback {
 			margin-left: 0.5%;
 		}
-		
+
 		.dir-rtl & {
 			float: right;
 		}
@@ -143,7 +143,7 @@ button {
 			margin-right: -(40px/2);
 			right: 50%;
 		}
-		
+
 		&.icon-tick {
 			background-color: @validation-success;
 		}
@@ -152,7 +152,7 @@ button {
 			background-color: @validation-error;
 		}
 
-		@media all and (max-width: @device-width-small) {
+		@media (max-width: @device-width-small) {
 			height: 38px;
 			line-height: 38px;
 			margin-left: -20px;

@@ -1,6 +1,6 @@
+// ====================================================================================================
 // Notify styling
-// ==============
-
+// ====================================================================================================
 .notify {
 	.notify-popup {
 		&.notify-type-prompt {
@@ -20,11 +20,11 @@
 		padding: @notify-padding-top 0 @notify-padding-bottom;
 		position: relative;
 
-		@media all and (max-width: (@device-width-large + 20px)) {
+		@media (max-width: (@device-width-large + 20px)) {
 			padding: @notify-padding-top 20px @notify-padding-bottom;
 		}
 
-		@media all and (max-width: (@device-width-small + 20px)) {
+		@media (max-width: (@device-width-small + 20px)) {
 			padding: @notify-padding-top 10px @notify-padding-bottom;
 		}
 	}
@@ -45,7 +45,7 @@
 	// 			padding-right: 80px;
 	// 		}
 
-	// 		@media all and (max-width:(@device-width-medium - 1px)) {
+	// 		@media (max-width:(@device-width-medium - 1px)) {
 	// 			padding-left: 0px;
 
 	// 			.dir-rtl & {
@@ -179,7 +179,7 @@
 	width: 380px;
 	z-index: 50;
 
-	@media all and (max-width: @device-width-medium) {
+	@media (max-width: @device-width-medium) {
 		max-width: 380px;
 		right: 5%;
 		top: (@navigation-height-mobile + 20px);
