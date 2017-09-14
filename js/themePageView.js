@@ -87,14 +87,8 @@ define([ "./themeView", "core/js/adapt" ], function(ThemeView, Adapt) {
 			if (minHeight) $element.css("min-height", minHeight + "px");
 		},
 
-		onScrollButtonClick: function(event) {
-			event.preventDefault();
-			
-			$("html, body").velocity("scroll", {
-				duration: 800,
-				offset: this.$(".page-header").height() + "px",
-				mobileHA: false 
-			});
+		onScrollButtonClick: function() {
+			Adapt.scrollTo('.article', { duration: 800 });
 		},
 
 		onRemove: function() {
