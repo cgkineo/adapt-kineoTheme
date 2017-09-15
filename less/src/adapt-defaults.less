@@ -1,28 +1,28 @@
-// IMPORTANT - THESE ARE THE DEFAULT VARIABLES / LESS FOR COMPATIBILITY WITH ADAPT OPEN SOURCE WHILST THEME IS IN WORKING PROCESS
+// ====================================================================================================
+// Adapt Defaults
+// ====================================================================================================
 
+// IMPORTANT - THESE ARE THE DEFAULT VARIABLES / LESS FOR COMPATIBILITY WITH ADAPT OPEN SOURCE WHILST THEME IS IN WORKING PROCESS
 // THIS FILE WILL BE REMOVED BEFORE FINAL RELEASE - PLEASE COMMENT OUT VARIABLES AS THEY BECOME REDUNDANT
 
-
-// =================
 // Responsive Widths
-// =================
-
+// ==================================================
 .responsive-large {
-	@media all and (min-width:@device-width-large) {
-		margin:0 auto;
+	@media (min-width: @device-width-large) {
+		margin: 0 auto;
 		width: @device-width-large;
 	}
 }
 
 .responsive-medium {
-	@media all and (max-width:@device-width-medium) and (min-width:(@device-width-small)) {
-		margin:0 auto;
+	@media (max-width: @device-width-medium) and (min-width: @device-width-small) {
+		margin: 0 auto;
 		width: @device-width-small;
 	}
 }
 
 .responsive-small {
-	@media all and (max-width:(@device-width-small - 1px)) {
+	@media (max-width: (@device-width-small - 1px)) {
 		margin: 0 auto;
 		width: 100%;
 	}
@@ -34,9 +34,8 @@
 	.responsive-small;
 }
 
-// =========
 // Variables
-// =========
+// ====================================================================================================
 
 // Main colors
 // ===========
@@ -417,11 +416,11 @@
 
 // Detailed Color setup (V2 Vanilla)
 // =================================
-// (These variables will replace V1 
-//  variables above when updated in 
+// (These variables will replace V1
+//  variables above when updated in
 //         components & extensions)
 
-@item-border: 3px solid @item-border-color; 
+@item-border: 3px solid @item-border-color;
 
 // Body
 @foreground-color: @theme-black; // done -used in components
@@ -442,7 +441,7 @@
 @button-border-color-hover: @button-color-hover; // done
 @button-border-color-disabled: @button-color-disabled; // done
 
-// Navigation 
+// Navigation
 //@navigation-color: @tertiary-color; // done
 
 @navigation-icon-color: @tertiary-color-inverted; // done
