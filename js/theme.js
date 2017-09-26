@@ -4,7 +4,7 @@ define([
 	"./themeArticleView",
 	"./themeBlockView",
 	"./themeView"
-], function(Adapt, ThemePageView, ThemeBlockView, ThemeView) {
+], function(Adapt, ThemePageView, ThemeArticleView, ThemeBlockView, ThemeView) {
 
 	function onDataReady() {
 		$("html").addClass(Adapt.course.get("_courseStyle"));
