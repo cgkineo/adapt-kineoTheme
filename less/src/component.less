@@ -54,13 +54,15 @@
 	}
 
 	// to replicate padding between blocks when components drop into a single column
-	&:first-child {
-		@media (max-width: @device-width-medium) {
-			padding-bottom: @block-padding / 2;
-		}
+	&:not(.component-full):not(.component-medium) {
+		&:first-child {
+			@media (max-width: @device-width-medium) {
+				padding-bottom: @block-padding / 2;
+			}
 
-		@media (max-width: @device-width-small) {
-			padding-bottom: @block-padding / 3;
+			@media (max-width: @device-width-small) {
+				padding-bottom: @block-padding / 3;
+			}
 		}
 	}
 }
