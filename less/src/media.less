@@ -12,4 +12,17 @@
 			color: @submit-button-color-inverted;
 		}
 	}
+	
+	/* hide the caption language selector that gets shown when you click the 'cc' button - we don't need it as we only ever use one language */
+	.mejs-captions-selector {
+        	display: none !important;
+	}
+
+	/* stop the caption backgrounds from overlapping when the captions go onto multiple lines */
+	.mejs-captions-text  {
+		line-height: 24.5px;
+		.chrome & {
+			line-height: 23px;
+		}
+	}
 }
