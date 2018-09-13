@@ -73,9 +73,9 @@ This also helps keep all theming JSON in one place, and makes it easier to port 
 
 **Examples complete with comments can be found in the [example.json](https://github.com/cgkineo/adapt-kineo-theme/blob/master/example.json) file.**
 
-### Background Images & Colors
+### Background Images
 
-It's now possible to add background images/colors to articles and blocks entirely via JSON.
+It's now possible to add background images to articles and blocks entirely via JSON.
 
 Here is an example of how to add a background image:
 
@@ -90,16 +90,6 @@ Here is an example of how to add a background image:
 ```
 
 You must set background images for all sizes. You can also set the same image for all widths though it is recommended you consider file sizes for mobile.
-
-Example of background color:
-
-```
-"_theme": {
-    "_backgroundColor": "#EA1B75"
-}
-```
-
-**Only include either a background image or color.**
 
 
 ### Boilerplate LESS files
