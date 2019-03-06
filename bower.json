@@ -1,23 +1,15 @@
 {
-	"name": "adapt-kineo-theme",
-	"version": "2.0.3",
+	"name": "adapt-kineoTheme",
+	"version": "1.0.0",
 	"framework": ">=2.1.1",
-	"homepage": "https://github.com/cgkineo/adapt-kineo-theme",
-	"issues": "https://github.com/cgkineo/adapt-kineo-theme/issues/new?title=adapt-kineo-theme",
 	"displayName": "Kineo Theme",
-	"theme": "kineo-theme",
-	"description": "A Kineo version 2.0 theme",
+	"theme": "kineoTheme",
+	"description": "A Kineo base theme",
 	"main": "js/theme.js",
 	"keywords": [
 		"adapt-plugin",
 		"adapt-theme"
 	],
-	"license": "GPLv3",
-	"ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"test",
-		"tests"
-	]
+	"license": "GPL-3.0",
+	"homepage": "https://github.com/cgkineo/adapt-kineoTheme"
 }
