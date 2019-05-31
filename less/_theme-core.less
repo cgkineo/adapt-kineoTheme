@@ -553,17 +553,13 @@ body {
 	// Default
 	// ==================================================
 	.navigation-plp-rollover-args() when (@rollover-style = default) {
-		.page-level-progress-navigation-completion {
+		.pagelevelprogress-navigation {
 			.navigation-color-hover(background-color, 0%);
 			.ui-button-color-hover(border, 2px, solid, 0%);
 		}
 
-		.page-level-progress-navigation-bar {
+		.pagelevelprogress-indicator-bar {
 			.ui-button-color-hover(background-color, 0%);
-		}
-
-		.page-level-progress-plus-icon {
-			.ui-button-color-hover(color, 0%);
 		}
 	}
 
@@ -573,11 +569,11 @@ body {
 		.ui-button-color-hover(background-color, 0%);
 		.transition-background-color;
 
-		.page-level-progress-navigation-completion {
+		.pagelevelprogress-navigation {
 			border: 2px solid @navigation-color-inverted;
 		}
 
-		.page-level-progress-navigation-bar {
+		.pagelevelprogress-indicator-bar {
 			.primary-color-hover(background-color, 0%);
 		}
 	}
